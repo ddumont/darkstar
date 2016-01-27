@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Mhaura
--- NPC:  Phoochuchu
+--  NPC: Phoochuchu
 -- Involved in Quest: A Thief in Norg!?
 -- @pos -4 -4 69 249
 -----------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 
 -----------------------------------
 -- onTrade Action

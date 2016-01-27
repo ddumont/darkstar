@@ -3,11 +3,9 @@
 -- Zone: Vunkerl_Inlet_[S] (83)
 --
 -----------------------------------
-package.loaded["scripts/zones/Vunkerl_Inlet_[S]/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Vunkerl_Inlet_[S]/TextIDs");
+local text = require("scripts/zones/Vunkerl_Inlet_[S]/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -40,8 +38,8 @@ end;
 -----------------------------------    
 
 function onEventUpdate(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    
 
 -----------------------------------    
@@ -49,6 +47,6 @@ end;
 -----------------------------------    
 
 function onEventFinish(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    

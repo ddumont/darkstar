@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Port Windurst
--- NPC: Guruna-Maguruna
+--  NPC: Guruna-Maguruna
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,GURUNAMAGURUNA_SHOP_DIALOG);
+    player:showText(npc, text.GURUNAMAGURUNA_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x3322,  4201,1,     --Beetle Gorget
         0x3139,  2776,1,     --Linen Robe
         0x31B9,  1570,1,     --Linen Cuffs
@@ -50,8 +51,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -59,6 +60,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Korroloka Tunnel
--- NPC:  ??? (qm2)
+--  NPC: ??? (qm2)
 -- Involved In Quest: Ayame and Kaede
 -- @pos -208 -9 176 173
------------------------------------
-package.loaded["scripts/zones/Korroloka_Tunnel/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Korroloka_Tunnel/TextIDs");
+local text = require("scripts/zones/Korroloka_Tunnel/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -35,7 +33,7 @@ function onTrigger(player,npc)
             if (killedLeeches >= 1) then
                 if ((killedLeeches == 3 and (os.time() - player:getVar("KorrolokaLeeches_Timer") < 30)) or (killedLeeches < 3 and leechesDespawned and (os.time() - spawnTime) < 30)) then
                     player:addKeyItem(STRANGELY_SHAPED_CORAL);
-                    player:messageSpecial(KEYITEM_OBTAINED,STRANGELY_SHAPED_CORAL);
+                    player:messageSpecial(text.KEYITEM_OBTAINED,STRANGELY_SHAPED_CORAL);
                     player:setVar("KorrolokaLeeches",0);
                     player:setVar("KorrolokaLeeches_Spawned",0);
                     player:setVar("KorrolokaLeeches_Timer",0);
@@ -45,24 +43,24 @@ function onTrigger(player,npc)
                     SpawnMob(17486189,168);
                     player:setVar("KorrolokaLeeches",0);
                     player:setVar("KorrolokaLeeches_Spawned",os.time()+180);
-                    player:messageSpecial(SENSE_OF_BOREBODING);
+                    player:messageSpecial(text.SENSE_OF_BOREBODING);
                 else
-                    player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+                    player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
                 end
             elseif (canSpawn) then
                 SpawnMob(17486187,168); -- Despawn after 3 minutes (-12 seconds for despawn delay).
                 SpawnMob(17486188,168);
                 SpawnMob(17486189,168);
                 player:setVar("KorrolokaLeeches_Spawned",os.time()+180);
-                player:messageSpecial(SENSE_OF_BOREBODING);
+                player:messageSpecial(text.SENSE_OF_BOREBODING);
             else
-                player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+                player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
             end
         else
-            player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+            player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
         end
     else
-        player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+        player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
     end
 
 end;

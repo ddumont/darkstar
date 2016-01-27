@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters (S)
---   NPC: Ransnana
---  Type: Standard NPC
+-- Area: Windurst Waters (S)
+--  NPC: Ransnana
+-- Type: Standard NPC
 -- @zone: 94
---  @pos -22.008 -13.339 122.819
+-- @pos -22.008 -13.339 122.819
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters_[S]/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

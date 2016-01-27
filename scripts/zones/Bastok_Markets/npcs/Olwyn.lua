@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Olwyn
+--  NPC: Olwyn
 -- Standard Merchant NPC
 --
 -- Updated Aug-09-2013 by Zerahn, based on bgwiki and gamerescape
@@ -8,8 +8,7 @@
 
 require("scripts/globals/events/harvest_festivals");
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,9 +23,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,OLWYN_SHOP_DIALOG);
+    player:showText(npc, text.OLWYN_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x1020,   445,1,     --Ether
 
         0x1037,   736,2,     --Echo Drops
@@ -44,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -53,6 +54,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

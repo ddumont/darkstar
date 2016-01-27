@@ -4,12 +4,10 @@
 -- Type: Leathercraft Normal/Adv. Image Support
 -- @pos -71.556 -6.999 -103.015 48
 -----------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Al_Zahbi/TextIDs");
+local text = require("scripts/zones/Al_Zahbi/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ function onTrade(player,npc,trade)
                 player:tradeComplete();
                 player:startEvent(0x00E3,8,0,0,0,188,0,5,0);
             else
-                npc:showText(npc, IMAGE_SUPPORT_ACTIVE);
+                npc:showText(npc, text.IMAGE_SUPPORT_ACTIVE);
             end
         end
     end
@@ -66,10 +64,10 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
     if (csid == 0x00E2 and option == 1) then
-        player:messageSpecial(IMAGE_SUPPORT,0,5,1);
+        player:messageSpecial(text.IMAGE_SUPPORT,0,5,1);
         player:addStatusEffect(EFFECT_LEATHERCRAFT_IMAGERY,1,0,120);
     elseif (csid == 0x00E3) then
-        player:messageSpecial(IMAGE_SUPPORT,0,5,0);
+        player:messageSpecial(text.IMAGE_SUPPORT,0,5,0);
         player:addStatusEffect(EFFECT_LEATHERCRAFT_IMAGERY,3,0,480);
     end
 end;

@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Bibiki Bay
--- NPC:  Rhalo Davigoh
+--  NPC: Rhalo Davigoh
 -- @pos -407 -3 -419 4
------------------------------------
-
-package.loaded["scripts/zones/Bibiki_Bay/TextIDs"] = nil;
-
-require("scripts/zones/Bibiki_Bay/TextIDs");
+local text = require("scripts/zones/Bibiki_Bay/TextIDs");
 require("scripts/globals/shop");
 
 -----------------------------------

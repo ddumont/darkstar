@@ -3,9 +3,7 @@
 --  NPC: ??? (Spawn Chamrosh(ZNM T1))
 -- @pos 206 14 -285 65
 -----------------------------------
-package.loaded["scripts/zones/Mamook/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Mamook/TextIDs");
+local text = require("scripts/zones/Mamook/TextIDs");
 require("scripts/globals/status");
 
 -----------------------------------
@@ -27,7 +25,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_HAPPENS);
+    player:messageSpecial(text.NOTHING_HAPPENS);
 end;
 
 -----------------------------------

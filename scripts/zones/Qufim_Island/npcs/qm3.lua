@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Qufim Island
--- NPC: ??? (qm3)
+--  NPC: ??? (qm3)
 -- Mission: ACP - The Echo Awakens
 -- @zone 126
 -- @pos -120.342 -19.471 306.661
------------------------------------
-package.loaded["scripts/zones/Qufim_Island/TextIDs"] = nil;
 -------------------------------------
 
-require("scripts/zones/Qufim_Island/TextIDs");
+local text = require("scripts/zones/Qufim_Island/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
@@ -57,7 +55,7 @@ function onTrigger(player,npc)
         -- elseif (SR and SC and SV and ACPm >= THOSE_WHO_LURK_IN_SHADOWS_I and player:getVar("SEED_MANDY") == 1) then
             -- player:addKeyItem(AMBER_KEY);
             -- player:setVar("LastAmberKey", os.date("%j"));
-            -- player:messageSpecial(KEYITEM_OBTAINED,AMBER_KEY);
+            -- player:messageSpecial(text.KEYITEM_OBTAINED,AMBER_KEY);
             -- player:setVar("SEED_MANDY",0);
             -- player:delKeyItem(SEEDSPALL_ROSEUM)
             -- player:delKeyItem(SEEDSPALL_CAERULUM)

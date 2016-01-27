@@ -4,12 +4,10 @@
 -- Type: Fishing Normal/Adv. Image Support
 -- @pos -28.4 -6 -98 50
 -----------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ function onTrade(player,npc,trade)
                 player:tradeComplete();
                 player:startEvent(0x0283,8,0,0,0,188,0,6,0);
             else
-                npc:showText(npc, IMAGE_SUPPORT_ACTIVE);
+                npc:showText(npc, text.IMAGE_SUPPORT_ACTIVE);
             end
         end
     end
@@ -66,10 +64,10 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
     if (csid == 0x0282 and option == 1) then
-        player:messageSpecial(IMAGE_SUPPORT,0,0,1);
+        player:messageSpecial(text.IMAGE_SUPPORT,0,0,1);
         player:addStatusEffect(EFFECT_FISHING_IMAGERY,1,0,3600);
     elseif (csid == 0x0283) then
-        player:messageSpecial(IMAGE_SUPPORT,0,0,0);
+        player:messageSpecial(text.IMAGE_SUPPORT,0,0,0);
         player:addStatusEffect(EFFECT_FISHING_IMAGERY,2,0,7200);
     end
 end;

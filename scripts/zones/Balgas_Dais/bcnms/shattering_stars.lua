@@ -2,13 +2,11 @@
 -- Area: Balga's Dais
 -- Name: Shattering stars - Maat Fight
 -- @pos 299 -123 345 146
------------------------------------
-package.loaded["scripts/zones/Balgas_Dais/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/titles");
 require("scripts/globals/quests");
-require("scripts/zones/Balgas_Dais/TextIDs");
+local text = require("scripts/zones/Balgas_Dais/TextIDs");
 
 -----------------------------------
 
@@ -50,7 +48,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         if (player:getQuestStatus(JEUNO,SHATTERING_STARS) == QUEST_ACCEPTED and player:getFreeSlotsCount() > 0) then
             player:addItem(4181);
-            player:messageSpecial(ITEM_OBTAINED,4181);
+            player:messageSpecial(text.ITEM_OBTAINED,4181);
         end
         local pjob = player:getMainJob();
         player:setVar("maatDefeated",pjob);

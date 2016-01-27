@@ -3,12 +3,10 @@
 -- Zone: Oldton_Movalpolos (11)
 --
 -----------------------------------
-package.loaded["scripts/zones/Oldton_Movalpolos/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/conquest");
-require("scripts/zones/Oldton_Movalpolos/TextIDs");
+local text = require("scripts/zones/Oldton_Movalpolos/TextIDs");
 require("scripts/globals/missions");
 
 -----------------------------------
@@ -29,7 +27,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
     
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -67,8 +65,8 @@ end;
 -----------------------------------    
 
 function onEventUpdate(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    
 
 -----------------------------------    
@@ -76,8 +74,8 @@ end;
 -----------------------------------    
 
 function onEventFinish(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid==0x0001) then
        player:setVar("COP_Louverance_s_Path",5);
     elseif (csid == 0x0039) then

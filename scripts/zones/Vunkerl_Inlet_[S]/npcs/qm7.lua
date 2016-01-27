@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Vunkerl Inlet (S) (H-6)
--- NPC: ???
+--  NPC: ???
 -- Involved in Quests
 -- @pos -26 -31 364
------------------------------------
-package.loaded["scripts/zones/Vunkerl_Inlet_[S]/TextIDs"] = nil;
 package.loaded["scripts/globals/quests"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Vunkerl_Inlet_[S]/TextIDs");
+local text = require("scripts/zones/Vunkerl_Inlet_[S]/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -44,16 +42,16 @@ function onEventFinish(player,csid,option)
     if (csid == 0x0069) then
         player:addQuest(CRYSTAL_WAR, BOY_AND_THE_BEAST);
         player:addKeyItem(VUNKERL_HERB_MEMO);
-        player:messageSpecial(KEYITEM_OBTAINED, VUNKERL_HERB_MEMO);
+        player:messageSpecial(text.KEYITEM_OBTAINED, VUNKERL_HERB_MEMO);
     elseif (csid == 0x006C) then
         if(player:getFreeSlotsCount() == 0) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,17384); -- Carbon Fishing Rod
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,17384); -- Carbon Fishing Rod
         else
             player:completeQuest(CRYSTAL_WAR, BOY_AND_THE_BEAST);
             player:delKeyItem(VUNKERL_HERB_MEMO);
             player:delKeyItem(VUNKERL_HERB);
             player:addItem(17384);
-            player:messageSpecial(ITEM_OBTAINED,17384); --Carbon Fishing Rod
+            player:messageSpecial(text.ITEM_OBTAINED,17384); --Carbon Fishing Rod
         end
     elseif (csid == 0x006D) then
         player:delKeyItem(VUNKERL_HERB);

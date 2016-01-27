@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Riverne Site #A01
--- NPC:  Stone Monument
------------------------------------
-package.loaded["scripts/zones/Riverne-Site_A01/TextIDs"] = nil;
+--  NPC: Stone Monument
 -----------------------------------
 
-require("scripts/zones/Riverne-Site_A01/TextIDs");
+local text = require("scripts/zones/Riverne-Site_A01/TextIDs");
 
 -----------------------------------
 -- onTrade
@@ -19,7 +17,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(MONUMENT);
+    player:messageSpecial(text.MONUMENT);
 end;
 
 -----------------------------------
@@ -27,8 +25,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -36,6 +34,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,10 +1,7 @@
 ----------------------------------
---  Area: Crawlers' Nest [S]
+-- Area: Crawlers' Nest [S]
 --  NPC: Tucker
------------------------------------
-
-package.loaded["scripts/zones/Crawlers_Nest_[S]/TextIDs"] = nil;
-require("scripts/zones/Crawlers_Nest_[S]/TextIDs");
+local text = require("scripts/zones/Crawlers_Nest_[S]/TextIDs");
 require("scripts/globals/quests");
 
 -----------------------------------
@@ -78,28 +75,28 @@ function onEventFinish(player,csid,option)
         if (player:getFreeSlotsCount() > 0) then
             player:tradeComplete();
             player:addItem(2550, 4);
-            player:messageSpecial(ITEM_OBTAINED + 9, 2550, 4);
+            player:messageSpecial(text.ITEM_OBTAINED + 9, 2550, 4);
             player:setVar("SheetsofVellum", 2);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED, 2550);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED, 2550);
         end
     elseif (csid == 10) then
         if (player:getFreeSlotsCount() > 0) then
             player:tradeComplete();
             player:addItem(2550, 4);
-            player:messageSpecial(ITEM_OBTAINED + 9, 2550, 4);
+            player:messageSpecial(text.ITEM_OBTAINED + 9, 2550, 4);
             player:setVar("SheetsofVellum", 3);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED, 2550);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED, 2550);
         end
     elseif (csid == 11) then
         if (player:getFreeSlotsCount() > 0) then
             player:tradeComplete();
             player:addItem(2550, 4);
-            player:messageSpecial(ITEM_OBTAINED + 9, 2550, 4);
+            player:messageSpecial(text.ITEM_OBTAINED + 9, 2550, 4);
             player:setVar("SheetsofVellum", 4);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED, 2550);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED, 2550);
         end
     end
     

@@ -11,14 +11,12 @@
 --16924675', 'Promathia V1', '936', '-519', '120', '-520
 --16924675', 'Promathia V2', '11135', '-519', '120', '-520
 -----------------------------------
-package.loaded["scripts/zones/Empyreal_Paradox/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
 require("scripts/globals/missions");
-require("scripts/zones/Empyreal_Paradox/TextIDs");
+local text = require("scripts/zones/Empyreal_Paradox/TextIDs");
 
 -----------------------------------
 -- EXAMPLE SCRIPT
@@ -67,7 +65,7 @@ function onBcnmLeave(player,instance,leavecode)
     elseif (leavecode == 4) then
         player:startEvent(0x7d02);
     end
-    --printf("leavecode: %u",leavecode);
+    -- printf("leavecode: %u",leavecode);
     
 end;
 
@@ -82,7 +80,7 @@ function onEventFinish(player,csid,option)
     player:startEvent(0x0003);
     if (player:getCurrentMission(COP) == DAWN and player:getVar("PromathiaStatus")==2) then
         player:addKeyItem(TEAR_OF_ALTANA);
-        player:messageSpecial(KEYITEM_OBTAINED,TEAR_OF_ALTANA);
+        player:messageSpecial(text.KEYITEM_OBTAINED,TEAR_OF_ALTANA);
         player:setVar("Promathia_kill_day",tonumber(os.date("%j")));       
     player:setVar("PromathiaStatus",3);
     end

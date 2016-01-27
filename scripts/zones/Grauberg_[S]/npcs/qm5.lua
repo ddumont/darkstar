@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Grauberg [S]
---  NPC:  ???
---  Quest - Fires of Discontent
+-- Area: Grauberg [S]
+--  NPC: ???
+-- Quest - Fires of Discontent
 -- pos 258 33 516
------------------------------------
-package.loaded["scripts/zones/Grauberg_[S]/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/harvesting");
-require("scripts/zones/Grauberg_[S]/TextIDs");
+local text = require("scripts/zones/Grauberg_[S]/TextIDs");
 
 -----------------------------------
 -- onTrade

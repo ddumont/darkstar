@@ -1,13 +1,9 @@
 -----------------------------------
 -- Area: The Garden of Ru'Hmet
---  MOB: Aw_aern PH (Ix'Aern DRK and DRG)
+-- MOB: Aw_aern PH (Ix'Aern DRK and DRG)
 -----------------------------------
 
-package.loaded["scripts/zones/The_Garden_of_RuHmet/TextIDs"] = nil;
-
------------------------------------
-
-require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
+local text = require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
 require("scripts/zones/The_Garden_of_RuHmet/MobIDs");
 
 -----------------------------------

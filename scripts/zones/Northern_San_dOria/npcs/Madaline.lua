@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Northern San d'Oria
--- NPC: Madaline
+--  NPC: Madaline
 -- Standard Info NPC 
------------------------------------
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +20,7 @@ FlyerForRegine = player:getQuestStatus(SANDORIA,FLYERS_FOR_REGINE);
         count = trade:getItemCount();
         MagicFlyer = trade:hasItemQty(532,1);
         if (MagicFlyer == true and count == 1) then
-            player:messageSpecial(FLYER_REFUSED);
+            player:messageSpecial(text.FLYER_REFUSED);
         end
     end
 end;
@@ -34,8 +32,8 @@ end;
 function onTrigger(player,npc)
 Telmoda_Madaline = player:getVar("Telmoda_Madaline_Event");
 if (Telmoda_Madaline ~= 1) then
-player:setVar(player,"Telmoda_Madaline_Event",1);
-player:startEvent(0x0213);
+    player:setVar(player,"Telmoda_Madaline_Event",1);
+    player:startEvent(0x0213);
  else
   player:startEvent(0x0269);
 end
@@ -47,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -56,10 +54,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-
 

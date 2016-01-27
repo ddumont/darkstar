@@ -2,14 +2,12 @@
 -- Area: Lower Jeuno
 --  NPC: Treasure Coffer
 -- Type: Add-on NPC
---  @pos 41.169 3.899 -51.005 245
------------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
+-- @pos 41.169 3.899 -51.005 245
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -62,18 +60,18 @@ function onEventFinish(player,csid,option)
         if (option == 16777216) then
             if (player:getFreeSlotsCount() >= 1) then
                 player:addItem(11538);
-                player:messageSpecial(ITEM_OBTAINED,11538);
+                player:messageSpecial(text.ITEM_OBTAINED,11538);
             else
-                player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,11538);
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,11538);
             end
 
         elseif (option == 33554432) then
             if (player:hasItem(11538) == false) then
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(11538);
-                    player:messageSpecial(ITEM_OBTAINED,11538);
+                    player:messageSpecial(text.ITEM_OBTAINED,11538);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,277);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,277);
                 end
             end
 
@@ -684,9 +682,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(CRIMSON_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -753,9 +751,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(VIRIDIAN_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -816,9 +814,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(AMBER_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -876,9 +874,9 @@ function onEventFinish(player,csid,option)
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(AZURE_KEY);
                     player:setVar("LastAzureKey", os.date("%j"));
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -930,9 +928,9 @@ function onEventFinish(player,csid,option)
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(IVORY_KEY);
                     player:setVar("LastIvoryKey", os.date("%j"));
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -995,9 +993,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(EBON_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1050,9 +1048,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(WHITE_CORAL_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1095,9 +1093,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(BLUE_CORAL_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1156,9 +1154,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(PEACH_CORAL_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1203,9 +1201,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(BLACK_CORAL_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1250,9 +1248,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(RED_CORAL_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1307,9 +1305,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(ANGEL_SKIN_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1334,9 +1332,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(MOOGLE_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1387,9 +1385,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(BIRD_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1438,9 +1436,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(CACTUAR_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1467,9 +1465,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(BOMB_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1510,9 +1508,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(CHOCOBO_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);
@@ -1563,9 +1561,9 @@ function onEventFinish(player,csid,option)
                 if (player:getFreeSlotsCount() >= 1) then
                     player:addItem(prize,1,a1,v1,a2,v2,a3,v3,a4,v4);
                     player:delKeyItem(TONBERRY_KEY);
-                    player:messageSpecial(ITEM_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_OBTAINED,prize);
                 else
-                    player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,prize);
+                    player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,prize);
                 end
             else
                 player:showText(player,NO_KEY);

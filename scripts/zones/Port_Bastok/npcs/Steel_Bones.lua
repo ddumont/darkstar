@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC: Steel Bones
+--  NPC: Steel Bones
 -- Standard Info NPC
 -- Involved in Quest: Guest of Hauteur
------------------------------------
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -40,8 +38,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -49,13 +47,13 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x39 and GuestofHauteur == 1) then
         player:setVar("GuestofHauteur_Event",1)
         player:addKeyItem(LETTERS_FROM_DOMIEN);
-        player:messageSpecial(KEYITEM_OBTAINED,LETTERS_FROM_DOMIEN);        
+        player:messageSpecial(text.KEYITEM_OBTAINED,LETTERS_FROM_DOMIEN);        
     end
     
 end;

@@ -1,11 +1,8 @@
 -----------------------------------
 -- Area: Kazham
--- NPC: Tatapp
+--  NPC: Tatapp
 -- Standard Merchant NPC
------------------------------------
-
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 require("scripts/globals/pathfind");
 
 local path = {
@@ -310,8 +307,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -319,8 +316,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option,npc)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x00E1) then    -- correct trade, onto next opo
         if player:getVar("OPO_OPO_PROGRESS") == 6 then
@@ -337,6 +334,3 @@ function onEventFinish(player,csid,option,npc)
         npc:wait(0);
     end
 end;
-
-
-

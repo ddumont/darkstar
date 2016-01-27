@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Crawlers' Nest
--- NPC:  ??? - Drown Crawler (Spawn area 1)
+--  NPC: ??? - Drown Crawler (Spawn area 1)
 -- @pos 4.045 -2.703 285.026 197
 -----------------------------------
-package.loaded["scripts/zones/Crawlers_Nest/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Crawlers_Nest/TextIDs");
+local text = require("scripts/zones/Crawlers_Nest/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -20,7 +18,7 @@ function onTrade(player,npc,trade)
             SpawnMob(17584131,120):updateClaim(player); -- Drone Crawler
             npc:setStatus(STATUS_DISAPPEAR) -- hide ???
         else 
-            player:messageSpecial(NOTHING_SEEMS_TO_HAPPEN);                
+            player:messageSpecial(text.NOTHING_SEEMS_TO_HAPPEN);                
         end
     end
 end; 

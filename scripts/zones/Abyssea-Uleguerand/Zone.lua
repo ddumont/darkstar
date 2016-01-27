@@ -3,15 +3,12 @@
 -- Zone: Abyssea - Uleguerand
 --
 -----------------------------------
-package.loaded["scripts/zones/Abyssea-Uleguerand/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Abyssea-Uleguerand/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)

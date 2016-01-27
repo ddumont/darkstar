@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Rabao
--- NPC: Generoit
+--  NPC: Generoit
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Rabao/TextIDs"] = nil;
-require("scripts/zones/Rabao/TextIDs");
+local text = require("scripts/zones/Rabao/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,GENEROIT_SHOP_DIALOG);
+    player:showText(npc, text.GENEROIT_SHOP_DIALOG);
 
-stock = {0x11C1,61,    -- Gysahl Greens
+    local stock =
+    {
+    0x11C1,61,    -- Gysahl Greens
      0x0348,7,    -- Chocobo Feather
      0x4278,10,    -- Pet Food Alpha Biscuit
      0x4279,81,    -- Pet Food Beta Biscuit
@@ -33,7 +34,7 @@ stock = {0x11C1,61,    -- Gysahl Greens
      0x45CA,687,    -- Carrion Broth
      0x13D1,50784}    -- Scroll of Chocobo Mazurka
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -41,8 +42,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -50,9 +51,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

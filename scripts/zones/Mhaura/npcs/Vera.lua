@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Mhaura
--- NPC: Vera
+--  NPC: Vera
 -- Finishes Quest: The Old Lady
 -- @pos -49 -5 20 249
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -68,8 +66,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -77,8 +75,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x0083 and option == 40) then
         player:addQuest(OTHER_AREAS, THE_OLD_LADY);
@@ -93,7 +91,7 @@ function onEventFinish(player,csid,option)
         player:tradeComplete();
         player:unlockJob(0);
         player:setVar("VeraOldLadyVar", 0);
-        player:messageSpecial(SUBJOB_UNLOCKED);
+        player:messageSpecial(text.SUBJOB_UNLOCKED);
         player:completeQuest(OTHER_AREAS,THE_OLD_LADY);
     end
     

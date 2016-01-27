@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Aht Urhgan Whitegate
---  NPC:  Tsih Kolgimih
---  Type: Event Scene Replayer
---  @pos -143.000 0.999 11.000 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Area: Aht Urhgan Whitegate
+--  NPC: Tsih Kolgimih
+-- Type: Event Scene Replayer
+-- @pos -143.000 0.999 11.000 50
 -----------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action

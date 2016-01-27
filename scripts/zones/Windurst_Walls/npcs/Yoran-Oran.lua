@@ -1,18 +1,16 @@
 -----------------------------------
---  Area: Windurst Walls
---   NPC: Yoran-Oran
---  Type: Standard NPC
+-- Area: Windurst Walls
+--  NPC: Yoran-Oran
+-- Type: Standard NPC
 -- @zone: 239
---  @pos -109.987 -14 203.338
+-- @pos -109.987 -14 203.338
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 require("scripts/globals/keyitems");
 -----------------------------------
 -- onTrade Action

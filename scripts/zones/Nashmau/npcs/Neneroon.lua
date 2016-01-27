@@ -1,13 +1,11 @@
 ----------------------------------
---  Area: Nashmau
---  NPC:  Neneroon
---  Type: Item Deliverer
---  @pos -0.866    -5.999    36.942 53
------------------------------------
-package.loaded["scripts/zones/Nashmau/TextIDs"] = nil;
+-- Area: Nashmau
+--  NPC: Neneroon
+-- Type: Item Deliverer
+-- @pos -0.866    -5.999    36.942 53
 -----------------------------------
 
-require("scripts/zones/Nashmau/TextIDs");
+local text = require("scripts/zones/Nashmau/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, NENE_DELIVERY_DIALOG);
+    player:showText(npc, text.NENE_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Riverne Site #B01
--- NPC:  Unstable Displacement
+--  NPC: Unstable Displacement
 -- ENM Battlefield
 -- @pos -612 4 693
 -----------------------------------
-package.loaded["scripts/zones/Riverne-Site_B01/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Riverne-Site_B01/TextIDs");
+local text = require("scripts/zones/Riverne-Site_B01/TextIDs");
 require("scripts/globals/quests");
 require("scripts/globals/status");
 require("scripts/globals/bcnm");
@@ -52,7 +50,7 @@ function onTrigger(player,npc)
     elseif (EventTriggerBCNM(player,npc)) then
         return 1;
     else
-        player:messageSpecial(SPACE_SEEMS_DISTORTED);
+        player:messageSpecial(text.SPACE_SEEMS_DISTORTED);
     end
 end;
 

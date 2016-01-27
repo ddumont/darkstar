@@ -3,11 +3,9 @@
 -- DOOR: _5a0 (Heavy Stone Door)
 -- @pos -39.000 4.823 20.000 190
 -----------------------------------
-package.loaded["scripts/zones/King_Ranperres_Tomb/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/King_Ranperres_Tomb/TextIDs");
+local text = require("scripts/zones/King_Ranperres_Tomb/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -45,7 +43,7 @@ function onTrigger(player,npc)
          player:startEvent(0x000e);
 
     else
-        player:messageSpecial(HEAVY_DOOR);
+        player:messageSpecial(text.HEAVY_DOOR);
     end
 end; 
 
@@ -54,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -63,8 +61,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0005) then 
         player:setVar("MissionStatus",9);
     elseif (csid == 0x000e) then 

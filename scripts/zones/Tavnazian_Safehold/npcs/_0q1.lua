@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Tavnazian Safehold
--- NPC:  Sewer Entrance
+--  NPC: Sewer Entrance
 -- @pos 28 -12 44 26
------------------------------------
-package.loaded["scripts/zones/Tavnazian_Safehold/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/missions");
-require("scripts/zones/Tavnazian_Safehold/TextIDs");
+local text = require("scripts/zones/Tavnazian_Safehold/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -30,7 +28,7 @@ function onTrigger(player,npc)
     elseif (player:getCurrentMission(COP) >= DISTANT_BELIEFS or hasCompletedMission(COP,THE_LAST_VERSE)) then
         player:startEvent(0x01f6);
     else
-        --player:messageSpecial();
+        --player:messageSpecial(text.);
     end
     
     return 1;
@@ -41,8 +39,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x0067) then
         player:setVar("PromathiaStatus",0);

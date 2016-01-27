@@ -1,10 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: Animated Dagger
+-- MOB: Animated Dagger
 -----------------------------------
 
 require("scripts/globals/status");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobEngaged

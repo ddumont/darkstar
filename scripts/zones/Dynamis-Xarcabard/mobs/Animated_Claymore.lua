@@ -1,10 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: Animated Claymore
+-- MOB: Animated Claymore
 -----------------------------------
 
 require("scripts/globals/status");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobEngaged

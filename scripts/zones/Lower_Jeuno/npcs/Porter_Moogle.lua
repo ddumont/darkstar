@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Lower Jeuno
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 245
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
+-- Area: Lower Jeuno
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 245
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

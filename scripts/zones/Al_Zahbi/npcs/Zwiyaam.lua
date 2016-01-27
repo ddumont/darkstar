@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Al Zahbi
---   NPC: Zwiyaam
---  Type: Standard NPC
+-- Area: Al Zahbi
+--  NPC: Zwiyaam
+-- Type: Standard NPC
 -- @zone: 48
---  @pos 14.814 -7.667 41.889
+-- @pos 14.814 -7.667 41.889
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

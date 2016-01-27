@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Temple of Uggalepih
--- NPC:  ??? (Death From Above NM)
+--  NPC: ??? (Death From Above NM)
 -- Involved In Mission: Death From Above
 -- @pos 53 1 -32 159
 -----------------------------------
-package.loaded["scripts/zones/Temple_of_Uggalepih/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Temple_of_Uggalepih/TextIDs");
+local text = require("scripts/zones/Temple_of_Uggalepih/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -29,5 +27,5 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NM_OFFSET + 4);
+    player:messageSpecial(text.NM_OFFSET + 4);
 end;

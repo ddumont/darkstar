@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Kuftal Tunnel
--- NPC:  ??? (qm2)
+--  NPC: ??? (qm2)
 -- Note: Used to spawn Cancer & Bastok mission 8-2
 -- @pos -25.238 -12.785 -148.393 174
 -----------------------------------
-package.loaded["scripts/zones/Kuftal_Tunnel/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Kuftal_Tunnel/TextIDs");
+local text = require("scripts/zones/Kuftal_Tunnel/TextIDs");
 require("scripts/globals/missions");
 
 -----------------------------------
@@ -35,5 +33,5 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-player:messageSpecial(FISHBONES);
+    player:messageSpecial(text.FISHBONES);
 end;

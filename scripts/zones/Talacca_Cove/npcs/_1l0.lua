@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Talacca_Cove
--- NPC:  rock slab (corsair job flag quest)
+--  NPC: rock slab (corsair job flag quest)
 -- 
 -----------------------------------
-package.loaded["scripts/zones/Talacca_Cove/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Talacca_Cove/TextIDs");
+local text = require("scripts/zones/Talacca_Cove/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -51,10 +49,10 @@ function onEventFinish(player,csid,option)
     if (csid == 0x0003) then                    -- complete corsair job flag quest
         player:setVar("LuckOfTheDraw",5); -- var will remain for af quests        
         player:addItem(5493);
-        player:messageSpecial(ITEM_OBTAINED,5493);    
+        player:messageSpecial(text.ITEM_OBTAINED,5493);    
         player:delKeyItem(FORGOTTEN_HEXAGUN);
         player:unlockJob(17);
-        player:messageSpecial(YOU_CAN_NOW_BECOME_A_CORSAIR);
+        player:messageSpecial(text.YOU_CAN_NOW_BECOME_A_CORSAIR);
         player:completeQuest(AHT_URHGAN,LUCK_OF_THE_DRAW);
     end
 

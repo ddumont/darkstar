@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Selbina
--- NPC:  Thunder Hawk
+--  NPC: Thunder Hawk
 -- Starts and Finishes Quest: The Rescue
 -- @pos -58 -10 6 248
 -----------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/quests");
@@ -45,8 +43,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -54,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0050 and option == 70) then
         player:addQuest(OTHER_AREAS,THE_RESCUE);
     elseif (csid == 0x0051) then
@@ -64,13 +62,10 @@ function onEventFinish(player,csid,option)
         player:delKeyItem(TRADERS_SACK);
         if (player:hasKeyItem(MAP_OF_THE_RANGUEMONT_PASS) == false) then
             player:addKeyItem(MAP_OF_THE_RANGUEMONT_PASS);
-            player:messageSpecial(KEYITEM_OBTAINED,MAP_OF_THE_RANGUEMONT_PASS);
+            player:messageSpecial(text.KEYITEM_OBTAINED,MAP_OF_THE_RANGUEMONT_PASS);
         end
         player:addGil(3000);
-        player:messageSpecial(GIL_OBTAINED,3000);
+        player:messageSpecial(text.GIL_OBTAINED,3000);
         player:addFame(OTHER_AREAS,30);
     end
 end;
-
-
-

@@ -1,12 +1,10 @@
 -----------------------------------
---  Area: Mount Zhayolm
---  NPC:  Mining Point
------------------------------------
-package.loaded["scripts/zones/Mount_Zhayolm/TextIDs"] = nil;
+-- Area: Mount Zhayolm
+--  NPC: Mining Point
 -------------------------------------
 
 require("scripts/globals/mining");
-require("scripts/zones/Mount_Zhayolm/TextIDs");
+local text = require("scripts/zones/Mount_Zhayolm/TextIDs");
 
 -----------------------------------
 -- onTrade
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(MINING_IS_POSSIBLE_HERE,605);
+    player:messageSpecial(text.MINING_IS_POSSIBLE_HERE,605);
 end;
 
 -----------------------------------
@@ -29,8 +27,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -38,6 +36,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

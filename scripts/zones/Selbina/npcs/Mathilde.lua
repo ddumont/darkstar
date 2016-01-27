@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Selbina
--- NPC:  Mathilde
+--  NPC: Mathilde
 -- Involved in Quest: Riding on the Clouds
 -- @pos 12.578 -8.287 -7.576 248
 -----------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
 
@@ -22,7 +20,7 @@ function onTrade(player,npc,trade)
             player:setVar("ridingOnTheClouds_3",0);
             player:tradeComplete();
             player:addKeyItem(SOMBER_STONE);
-            player:messageSpecial(KEYITEM_OBTAINED,SOMBER_STONE);
+            player:messageSpecial(text.KEYITEM_OBTAINED,SOMBER_STONE);
         end
     end
     

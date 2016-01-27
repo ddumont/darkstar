@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters
---   NPC: Olaky-Yayulaky
---  Type: Item Depository
+-- Area: Windurst Waters
+--  NPC: Olaky-Yayulaky
+-- Type: Item Depository
 -- @zone: 238
---  @pos -61.247 -4.5 72.551
+-- @pos -61.247 -4.5 72.551
 --
 -- Auto-Script: Requires Verification (Verfied By Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

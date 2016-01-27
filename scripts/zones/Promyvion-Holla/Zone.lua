@@ -3,13 +3,11 @@
 -- Zone: Promyvion-Holla (16)
 --
 -----------------------------------
-package.loaded["scripts/zones/Promyvion-Holla/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/status");
 require("scripts/globals/missions");
-require("scripts/zones/Promyvion-Holla/TextIDs");
+local text = require("scripts/zones/Promyvion-Holla/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -83,7 +81,7 @@ end;
 
 function onRegionEnter(player,region)
     --regionID =region:GetRegionID();
-    --printf("regionID: %u",regionID);
+    -- printf("regionID: %u",regionID);
     if (player:getAnimation() == 0) then
         switch (region:GetRegionID()): caseof
         {
@@ -193,8 +191,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -202,8 +200,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x002E and option == 1) then
         player:setPos(-225.682, -6.459, 280.002, 128, 14); -- To Hall of Transference {R}

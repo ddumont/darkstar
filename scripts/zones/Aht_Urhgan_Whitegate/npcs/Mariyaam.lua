@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Aht Urhgan Whitegate
---  NPC:  Mariyaam
---  Type: Item Deliverer
---  @pos -125 -6 90 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Area: Aht Urhgan Whitegate
+--  NPC: Mariyaam
+-- Type: Item Deliverer
+-- @pos -125 -6 90 50
 -----------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

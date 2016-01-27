@@ -1,11 +1,8 @@
 -----------------------------------
 -- Area: Kazham
--- NPC: Popopp
+--  NPC: Popopp
 -- Standard Info NPC
------------------------------------
-
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -68,8 +65,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -77,8 +74,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x00DF) then    -- correct trade, onto next opo
         if player:getVar("OPO_OPO_PROGRESS") == 4 then
@@ -93,6 +90,3 @@ function onEventFinish(player,csid,option)
         player:setVar("OPO_OPO_RETRY",5);
     end
 end;
-
-
-

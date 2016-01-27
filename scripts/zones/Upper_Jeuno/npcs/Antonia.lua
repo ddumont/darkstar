@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC: Antonia
+--  NPC: Antonia
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,ANTONIA_SHOP_DIALOG);
+    player:showText(npc, text.ANTONIA_SHOP_DIALOG);
 
-stock = {0x42A5,6256,  -- Mythril Rod
+    local stock =
+    {
+    0x42A5,6256,  -- Mythril Rod
          0x4283,11232, -- Oak Cudgel
          0x428C,18048, -- Mythril Mace
          0x4294,6033,  -- Warhammer
@@ -32,7 +33,7 @@ stock = {0x42A5,6256,  -- Mythril Rod
          0x4186,10596, -- Scythe
          0x43A8,7}    -- Iron Arrow
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -40,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -49,9 +50,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

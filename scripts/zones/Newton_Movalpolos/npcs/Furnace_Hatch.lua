@@ -1,11 +1,9 @@
 -----------------------------------
---  Area: Newton Movalpolos
---  NPC:  Furnace_Hatch
------------------------------------
-package.loaded["scripts/zones/Newton_Movalpolos/TextIDs"] = nil;
+-- Area: Newton Movalpolos
+--  NPC: Furnace_Hatch
 -----------------------------------
 
-require("scripts/zones/Newton_Movalpolos/TextIDs");
+local text = require("scripts/zones/Newton_Movalpolos/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -14,7 +12,7 @@ require("scripts/zones/Newton_Movalpolos/TextIDs");
 function onTrade(player,npc,trade)
     if (trade:getItemCount() == 1 and trade:hasItemQty(947,1)) then
         player:tradeComplete(); 
-        -- player:messageSpecial(???); -- Needs retail info
+        -- player:messageSpecial(text.???); -- Needs retail info
         
         local npcid = npc:getID();
         local Door_Offset = 16826582; -- _0c0 in NPC_List

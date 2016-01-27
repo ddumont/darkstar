@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon NE    
--- NPC:  Borametz
+--  NPC: Borametz
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

@@ -1,15 +1,13 @@
 -----------------------------------
---    Area: Port San d'Oria
---    NPC:  Bonmaurieut
---    Only sells when San d'Oria controlls Elshimo Uplands
------------------------------------
-package.loaded["scripts/zones/Port_San_dOria/TextIDs"] = nil;
+-- Area: Port San d'Oria
+--  NPC: Bonmaurieut
+-- Only sells when San d'Oria controlls Elshimo Uplands
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
 require("scripts/globals/quests");
-require("scripts/zones/Port_San_dOria/TextIDs");
+local text = require("scripts/zones/Port_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -23,7 +21,7 @@ FlyerForRegine = player:getQuestStatus(SANDORIA,FLYERS_FOR_REGINE);
         count = trade:getItemCount();
         MagicFlyer = trade:hasItemQty(532,1);
         if (MagicFlyer == true and count == 1) then
-            player:messageSpecial(FLYER_REFUSED);
+            player:messageSpecial(text.FLYER_REFUSED);
         end
     end
 end;
@@ -37,16 +35,18 @@ function onTrigger(player,npc)
 RegionOwner = GetRegionOwner(ELSHIMOUPLANDS);
 
 if (RegionOwner ~= SANDORIA) then 
-    player:showText(npc,BONMAURIEUT_CLOSED_DIALOG);
+    player:showText(npc, text.BONMAURIEUT_CLOSED_DIALOG);
 else
-    player:showText(npc,BONMAURIEUT_OPEN_DIALOG);
+    player:showText(npc, text.BONMAURIEUT_OPEN_DIALOG);
     
-    stock = {0x0585,1656, --Cattleya
+    local stock =
+    {
+    0x0585,1656, --Cattleya
              0x0274,239,  --Cinnamon
              0x1174,73,   --Pamamas
              0x02d1,147}  --Rattan Lumber
               
-showShop(player,SANDORIA,stock);
+    showShop(player,SANDORIA,stock);
 end
 end; 
 
@@ -55,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -64,10 +64,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-
 

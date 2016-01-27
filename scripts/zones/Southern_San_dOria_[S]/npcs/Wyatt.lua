@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Southern SandOria [S]
--- NPC: Wyatt
+--  NPC: Wyatt
 -- @zone 80
 -- @pos 124 0 84
 -----------------------------------
-package.loaded["scripts/zones/Southern_San_dOria_[S]/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Southern_San_dOria_[S]/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria_[S]/TextIDs");
 require("scripts/globals/titles");
 require("scripts/globals/quests");
 
@@ -32,7 +30,7 @@ function onTrigger(player,npc)
     elseif (seeingSpots == QUEST_ACCEPTED) then
         player:startEvent(0x0003);
     else
-        player:showText(npc, WYATT_DIALOG);
+        player:showText(npc, text.WYATT_DIALOG);
     end
 end;
 
@@ -41,8 +39,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0002) then
         player:addQuest(CRYSTAL_WAR,SEEING_SPOTS);
     elseif (csid == 0x0004) then
@@ -59,12 +57,12 @@ function onEventFinish(player,csid,option)
         if (player:getQuestStatus(CRYSTAL_WAR,SEEING_SPOTS) == QUEST_ACCEPTED) then
             player:addTitle(LADY_KILLER);
             player:addGil(GIL_RATE*3000);
-            player:messageSpecial(GIL_OBTAINED,GIL_RATE*3000);
+            player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*3000);
             player:completeQuest(CRYSTAL_WAR,SEEING_SPOTS);
         else
             player:addTitle(LADY_KILLER);
             player:addGil(GIL_RATE*3000);
-            player:messageSpecial(GIL_OBTAINED,GIL_RATE*3000);
+            player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*3000);
         end
     end
 end;

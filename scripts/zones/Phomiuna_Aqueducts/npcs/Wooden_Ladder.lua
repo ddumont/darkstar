@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Phomiuna Aqueducts
--- NPC:  Wooden Ladder
+--  NPC: Wooden Ladder
 -- @pos 101.9 -1.5 -101.9
 -- @pos 101.948 -1.5 -18.016
 -- @pos -61.888 -1.5 -18.079
@@ -14,11 +14,9 @@
 -- @pos 199.38 -22.559 60
 -- @pos -200.679 -8.57 60
 -----------------------------------
-package.loaded["scripts/zones/Phomiuna_Aqueducts/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Phomiuna_Aqueducts/TextIDs");
+local text = require("scripts/zones/Phomiuna_Aqueducts/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -65,7 +63,7 @@ function onTrigger(player,npc)
     elseif ((X <= 205.3 and X >= 193.3) and (Y >= -24 and Y <= -22) and (Z >= 54 and Z <= 66)) then
         player:startEvent(0x001f);
     elseif ((X <= -194.6 and X >= -206.6) and (Y >= -8 and Y <= -6) and (Z >= 54 and Z <= 66)) then
-        player:messageSpecial(DOOR_SEALED_SHUT);
+        player:messageSpecial(text.DOOR_SEALED_SHUT);
     end
     
 end; 
@@ -75,8 +73,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -84,6 +82,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

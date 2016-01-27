@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Arrapago Reef
---  MOB: Medusa
+-- MOB: Medusa
 -- @pos -458 -20 458
 -- TODO: resists, attack/def boosts
 -----------------------------------
 
 require("scripts/globals/titles");
-require("scripts/zones/Arrapago_Reef/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

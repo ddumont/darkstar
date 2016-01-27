@@ -1,19 +1,17 @@
 -----------------------------------
---    Area: Abyssea_Uleguerand
---    NPC: Waylea
---    Standard Info NPC
------------------------------------
-package.loaded["scripts/zones/Abyssea-Uleguerand/TextIDs"] = nil;
+-- Area: Abyssea_Uleguerand
+--  NPC: Waylea
+-- Standard Info NPC
 -----------------------------------
 
-require("scripts/zones/Abyssea-Uleguerand/TextIDs");
+local text = require("scripts/zones/Abyssea-Uleguerand/TextIDs");
 
 -----------------------------------
 -- onTrade Action
 -----------------------------------
 
 function onTrade(player,npc,trade)
-end; 
+end;
 
 -----------------------------------
 -- onTrigger Action
@@ -28,8 +26,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -37,6 +35,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

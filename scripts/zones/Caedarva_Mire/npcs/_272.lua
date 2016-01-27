@@ -4,13 +4,10 @@
 -- @pos 486 -23 -500 79
 -----------------------------------
 
-package.loaded["scripts/zones/Caedarva_Mire/TextIDs"] = nil;
------------------------------------
-
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
 require("scripts/globals/besieged");
-require("scripts/zones/Caedarva_Mire/TextIDs");
+local text = require("scripts/zones/Caedarva_Mire/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -34,10 +31,10 @@ function onTrigger(player,npc)
         if (assaultid ~= 0) then
             player:startEvent(0x008C, assaultid, -4, 0, recommendedLevel, 0, armband);
         else
-            player:messageSpecial(NOTHING_HAPPENS);
+            player:messageSpecial(text.NOTHING_HAPPENS);
         end
     else
-        player:messageSpecial(NOTHING_HAPPENS);
+        player:messageSpecial(text.NOTHING_HAPPENS);
     end
 end;
 

@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Temenos E T    
--- NPC: Fire_Elemental
+--  NPC: Fire_Elemental
 
 -----------------------------------
-package.loaded["scripts/zones/Temenos/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Temenos/TextIDs");
+local text = require("scripts/zones/Temenos/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Selbina
--- NPC: Wachiwi
+--  NPC: Wachiwi
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 
 -----------------------------------
 -- onTrade Action

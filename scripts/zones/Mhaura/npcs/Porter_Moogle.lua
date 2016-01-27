@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Mhaura
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 249
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 249
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

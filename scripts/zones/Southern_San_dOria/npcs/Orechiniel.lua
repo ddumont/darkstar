@@ -3,12 +3,10 @@
 --  NPC: Orechiniel
 -- Type: Leathercraft Adv. Synthesis Image Support
 -----------------------------------
-package.loaded["scripts/zones/Southern_San_dOria/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Southern_San_dOria/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -57,7 +55,7 @@ function onEventFinish(player,csid,option)
 
     if (csid == 0x028A and option == 1) then
         player:delGil(Cost);
-        player:messageSpecial(LEATHER_SUPPORT,0,5,0);
+        player:messageSpecial(text.LEATHER_SUPPORT,0,5,0);
         player:addStatusEffect(EFFECT_LEATHERCRAFT_IMAGERY,3,0,480);
     end
 end;

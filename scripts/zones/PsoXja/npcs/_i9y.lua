@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Pso'Xja
--- NPC:  _i9y (Crystal Receptor)
+--  NPC: _i9y (Crystal Receptor)
 -- @pos -389.980 -3.198 -203.595 9
 -----------------------------------
-package.loaded["scripts/zones/PsoXja/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/PsoXja/TextIDs");
+local text = require("scripts/zones/PsoXja/TextIDs");
 
 -----------------------------------
 -- onTrade
@@ -23,7 +21,7 @@ function onTrigger(player,npc)
     if (npc:getAnimation() == 9) then
         player:startEvent(0x003a);
     else
-        player:messageSpecial(DEVICE_IN_OPERATION);
+        player:messageSpecial(text.DEVICE_IN_OPERATION);
     end    
 end;
 
@@ -32,8 +30,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

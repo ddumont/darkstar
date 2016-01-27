@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Castle Oztroja
--- NPC:  _475 (Brass Door)
+--  NPC: _475 (Brass Door)
 -- Involved in Mission: Magicite
 -- @pos -99 24 -105 151
 -----------------------------------
-package.loaded["scripts/zones/Castle_Oztroja/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Castle_Oztroja/TextIDs");
+local text = require("scripts/zones/Castle_Oztroja/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ end;
 function onTrigger(player,npc)
 
     if (npc:getAnimation() == 9) then
-        player:messageSpecial(ITS_LOCKED);
+        player:messageSpecial(text.ITS_LOCKED);
     end    
     
 end;

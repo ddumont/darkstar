@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area:  Lower Delkfutt's Tower
--- NPC:   Cermet Door
+--  NPC:  Cermet Door
 -- Notes: Involved in Missions: THREE_PATHS
------------------------------------
-package.loaded["scripts/zones/Lower_Delkfutts_Tower/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Lower_Delkfutts_Tower/TextIDs");
+local text = require("scripts/zones/Lower_Delkfutts_Tower/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -36,8 +34,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

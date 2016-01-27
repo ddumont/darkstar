@@ -2,13 +2,11 @@
 -- Area: Cloister of Tremors
 -- BCNM: Trial by Earth
 -- @pos -539 1 -493 209
------------------------------------
-package.loaded["scripts/zones/Cloister_of_Tremors/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Cloister_of_Tremors/TextIDs");
+local text = require("scripts/zones/Cloister_of_Tremors/TextIDs");
 
 -----------------------------------
 
@@ -53,7 +51,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         player:delKeyItem(TUNING_FORK_OF_EARTH);
         player:addKeyItem(WHISPER_OF_TREMORS);
-        player:messageSpecial(KEYITEM_OBTAINED,WHISPER_OF_TREMORS);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHISPER_OF_TREMORS);
     end
     
 end;

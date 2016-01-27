@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC: Collet
+--  NPC: Collet
 -- Involved in Quests: A Clock Most Delicate, Save the Clock Tower
 -- @zone 244
 -- @pos -44 0 107
------------------------------------
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -48,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0070) then
         player:setVar("aClockMostdelicateVar", 1);
     elseif (csid == 0x0073) then 
@@ -66,6 +64,3 @@ function onEventFinish(player,csid,option)
         player:setVar("saveTheClockTowerNPCz1",player:getVar("saveTheClockTowerNPCz1") + 2);
     end
 end;
-
-
-

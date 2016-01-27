@@ -3,11 +3,9 @@
 -- Zone: Cloister_of_Frost (203)
 --
 -----------------------------------
-package.loaded["scripts/zones/Cloister_of_Frost/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Cloister_of_Frost/TextIDs");
+local text = require("scripts/zones/Cloister_of_Frost/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -36,7 +34,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
     
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -52,8 +50,8 @@ end;
 -----------------------------------    
 
 function onEventUpdate(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    
 
 -----------------------------------    
@@ -61,6 +59,6 @@ end;
 -----------------------------------    
 
 function onEventFinish(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    

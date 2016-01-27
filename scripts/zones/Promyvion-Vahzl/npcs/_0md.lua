@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Promyvion vahzl
--- NPC:  Memory flux (2)
------------------------------------
-package.loaded["scripts/zones/Promyvion-Vahzl/TextIDs"] = nil;
+--  NPC: Memory flux (2)
 -----------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Promyvion-Vahzl/TextIDs");
+local text = require("scripts/zones/Promyvion-Vahzl/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -26,15 +24,15 @@ function onTrigger(player,npc)
     elseif (player:getCurrentMission(COP) == DESIRES_OF_EMPTINESS and player:getVar("PromathiaStatus")==4) then
         player:startEvent(0x0034);   
     else
-        player:messageSpecial(OVERFLOWING_MEMORIES);
+        player:messageSpecial(text.OVERFLOWING_MEMORIES);
     end
 end;
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 -----------------------------------
 -- onEventFinish

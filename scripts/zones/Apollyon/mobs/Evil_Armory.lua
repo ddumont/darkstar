@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon SE
--- NPC:  Evil_Armory
+--  NPC: Evil_Armory
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

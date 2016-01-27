@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Apollyon (Central)
---  MOB: Proto-Omega
------------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
+-- MOB: Proto-Omega
 -----------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
+local text = require("scripts/zones/Apollyon/TextIDs");
 require("scripts/globals/titles");
 require("scripts/globals/status");
 require("scripts/globals/magic");

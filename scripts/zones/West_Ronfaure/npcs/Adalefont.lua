@@ -1,13 +1,11 @@
 -----------------------------------
---    Area: West Ronfaure
---    NPC:  Adalefont
---  @pos -176.000 -61.999 377.460 100
------------------------------------
-package.loaded["scripts/zones/West_Ronfaure/TextIDs"] = nil;
+-- Area: West Ronfaure
+--  NPC: Adalefont
+-- @pos -176.000 -61.999 377.460 100
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/West_Ronfaure/TextIDs");
+local text = require("scripts/zones/West_Ronfaure/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -25,9 +23,9 @@ function onTrigger(player,npc)
     local thePickpocket = player:getQuestStatus(SANDORIA, THE_PICKPOCKET);
 
     if (thePickpocket > 0) then
-        player:showText(npc, 7265);
+        player:showText(npc, text.7265);
     else
-        player:showText(npc, ADALEFONT_DIALOG);
+        player:showText(npc, text.ADALEFONT_DIALOG);
     end
 end;
 

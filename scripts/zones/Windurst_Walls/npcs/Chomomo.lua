@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Windurst Walls
---  NPC:  Chomomo
---  Type: Standard NPC
---  @pos -1.262 -11 290.224 239
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
+-- Area: Windurst Walls
+--  NPC: Chomomo
+-- Type: Standard NPC
+-- @pos -1.262 -11 290.224 239
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 
 -----------------------------------
 -- onTrade Action

@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Aht Urhgan Whitegate
--- NPC: Sajaaya
+--  NPC: Sajaaya
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action

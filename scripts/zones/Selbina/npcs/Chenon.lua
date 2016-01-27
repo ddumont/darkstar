@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Selbina
---  NPC:  Chenon
---  Type: Fish Ranking NPC
---  @pos -13.472 -8.287 9.497 248
------------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
+-- Area: Selbina
+--  NPC: Chenon
+-- Type: Fish Ranking NPC
+-- @pos -13.472 -8.287 9.497 248
 -----------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 
 -----------------------------------
 -- onTrade Action

@@ -4,12 +4,10 @@
 -- Alchemy Adv. Synthesis Image Support
 -- @pos 123.5 2 1 234
 -----------------------------------
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -58,7 +56,7 @@ function onEventFinish(player,csid,option)
 
     if (csid == 0x007A and option == 1) then
         player:delGil(Cost);
-        player:messageSpecial(ALCHEMY_SUPPORT,0,7,0);
+        player:messageSpecial(text.ALCHEMY_SUPPORT,0,7,0);
         player:addStatusEffect(EFFECT_ALCHEMY_IMAGERY,3,0,480);
     end
 end;

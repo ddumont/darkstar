@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Kamihr Drifts
--- NPC: Liseran Door Entrance
+--  NPC: Liseran Door Entrance
 -- Zones to Outer Ra'Kaznar (zone 274)
 -- @zone 274
 -- @pos -34.549 -181.334 -20.031
 -----------------------------------
-package.loaded["scripts/zones/Kamihr_Drifts/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Kamihr_Drifts/TextIDs");
+local text = require("scripts/zones/Kamihr_Drifts/TextIDs");
 
 -----------------------------------
 -- onTrade Action

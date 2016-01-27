@@ -3,14 +3,12 @@
 -- Zone: Nyzul_Isle
 -- 
 -----------------------------------
-package.loaded["scripts/zones/Nyzul_Isle/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Nyzul_Isle/TextIDs");
+local text = require("scripts/zones/Nyzul_Isle/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)
@@ -23,7 +21,7 @@ end;
 function onZoneIn(player,prevZone)
 local cs = -1;
 
-return cs;
+    return cs;
 end;
 
 -----------------------------------
@@ -38,8 +36,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -47,9 +45,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

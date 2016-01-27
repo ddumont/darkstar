@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Norg
--- NPC:  Jaucribaix
+--  NPC: Jaucribaix
 -- Starts and Finishes Quest: Forge Your Destiny, The Sacred Katana, Yomi Okuri, A Thief in Norg!?
 -- @pos 91 -7 -8 252
------------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
@@ -12,7 +10,7 @@ require("scripts/globals/shop");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -63,7 +61,7 @@ function onTrigger(player,npc)
             player:startEvent(0x001c,(swordTimer - os.time())/144);    
         elseif (swordTimer < os.time() and swordTimer ~= 0) then
             if (player:getFreeSlotsCount() == 0) then 
-                player:messageSpecial(CARRYING_TOO_MUCH_ALREADY);
+                player:messageSpecial(text.CARRYING_TOO_MUCH_ALREADY);
             else
                 player:startEvent(0x001d, 17809); -- Finish Quest "Forge Your Destiny"
             end
@@ -138,8 +136,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -147,8 +145,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0019 and option == 1) then
         player:addQuest(OUTLANDS,FORGE_YOUR_DESTINY);
@@ -159,7 +157,7 @@ function onEventFinish(player,csid,option)
         player:tradeComplete();
         player:addTitle(BUSHIDO_BLADE);
         player:addItem(17809);
-        player:messageSpecial(YOU_CAN_NOW_BECOME_A_SAMURAI, 17809); -- You can now become a samurai
+        player:messageSpecial(text.YOU_CAN_NOW_BECOME_A_SAMURAI, 17809); -- You can now become a samurai
         player:unlockJob(12); -- Samurai Job Unlocked
         player:setVar("ForgeYourDestiny_timer",0);
         player:setVar("ForgeYourDestiny_Event",0);
@@ -174,7 +172,7 @@ function onEventFinish(player,csid,option)
         player:setVar("Wait1DayForYomiOkuri_date", os.date("%j")); -- %M for next minute, %j for next day
         player:setVar("Wait1DayForYomiOkuri",VanadielDayOfTheYear());
         player:addItem(17812);
-        player:messageSpecial(ITEM_OBTAINED,17812); -- Magoroku
+        player:messageSpecial(text.ITEM_OBTAINED,17812); -- Magoroku
         player:addFame(OUTLANDS,NORG_FAME*AF1_FAME);
         player:completeQuest(OUTLANDS,THE_SACRED_KATANA);
     elseif (csid == 0x0092 and option == 1) then
@@ -190,14 +188,14 @@ function onEventFinish(player,csid,option)
         player:setVar("yomiOkuriCS",5);
         player:setVar("Wait1DayForYomiOkuri2_date",0);
         player:addKeyItem(YOMOTSU_HIRASAKA);
-        player:messageSpecial(KEYITEM_OBTAINED,YOMOTSU_HIRASAKA);
+        player:messageSpecial(text.KEYITEM_OBTAINED,YOMOTSU_HIRASAKA);
     elseif (csid == 0x009c) then
         if (player:getFreeSlotsCount() < 1) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,14100);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,14100);
         else
             player:delKeyItem(FADED_YOMOTSU_HIRASAKA);
             player:addItem(14100);
-            player:messageSpecial(ITEM_OBTAINED,14100); -- Myochin Sune-Ate
+            player:messageSpecial(text.ITEM_OBTAINED,14100); -- Myochin Sune-Ate
             player:setVar("yomiOkuriCS",0);
             player:needToZone(true);
             player:setVar("Wait1DayForAThiefinNorg_date", os.date("%j")); -- %M for next minute, %j for next day
@@ -210,10 +208,10 @@ function onEventFinish(player,csid,option)
         player:setVar("aThiefinNorgCS",1);
     elseif (csid == 0x00a6 or csid == 0x00a8) then
         if (player:getFreeSlotsCount() < 1) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1166);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1166);
         else
             player:addItem(1166);
-            player:messageSpecial(ITEM_OBTAINED,1166); -- Banishing Charm
+            player:messageSpecial(text.ITEM_OBTAINED,1166); -- Banishing Charm
             player:setVar("aThiefinNorgCS",6);
         end
     elseif (csid == 0x00a0) then
@@ -226,10 +224,10 @@ function onEventFinish(player,csid,option)
         player:setVar("Wait1DayForAThiefinNorg2_date", os.date("%j")); -- %M for next minute, %j for next day
     elseif (csid == 0x00a4) then
         if (player:getFreeSlotsCount() < 1) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,13868);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,13868);
         else
             player:addItem(13868);
-            player:messageSpecial(ITEM_OBTAINED,13868); --     Myochin Kabuto
+            player:messageSpecial(text.ITEM_OBTAINED,13868); --     Myochin Kabuto
             player:addTitle(PARAGON_OF_SAMURAI_EXCELLENCE);
             player:setVar("aThiefinNorgCS",0);
             player:setVar("Wait1DayForAThiefinNorg2_date",0);

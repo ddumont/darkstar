@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Windurst Waters
--- NPC:  Ahyeekih
+--  NPC: Ahyeekih
 -- Only sells when Windurst controls Kolshushu
 -- Confirmed shop stock, August 2013
 -----------------------------------
@@ -8,8 +8,7 @@
 require("scripts/globals/events/harvest_festivals")
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -26,10 +25,10 @@ end;
 function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(KOLSHUSHU);
     if (RegionOwner ~= WINDURST) then
-        player:showText(npc,AHYEEKIH_CLOSED_DIALOG);
+        player:showText(npc, text.AHYEEKIH_CLOSED_DIALOG);
     else
-        player:showText(npc,AHYEEKIH_OPEN_DIALOG);
-       
+        player:showText(npc, text.AHYEEKIH_OPEN_DIALOG);
+
         stock = {
             0x1197,   184,   --Buburimu Grape
             0x0460,  1620,   --Casablanca
@@ -48,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,6 +56,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

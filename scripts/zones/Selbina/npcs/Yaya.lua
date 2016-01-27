@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Selbina
--- NPC: Yaya
+--  NPC: Yaya
 -- Starts Quest: Under the sea
 -- @pos -19 -2 -16 248
 -----------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
@@ -36,8 +34,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -45,13 +43,10 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x001f) then 
         player:addQuest(OTHER_AREAS,UNDER_THE_SEA);
         player:setVar("underTheSeaVar",1);
     end
 end;
-
-
-

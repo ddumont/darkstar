@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Spire of Holla
--- NPC:  Web of Recollection
------------------------------------
-package.loaded["scripts/zones/Spire_of_Holla/TextIDs"] = nil;
+--  NPC: Web of Recollection
 -----------------------------------
 
 require("scripts/globals/bcnm");
 require("scripts/globals/quests");
 require("scripts/globals/missions");
-require("scripts/zones/Spire_of_Holla/TextIDs");
+local text = require("scripts/zones/Spire_of_Holla/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -31,7 +29,7 @@ function onTrigger(player,npc)
     if (EventTriggerBCNM(player,npc)) then
         return 1;
     else
-        player:messageSpecial(FAINT_SCRAPING);
+        player:messageSpecial(text.FAINT_SCRAPING);
         return 1;
     end
     
@@ -42,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("onUpdate CSID: %u",csid);
---printf("onUpdate RESULT: %u",option);
+    -- printf("onUpdate CSID: %u",csid);
+    -- printf("onUpdate RESULT: %u",option);
 
     if (EventUpdateBCNM(player,csid,option)) then
         return;
@@ -56,8 +54,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("onFinish CSID: %u",csid);
---printf("onFinish RESULT: %u",option);
+    -- printf("onFinish CSID: %u",csid);
+    -- printf("onFinish RESULT: %u",option);
     
     if (EventFinishBCNM(player,csid,option)) then
         return;

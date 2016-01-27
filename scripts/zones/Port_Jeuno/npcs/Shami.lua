@@ -1,5 +1,6 @@
 -----------------------------------
 -- Area: Port Jeuno
+<<<<<<< HEAD
 -- NPC: Shami
 -- Orb Seller (BCNM)
 -- @pos -14 8 44 246
@@ -10,6 +11,16 @@ package.loaded["scripts/zones/Port_Jeuno/TextIDs"] = nil;
 require("scripts/globals/settings");
 require("scripts/globals/quests");
 require("scripts/zones/Port_Jeuno/TextIDs");
+=======
+--  NPC: Shami
+-- Orb Seller (BCNM)
+-- @pos -14 8 44 246
+-----------------------------------
+
+require("scripts/globals/settings");
+require("scripts/globals/quests");
+local text = require("scripts/zones/Port_Jeuno/TextIDs");
+>>>>>>> Safe, cacheable requires in lua.
 
 -----------------------------------
 -- onTrade Action
@@ -162,28 +173,48 @@ function onTrigger(player,npc)
     end
 end; 
  
+<<<<<<< HEAD
 -- 0x0032 : 30 sceau conférie : choix entre clotho et lachésis
 -- 0x0018 : Après achat d'un orb (qu'bia, yughott, palborough, giddeus)
 -- 0x0008 : Après achat d'un orb (yughott, palborough, giddeus, qu'bia, ghelsba)
 -- 0x0004 : Après achat d'un orb (yughott, palborough, giddeus, ghelsba)
 -- 0x000a : Après achat d'un orb (yughott, palborough, giddeus)
+=======
+-- 0x0032 : 30 sceau confï¿½rie : choix entre clotho et lachï¿½sis
+-- 0x0018 : Aprï¿½s achat d'un orb (qu'bia, yughott, palborough, giddeus)
+-- 0x0008 : Aprï¿½s achat d'un orb (yughott, palborough, giddeus, qu'bia, ghelsba)
+-- 0x0004 : Aprï¿½s achat d'un orb (yughott, palborough, giddeus, ghelsba)
+-- 0x000a : Aprï¿½s achat d'un orb (yughott, palborough, giddeus)
+>>>>>>> Safe, cacheable requires in lua.
 -- 0x0009 : Trade d'un orb ? (yughott, palborough, giddeus, ghelsba)
 -- 0x0005 : Trade d'un orb ? (yughott, palborough, giddeus, ghelsba)
 -- 0x000b : Trade d'un orb ? (yughott, palborough, giddeus)
 -- 0x001a : Trade d'un orb ? (qu'bia, yughott, palborough, giddeus)
 -- 0x001b : Trade d'un orb ? (qu'bia, chambre des oracles)
+<<<<<<< HEAD
 -- 0x0016 : Trade d'un orb utilisé (il le recup)
 -- 0x0019 : Un seul échange autorisé par semaine
 -- 0x0141 : trade sceau + nombre player:startEvent(0x0141,0,15); 
 --          0 shbete, 1 s-confrerie, 2 s-demons, 3 s-seigneurdes hombre
+=======
+-- 0x0016 : Trade d'un orb utilisï¿½ (il le recup)
+-- 0x0019 : Un seul ï¿½change autorisï¿½ par semaine
+-- 0x0141 : trade sceau + nombre player:startEvent(0x0141,0,15); 
+-- 0 shbete, 1 s-confrerie, 2 s-demons, 3 s-seigneurdes hombre
+>>>>>>> Safe, cacheable requires in lua.
 
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
+<<<<<<< HEAD
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
+=======
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
+>>>>>>> Safe, cacheable requires in lua.
 end;
 
 -----------------------------------
@@ -191,8 +222,13 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
+<<<<<<< HEAD
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
+=======
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
+>>>>>>> Safe, cacheable requires in lua.
     local BeastmensSeal = player:getSeals(0);
     local KindredsSeal = player:getSeals(1);
     local KindredsCrest = player:getSeals(2);
@@ -209,9 +245,15 @@ function onEventFinish(player,csid,option)
                 takingSealCount = (option + 2)/256 - 1; -- Every seal requested adds 256 to the option value. The lowest is one seal which sets the option to 510, two seals would be 510 + 256. etc
                 player:delSeals(takingSealCount,0);
                 player:addItem(1126,takingSealCount); 
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1126);
             else
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1126);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1126);
+            else
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1126);
+>>>>>>> Safe, cacheable requires in lua.
             end
         elseif ((option + 1)% 256 == 0) then
             if (player:getFreeSlotsCount() >=1) then
@@ -219,9 +261,15 @@ function onEventFinish(player,csid,option)
                 takingSealCount = (option + 1)/256 - 1; -- Every seal requested adds 256 to the option value. The lowest is one seal which sets the option to 511, two seals would be 511 + 256. etc
                 player:delSeals(takingSealCount,1);
                 player:addItem(1127,takingSealCount); 
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1127);
             else
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1127);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1127);
+            else
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1127);
+>>>>>>> Safe, cacheable requires in lua.
             end
         elseif ((option + 3)% 256 == 0) then
             if (player:getFreeSlotsCount() >=1) then
@@ -229,9 +277,15 @@ function onEventFinish(player,csid,option)
                 takingSealCount = (option + 3)/256 - 1; -- Every seal requested adds 256 to the option value. The lowest is one seal which sets the option to 509, two seals would be 509 + 256. etc
                 player:delSeals(takingSealCount,2);
                 player:addItem(2955,takingSealCount); 
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,2955);
             else
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,2955);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,2955);
+            else
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,2955);
+>>>>>>> Safe, cacheable requires in lua.
             end
         elseif ((option + 4)% 256 == 0) then
             if (player:getFreeSlotsCount() >=1) then
@@ -239,9 +293,15 @@ function onEventFinish(player,csid,option)
                 takingSealCount = (option + 4)/256 - 1; -- Every seal requested adds 256 to the option value. The lowest is one seal which sets the option to 508, two seals would be 508 + 256. etc
                 player:delSeals(takingSealCount,3);
                 player:addItem(2956,takingSealCount); 
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,2956);
             else
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,2956);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,2956);
+            else
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,2956);
+>>>>>>> Safe, cacheable requires in lua.
             end
         elseif ((option + 5)% 256 == 0) then
             if (player:getFreeSlotsCount() >=1) then
@@ -249,9 +309,15 @@ function onEventFinish(player,csid,option)
                 takingSealCount = (option + 5)/256 - 1; -- Every seal requested adds 256 to the option value. The lowest is one seal which sets the option to 508, two seals would be 508 + 256. etc
                 player:delSeals(takingSealCount,4);
                 player:addItem(2957,takingSealCount); 
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,2957);
             else
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,2957);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,2957);
+            else
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,2957);
+>>>>>>> Safe, cacheable requires in lua.
             end
         end
 ----------------------------------------------------------------------------------------------------------------------------
@@ -262,57 +328,97 @@ function onEventFinish(player,csid,option)
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1551) == false) then
                 player:delSeals(20,0);
                 player:addItem(1551);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1551);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1551);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("CloudyOrbIsCracked",0);
             elseif (player:hasItem(1551)) then
                 player:addItem(1551);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1551);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1551);
+>>>>>>> Safe, cacheable requires in lua.
             end
             
         elseif (option == 2 and BeastmensSeal >= 30) then   -- Player asked for Sky orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1552) == false) then
                 player:delSeals(30,0);
                 player:addItem(1552);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1552);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1552);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("SkyOrbIsCracked",0);
             elseif (player:hasItem(1552)) then
                 player:addItem(1552);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1552);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1552);
+>>>>>>> Safe, cacheable requires in lua.
             end        
         elseif (option == 3 and BeastmensSeal >= 40) then   -- Player asked for Star orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1131) == false) then
                 player:delSeals(40,0);
                 player:addItem(1131);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1131);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1131);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("StarOrbIsCracked",0);
             elseif (player:hasItem(1131) == true) then
                 player:addItem(1131);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1131);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1131);
+>>>>>>> Safe, cacheable requires in lua.
             end
         elseif (option == 4 and BeastmensSeal >= 50) then   -- Player asked for Comet orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1177) == false) then
                 player:delSeals(50,0);
                 player:addItem(1177);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1177);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1177);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("CometOrbIsCracked",0);
             elseif (player:hasItem(1177)) then
                 player:addItem(1177);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1177);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1177);
+>>>>>>> Safe, cacheable requires in lua.
             end    
         elseif (option == 5 and BeastmensSeal >= 60) then   -- Player asked for Moon orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1130) == false) then
                 player:delSeals(60,0);
                 player:addItem(1130);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1130);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1130);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("MoonOrbIsCracked",0);
             elseif (player:hasItem(1130)) then
                 player:addItem(1130);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1130);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1130);
+>>>>>>> Safe, cacheable requires in lua.
             end                
 ----------------------------------------------------------------------------------------------------------------------------
 -------- Begin KSNM orb Handout --------------------------------------------------------------------------------------------
@@ -321,45 +427,77 @@ function onEventFinish(player,csid,option)
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1175) == false) then
                 player:delSeals(30,1);
                 player:addItem(1175);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1175);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1175);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("ClothoOrbIsCracked",0);
             elseif (player:hasItem(1175)) then
                 player:addItem(1175);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1175);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1175);
+>>>>>>> Safe, cacheable requires in lua.
             end        
         elseif (option == 7 and KindredsSeal >= 30) then   -- Player asked for Lachesis Orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1178) == false) then
                 player:delSeals(30,1);
                 player:addItem(1178);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1178);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1178);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("LachesisOrbIsCracked",0);
             elseif (player:hasItem(1178) == true) then
                 player:addItem(1178);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1178);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1178);
+>>>>>>> Safe, cacheable requires in lua.
             end
         elseif (option == 8 and KindredsSeal >= 30) then  -- Player asked for Atropos Orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1180) == false) then
                 player:delSeals(30,1);
                 player:addItem(1180);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1180);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1180);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("AtroposOrbIsCracked",0);
             elseif (player:hasItem(1180)) then
                 player:addItem(1180);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1180);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1180);
+>>>>>>> Safe, cacheable requires in lua.
             end
             elseif (option == 9 and KindredsSeal >= 99) then   -- Player asked for Themis Orb
             if (player:getFreeSlotsCount() >= 1 and player:hasItem(1553) == false) then
                 player:delSeals(99,1);
                 player:addItem(1553);
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_OBTAINED,1553);
+=======
+                player:messageSpecial(text.ITEM_OBTAINED,1553);
+>>>>>>> Safe, cacheable requires in lua.
                 player:setVar("ThemisOrbIsCracked",0);
             elseif (player:hasItem(1553)) then
                 player:addItem(1553);  -- does not add the item but forces it to send the "you cannot carry anymore of these" message.
             else
+<<<<<<< HEAD
                 player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1553);
+=======
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1553);
+>>>>>>> Safe, cacheable requires in lua.
             end    
         end
 -- TODO : Add in orbs for Kindred Crest exhcange (and High Kindred Crest) and find cutscene that tells you where you can bring it.

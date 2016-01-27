@@ -1,12 +1,12 @@
 -----------------------------------
 -- Area: Empyreal Paradox
---  MOB: Selh'teus
+-- MOB: Selh'teus
 -- Chains of Promathia 8-4 BCNM Fight
 -----------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/magic");
-require("scripts/zones/Empyreal_Paradox/TextIDs");
+local text = require("scripts/zones/Empyreal_Paradox/TextIDs");
 
 -----------------------------------
 -- onMobInitialize Action

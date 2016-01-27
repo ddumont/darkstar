@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Apollyon SE
--- NPC:  Grave_Digger
+--  NPC: Grave_Digger
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
-
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

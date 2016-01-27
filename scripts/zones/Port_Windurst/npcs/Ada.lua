@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Port Windurst
---   NPC: Ada
---  Type: Standard NPC
+-- Area: Port Windurst
+--  NPC: Ada
+-- Type: Standard NPC
 -- @zone: 240
---  @pos -79.803 -6.75 168.652
+-- @pos -79.803 -6.75 168.652
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

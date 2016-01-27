@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Ship_bound_for_Mhaura
--- NPC:  Map
+--  NPC: Map
 -- @pos 0.278 -14.707 -1.411 221
 -----------------------------------
-package.loaded["scripts/zones/Ship_bound_for_Mhaura/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Ship_bound_for_Mhaura/TextIDs");
+local text = require("scripts/zones/Ship_bound_for_Mhaura/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -28,8 +26,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -37,6 +35,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

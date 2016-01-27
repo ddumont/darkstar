@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Michea
+--  NPC: Michea
 -- Quest NPC
 -- Starts: Father Figure (100%) | The Elvaan Goldsmith (100%)
 -- Involed in: Fetichism | Where Two Paths Converge
 -----------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -90,8 +88,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -99,17 +97,17 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x00d7) then
         player:addQuest(BASTOK,THE_ELVAAN_GOLDSMITH);
     elseif (csid == 0x00f0) then
         player:addQuest(BASTOK,FATHER_FIGURE);
     elseif (csid == 0x00d8) then
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*180);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*180);
     elseif (csid == 0x00f1) then
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*2200);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*2200);
     elseif (csid == 0x013b) then
         player:delKeyItem(GOLDSMITHING_ORDER);
         player:setVar("DistantLoyaltiesProgress",2);
@@ -119,7 +117,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x013e) then
         player:setVar("DistantLoyaltiesProgress",4);
         player:addKeyItem(MYTHRIL_HEARTS);
-        player:messageSpecial(KEYITEM_OBTAINED,MYTHRIL_HEARTS);
+        player:messageSpecial(text.KEYITEM_OBTAINED,MYTHRIL_HEARTS);
     end
     
 end;

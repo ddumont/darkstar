@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Al Zahbi
--- NPC: Zafif
+--  NPC: Zafif
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
-require("scripts/zones/Al_Zahbi/TextIDs");
+local text = require("scripts/zones/Al_Zahbi/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,ZAFIF_SHOP_DIALOG);
+    player:showText(npc, text.ZAFIF_SHOP_DIALOG);
 
-stock = {0x1204,23400,        -- Scroll of Cure IV
+    local stock =
+    {
+    0x1204,23400,        -- Scroll of Cure IV
      0x1208,11200,        -- Scroll of Curaga II
      0x1209,19932,        -- Scroll of Curaga III
      0x122D,32000,        -- Scroll of Protect III
@@ -40,7 +41,7 @@ stock = {0x1204,23400,        -- Scroll of Cure IV
      0x128E,99375,        -- Scroll of Reraise III
      0x126B,28500}        -- Scroll of Reprisal
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -48,8 +49,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,9 +58,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

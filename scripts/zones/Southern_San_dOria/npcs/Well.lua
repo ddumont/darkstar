@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Southern San d'Oria
--- NPC:  Well
+--  NPC: Well
 -- Involved in Quest: Grave Concerns
 -- @zone 230
 -- @pos -129 -6 92
--------------------------------------
-package.loaded["scripts/zones/Southern_San_dOria/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Southern_San_dOria/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria/TextIDs");
 
 ----------------------------------- 
 -- onTrade Action 
@@ -22,7 +20,7 @@ function onTrade(player,npc,trade)
         if (trade:hasItemQty(547,1) and trade:getItemCount() == 1) then
             player:tradeComplete();
             player:addItem(567);
-            player:messageSpecial(ITEM_OBTAINED,567); -- Tomb Waterskin
+            player:messageSpecial(text.ITEM_OBTAINED,567); -- Tomb Waterskin
         end
     end
 
@@ -40,8 +38,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -49,6 +47,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

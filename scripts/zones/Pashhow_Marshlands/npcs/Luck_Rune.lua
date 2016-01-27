@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Pashhow Marshlands
---  NPC:  Luck Rune
---  Involved in Quest: Mhaura Fortune
---  @pos 573.245 24.999 199.560 109
------------------------------------
-package.loaded["scripts/zones/Pashhow_Marshlands/TextIDs"] = nil;
+-- Area: Pashhow Marshlands
+--  NPC: Luck Rune
+-- Involved in Quest: Mhaura Fortune
+-- @pos 573.245 24.999 199.560 109
 -------------------------------------
 
-require("scripts/zones/Pashhow_Marshlands/TextIDs");
+local text = require("scripts/zones/Pashhow_Marshlands/TextIDs");
 
 -----------------------------------
 -- onTrade
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_OUT_OF_THE_ORDINARY);
+    player:messageSpecial(text.NOTHING_OUT_OF_THE_ORDINARY);
 end;
 
 -----------------------------------
@@ -29,8 +27,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -38,6 +36,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

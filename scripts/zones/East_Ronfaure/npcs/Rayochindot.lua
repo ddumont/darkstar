@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: East Ronfaure
+-- Area: East Ronfaure
 --  NPC: Rayochindot
---  Type: Gate Guard
---  @pos 93.159 -62.999 272.601 101
------------------------------------
-package.loaded["scripts/zones/East_Ronfaure/TextIDs"] = nil;
+-- Type: Gate Guard
+-- @pos 93.159 -62.999 272.601 101
 -----------------------------------
 
-require("scripts/zones/East_Ronfaure/TextIDs");
+local text = require("scripts/zones/East_Ronfaure/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, RAYOCHINDOT_DIALOG);
+    player:showText(npc, text.RAYOCHINDOT_DIALOG);
 end;
 
 -----------------------------------

@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Apollyon NW
--- NPC:  Zlatorog 
+--  NPC: Zlatorog 
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
-
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

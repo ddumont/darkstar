@@ -1,16 +1,14 @@
 -----------------------------------
---  Area: Norg
+-- Area: Norg
 --  NPC: Chiyo
---  Type: Tenshodo Merchant
---  @pos 5.801 0.020 -18.739 252
------------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
+-- Type: Tenshodo Merchant
+-- @pos 5.801 0.020 -18.739 252
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
 require("scripts/globals/keyitems");
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -26,7 +24,7 @@ end;
 function onTrigger(player,npc)
     if (player:hasKeyItem(TENSHODO_MEMBERS_CARD)) then
         if (player:sendGuild(60422,9,23,7)) then
-            player:showText(npc, CHIYO_SHOP_DIALOG);
+            player:showText(npc, text.CHIYO_SHOP_DIALOG);
         end
     else
         -- player:startEvent(0x0096);

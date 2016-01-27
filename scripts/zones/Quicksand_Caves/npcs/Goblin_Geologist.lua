@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Quicksand Caves
---  NPC:  Goblin Geologist
---  Type: Mission
---  @pos -737.000 -11.125 -550.000 208
------------------------------------
-package.loaded["scripts/zones/Quicksand_Caves/TextIDs"] = nil;
+-- Area: Quicksand Caves
+--  NPC: Goblin Geologist
+-- Type: Mission
+-- @pos -737.000 -11.125 -550.000 208
 -----------------------------------
 
-require("scripts/zones/Quicksand_Caves/TextIDs");
+local text = require("scripts/zones/Quicksand_Caves/TextIDs");
 
 -----------------------------------
 -- onTrade Action

@@ -3,13 +3,11 @@
 -- Zone: Open_sea_route_to_Al_Zahbi (46)
 -- 
 -----------------------------------
-package.loaded["scripts/zones/Open_sea_route_to_Al_Zahbi/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Open_sea_route_to_Al_Zahbi/TextIDs");
+local text = require("scripts/zones/Open_sea_route_to_Al_Zahbi/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)
@@ -34,7 +32,7 @@ end;
 
 function onTransportEvent(player,transport)
     player:startEvent(0x0404);
-    player:messageSpecial(DOCKING_IN_AL_ZAHBI);
+    player:messageSpecial(text.DOCKING_IN_AL_ZAHBI);
 end;
 
 -----------------------------------
@@ -49,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

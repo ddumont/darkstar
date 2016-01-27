@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Windurst Woods
--- NPC:  Taraihi-Perunhi
+--  NPC: Taraihi-Perunhi
 -- Only sells when Windurst controlls Derfland Region
 -- Confirmed shop stock, August 2013
 -----------------------------------
@@ -8,8 +8,7 @@
 require("scripts/globals/events/harvest_festivals")
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
-require("scripts/zones/Windurst_Woods/TextIDs");
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -26,9 +25,9 @@ end;
 function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(DERFLAND);
     if (RegionOwner ~= WINDURST) then
-        player:showText(npc,TARAIHIPERUNHI_CLOSED_DIALOG);
+        player:showText(npc, text.text.TARAIHIPERUNHI_CLOSED_DIALOG);
     else
-        player:showText(npc,TARAIHIPERUNHI_OPEN_DIALOG);
+        player:showText(npc, text.text.TARAIHIPERUNHI_OPEN_DIALOG);
 
         stock = {
             0x1100,   128,   --Derfland Pear
@@ -49,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -58,6 +57,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

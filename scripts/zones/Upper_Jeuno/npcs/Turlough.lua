@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC: Turlough
+--  NPC: Turlough
 -- Mission NPC
 -- @pos 
------------------------------------
-
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 require("scripts/globals/quests");
 require("scripts/globals/missions");
 require("scripts/globals/settings");
@@ -50,7 +47,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x27BC) then
         player:setVar("QueenOfTheDance",2);
         player:addKeyItem(MAYAKOV_SHOW_TICKET);
-        player:messageSpecial(KEYITEM_OBTAINED,MAYAKOV_SHOW_TICKET);
+        player:messageSpecial(text.KEYITEM_OBTAINED,MAYAKOV_SHOW_TICKET);
     end
 end;
 

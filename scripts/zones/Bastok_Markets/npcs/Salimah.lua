@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area:  Bastok Markets
--- NPC:   Salimah
+--  NPC:  Salimah
 -- Notes: Start & Finishes Quest: Gourmet
 -- @pos -31.687 -6.824 -73.282 235
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/titles");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 require("scripts/globals/settings");
 
 -----------------------------------
@@ -73,8 +71,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -82,8 +80,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     local Gourmet = player:getQuestStatus(BASTOK,GOURMET);
 
@@ -107,7 +105,7 @@ function onEventFinish(player,csid,option)
         end
 
         player:addGil(gil*GIL_RATE);
-        player:messageSpecial(GIL_OBTAINED,gil*GIL_RATE);
+        player:messageSpecial(text.GIL_OBTAINED,gil*GIL_RATE);
         player:addFame(BASTOK,BAS_FAME*fame);
         player:addTitle(MOMMYS_HELPER);
         player:needToZone(true);

@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: FeiYin
--- NPC:  Strange Apparatus
+--  NPC: Strange Apparatus
 -- @pos -94 -15 220 204
------------------------------------
-
-package.loaded["scripts/zones/FeiYin/TextIDs"] = nil;
-
-require("scripts/zones/FeiYin/TextIDs");
+local text = require("scripts/zones/FeiYin/TextIDs");
 require("scripts/globals/strangeapparatus");
 
 -----------------------------------

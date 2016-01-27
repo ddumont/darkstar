@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Temenos     
--- NPC: Temenos_Ghrah
------------------------------------
-package.loaded["scripts/zones/Temenos/TextIDs"] = nil;
+--  NPC: Temenos_Ghrah
 -----------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Temenos/TextIDs");
+local text = require("scripts/zones/Temenos/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

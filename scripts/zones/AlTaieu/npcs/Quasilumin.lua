@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Al'Taieu
---  NPC:  Quasilumin
---  Type: Standard NPC
---  @pos -27.443 -1 -636.850 33
------------------------------------
-package.loaded["scripts/zones/AlTaieu/TextIDs"] = nil;
+-- Area: Al'Taieu
+--  NPC: Quasilumin
+-- Type: Standard NPC
+-- @pos -27.443 -1 -636.850 33
 -----------------------------------
 
-require("scripts/zones/AlTaieu/TextIDs");
+local text = require("scripts/zones/AlTaieu/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, QUASILUMIN_01);
+    player:showText(npc, text.QUASILUMIN_01);
 end;
 
 -----------------------------------

@@ -4,12 +4,10 @@
 -- Type: Leathercraft Guild Master
 -- @pos -178.882 -2 9.891 230
 -----------------------------------
-package.loaded["scripts/zones/Southern_San_dOria/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Southern_San_dOria/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -77,10 +75,10 @@ function onEventFinish(player,csid,option)
         local crystal = math.random(4096,4101);
 
         if (player:getFreeSlotsCount() == 0) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,crystal);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,crystal);
         else
             player:addItem(crystal);
-            player:messageSpecial(ITEM_OBTAINED,crystal);
+            player:messageSpecial(text.ITEM_OBTAINED,crystal);
             signupGuild(player, SKILL_LEATHERCRAFT);
         end
     end

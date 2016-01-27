@@ -4,13 +4,10 @@
 -- @pos -180 -6.8 -833 52
 -----------------------------------
 
-package.loaded["scripts/zones/Bhaflau_Thickets/TextIDs"] = nil;
------------------------------------
-
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
 require("scripts/globals/besieged");
-require("scripts/zones/Bhaflau_Thickets/TextIDs");
+local text = require("scripts/zones/Bhaflau_Thickets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -33,7 +30,7 @@ function onTrigger(player,npc)
         end
         player:startEvent(0x01F9, assaultid, -4, 0, recommendedLevel, 2, armband);
     else
-        player:messageSpecial(NOTHING_HAPPENS);
+        player:messageSpecial(text.NOTHING_HAPPENS);
     end
 end;
 

@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC: Ehrhard
+--  NPC: Ehrhard
 -- Involved in Quest: Stamp Hunt
------------------------------------
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action

@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Fort Karugo Narugo [S]
+-- Area: Fort Karugo Narugo [S]
 --  NPC: Rotih_Moalghett
---  Type: Quest
---  @zone: 96
---  @pos 280 -20 85
+-- Type: Quest
+-- @zone: 96
+-- @pos 280 -20 85
 --
------------------------------------
-
-package.loaded["scripts/zones/Fort_Karugo-Narugo_[S]/TextIDs"] = nil;
-require("scripts/zones/Fort_Karugo-Narugo_[S]/TextIDs");
+local text = require("scripts/zones/Fort_Karugo-Narugo_[S]/TextIDs");
 require("scripts/globals/quests");
 
 -----------------------------------
@@ -38,8 +35,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

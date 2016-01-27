@@ -3,12 +3,10 @@
 -- Zone: Attohwa_Chasm (7)
 --
 -----------------------------------
-package.loaded["scripts/zones/Attohwa_Chasm/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/zone");
-require("scripts/zones/Attohwa_Chasm/TextIDs");
+local text = require("scripts/zones/Attohwa_Chasm/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -71,7 +69,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -94,7 +92,7 @@ function onRegionEnter(player,region)
         end
 
         if (player:hasStatusEffect(EFFECT_POISON) == false) then
-            player:messageSpecial(GASPONIA_POISON);
+            player:messageSpecial(text.GASPONIA_POISON);
             local duration = math.random(30,60);
             player:addStatusEffect(EFFECT_POISON, 15, 0, duration);
         end

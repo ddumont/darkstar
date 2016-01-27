@@ -1,10 +1,10 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: King Zagan
+-- MOB: King Zagan
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
+local text = require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobEngaged
@@ -44,7 +44,7 @@ function onMobDeath(mob,killer,ally)
     end
     
     if (Animate_Trigger == 32767) then
-        ally:messageSpecial(PRISON_OF_SOULS_HAS_SET_FREE);
+        ally:messageSpecial(text.PRISON_OF_SOULS_HAS_SET_FREE);
     end
     
 end;

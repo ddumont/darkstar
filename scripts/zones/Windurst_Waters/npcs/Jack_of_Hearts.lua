@@ -1,13 +1,12 @@
 -----------------------------------
---    Area: Windurst Waters
---    NPC: Jack of Hearts
---    Adventurer's Assistant
---    Working 100%
+-- Area: Windurst Waters
+--  NPC: Jack of Hearts
+-- Adventurer's Assistant
+-- Working 100%
 -------------------------------------
 
 require("scripts/globals/settings");
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 ----------------------------------- 
 -- onTrade Action 
@@ -34,8 +33,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -43,9 +42,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

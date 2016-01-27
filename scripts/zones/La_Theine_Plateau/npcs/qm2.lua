@@ -1,15 +1,13 @@
 -----------------------------------
---  Area: La Theine Plateau
+-- Area: La Theine Plateau
 --  NPC: ??? (qm2)
---  Involved in Quest: HITTING_THE_MARQUISATE (THF AF3)
------------------------------------
-package.loaded["scripts/zones/La_Theine_Plateau/TextIDs"] = nil;
+-- Involved in Quest: HITTING_THE_MARQUISATE (THF AF3)
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/titles");
 require("scripts/globals/settings");
-require("scripts/zones/La_Theine_Plateau/TextIDs");
+local text = require("scripts/zones/La_Theine_Plateau/TextIDs");
 
 -----------------------------------
 -- onTrade
@@ -38,8 +36,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -47,15 +45,15 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0077) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,14094);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,14094);
         else 
         player:addItem(14094);
-        player:messageSpecial(ITEM_OBTAINED,14094);    
+        player:messageSpecial(text.ITEM_OBTAINED,14094);    
         player:tradeComplete();
         player:completeQuest(WINDURST, HITTING_THE_MARQUISATE);
         player:addTitle(PARAGON_OF_THIEF_EXCELLENCE);

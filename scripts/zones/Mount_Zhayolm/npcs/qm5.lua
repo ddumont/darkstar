@@ -3,9 +3,7 @@
 --  NPC: ??? (Spawn Sarameya(ZNM T4))
 -- @pos 322 -14 -581 61
 -----------------------------------
-package.loaded["scripts/zones/Mount_Zhayolm/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Mount_Zhayolm/TextIDs");
+local text = require("scripts/zones/Mount_Zhayolm/TextIDs");
 require("scripts/globals/status");
 
 -----------------------------------
@@ -27,7 +25,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_HAPPENS);
+    player:messageSpecial(text.NOTHING_HAPPENS);
 end;
 
 -----------------------------------

@@ -1,11 +1,9 @@
 -----------------------------------
---    Area: Mhaura
---    NPC:  Explorer Moogle
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Explorer Moogle
 -----------------------------------
 
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/teleports");
 
@@ -39,8 +37,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -48,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     local price = 300;
     

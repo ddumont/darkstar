@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: LaLoff Amphitheater
---  MOB: Ark Angel MR
+-- MOB: Ark Angel MR
 -----------------------------------
-package.loaded["scripts/zones/LaLoff_Amphitheater/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/LaLoff_Amphitheater/TextIDs");
+local text = require("scripts/zones/LaLoff_Amphitheater/TextIDs");
 require("scripts/globals/status");
 
 -----------------------------------
@@ -25,8 +23,8 @@ end;
 function onMobEngaged(mob,target)
 
 -- TODO: Summons pet when party is engaged.  Randomly chosen between Tiger and Mandragora.
---       Current victory system doesn't readily support a random choice of pet while having
---       the pet as a victory condition.  Therefore, Mandragora just isn't used at this time.
+-- Current victory system doesn't readily support a random choice of pet while having
+-- the pet as a victory condition.  Therefore, Mandragora just isn't used at this time.
 
    local mobid = mob:getID()
 

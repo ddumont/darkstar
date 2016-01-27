@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Aht Urhgan Whitegate
--- NPC: Khaf Jhifanm
+--  NPC: Khaf Jhifanm
 -- Standard Merchant NPC
 -----------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 require("scripts/globals/shop");
 
 -----------------------------------
@@ -22,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,KHAFJHIFANM_SHOP_DIALOG);
+    player:showText(npc, text.KHAFJHIFANM_SHOP_DIALOG);
 
-stock = {0x15BF,200,        -- Dried Date
+    local stock =
+    {
+    0x15BF,200,        -- Dried Date
      0x15C8,800,        -- Ayran
      0x15D6,3750,        -- balik Sandvici
      0x08BB,320,        -- Wildgrass Seeds
@@ -32,7 +32,7 @@ stock = {0x15BF,200,        -- Dried Date
      0x0b38,10000}        -- Empire Waystone
 
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -40,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -49,9 +49,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

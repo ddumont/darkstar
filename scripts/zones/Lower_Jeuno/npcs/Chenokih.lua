@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Lower Jeuno
--- NPC: Chenokih
+--  NPC: Chenokih
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,CHENOKIH_SHOP_DIALOG);
+    player:showText(npc, text.CHENOKIH_SHOP_DIALOG);
 
-stock = {0x3232,24500, -- Hose
+    local stock =
+    {
+    0x3232,24500, -- Hose
      0x3242,22632, -- Linen Slacks
      0x3233,57600, -- Wool Hose
      0x323A,14756, -- Wool Slops
@@ -36,7 +37,7 @@ stock = {0x3232,24500, -- Hose
      0x3509,11088, -- Black Cape
      0x3500,1250}  -- Scarlet Ribbon
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -44,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -53,9 +54,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

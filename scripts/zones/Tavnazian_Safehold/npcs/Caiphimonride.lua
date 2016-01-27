@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Tavnazian Safehold
--- NPC: Caiphimonride
+--  NPC: Caiphimonride
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Tavnazian_Safehold/TextIDs"] = nil;
-require("scripts/zones/Tavnazian_Safehold/TextIDs");
+local text = require("scripts/zones/Tavnazian_Safehold/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,15 +20,17 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,CAIPHIMONRIDE_SHOP_DIALOG);
+    player:showText(npc, text.CAIPHIMONRIDE_SHOP_DIALOG);
 
-stock = {0x4042,1867,    --Dagger
+    local stock =
+    {
+    0x4042,1867,    --Dagger
     0x40b6,8478,    --Longsword
     0x43B7,8,    --Rusty Bolt
     0x47C7,93240,    --Falx (COP Chapter 4 Needed; not implemented yet)
     0x4726,51905}    --Voulge (COP Chapter 4 Needed; not implemented yet)
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -37,8 +38,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -46,9 +47,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

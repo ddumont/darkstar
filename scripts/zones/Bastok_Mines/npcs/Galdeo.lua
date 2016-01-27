@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC: Galdeo
+--  NPC: Galdeo
 -- Only sells when Bastok controlls Li'Telor Region
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -23,9 +22,9 @@ end;
 function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(LITELOR);
     if (RegionOwner ~= BASTOK) then 
-        player:showText(npc,GALDEO_CLOSED_DIALOG);
+        player:showText(npc, text.GALDEO_CLOSED_DIALOG);
     else
-        player:showText(npc,GALDEO_OPEN_DIALOG);
+        player:showText(npc, text.GALDEO_OPEN_DIALOG);
         stock = {
             0x026f,   119,   --Bay Leaves
             0x103a,  6440    --Holy Water
@@ -41,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -50,6 +49,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

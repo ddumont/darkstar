@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Beaucedine Glacier
--- NPC:  Iron Grate
+--  NPC: Iron Grate
 -- Type: Door
 -- @pos 241.000 5.000 -20.000 111     : J-8
 -- @pos 60.000 5.000 -359.000 111     : H-10
@@ -9,11 +9,8 @@
 -- @pos -20.000 -55.000 -41.000 111   : H-8
 -- @pos -340.000 -95.000 159.000 111  : F-7
 -----------------------------------
-package.loaded["scripts/zones/Beaucedine_Glacier/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Beaucedine_Glacier/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -51,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -60,8 +57,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     local LVLcap = 0;
     

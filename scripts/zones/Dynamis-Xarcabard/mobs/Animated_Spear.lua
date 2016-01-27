@@ -1,10 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: Animated Spear
+-- MOB: Animated Spear
 -----------------------------------
 
 require("scripts/globals/status");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobEngaged

@@ -1,11 +1,10 @@
 -----------------------------------
 -- Area: Eastern Altepa Desert
--- NPC:  Lokpix
+--  NPC: Lokpix
 -- Starts Quest "Open Sesame"
 -----------------------------------
-package.loaded["scripts/zones/Eastern_Altepa_Desert/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Eastern_Altepa_Desert/TextIDs");
+
+local text = require("scripts/zones/Eastern_Altepa_Desert/TextIDs");
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
 
@@ -41,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
 end;
 
 -----------------------------------
@@ -58,7 +57,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x0016) then
         player:tradeComplete();
         player:addKeyItem(2051);
-        player:messageSpecial(KEYITEM_OBTAINED,2051);
+        player:messageSpecial(text.KEYITEM_OBTAINED,2051);
         player:addFame(OUTLANDS,30);
         player:completeQuest(OUTLANDS,OPEN_SESAME);
     end

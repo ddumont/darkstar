@@ -1,13 +1,9 @@
 -----------------------------------
 -- Area: Bibiki Bay
--- NPC:  Pohka Chichiyowahl
+--  NPC: Pohka Chichiyowahl
 -- Type: Standard Merchant NPC
 -- @pos -415 -2 -430 4
------------------------------------
-
-package.loaded["scripts/zones/Bibiki_Bay/TextIDs"] = nil;
-
-require("scripts/zones/Bibiki_Bay/TextIDs");
+local text = require("scripts/zones/Bibiki_Bay/TextIDs");
 require("scripts/globals/shop");
 
 -----------------------------------
@@ -22,9 +18,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,POHKA_SHOP_DIALOG);
+    player:showText(npc, text.POHKA_SHOP_DIALOG);
 
-    local stock = {
+    local stock =
+    {
+    
         0x43EC,  1238, 3, -- Fastwater F. Rod
         0x43E6, 11845, 3, -- S.H. Fishing Rod
         0x1034,   290, 3  -- Antidote

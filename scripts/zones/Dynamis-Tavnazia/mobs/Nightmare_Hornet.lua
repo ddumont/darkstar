@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Dynamis Tavnazia
--- NPC:  Nightmare_Hornet
+--  NPC: Nightmare_Hornet
 
------------------------------------
-package.loaded["scripts/zones/Dynamis-Tavnazia/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Tavnazia/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

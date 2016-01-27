@@ -2,13 +2,10 @@
 --
 -- Zone: Bastok_Mines (234)
 --
------------------------------------
-
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
 require("scripts/globals/events/harvest_festivals");
 require("scripts/globals/zone");
 require("scripts/globals/settings");
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 require("scripts/globals/missions");
 require("scripts/globals/titles");
 -----------------------------------
@@ -62,7 +59,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -90,10 +87,10 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
     if (csid == 0x01) then
-        player:messageSpecial(ITEM_OBTAINED,0x218);
+        player:messageSpecial(text.ITEM_OBTAINED,0x218);
     elseif (csid == 0x7534 and option == 0) then
         player:setHomePoint();
-        player:messageSpecial(HOMEPOINT_SET);
+        player:messageSpecial(text.HOMEPOINT_SET);
     elseif (csid == 0x00b0) then
         finishMissionTimeline(player,1,csid,option);
     end -- you're not useing the script i sent youuu

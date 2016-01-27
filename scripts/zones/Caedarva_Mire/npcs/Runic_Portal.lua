@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area: Caedarva Mire
--- NPC:  Runic Portal
+--  NPC: Runic Portal
 -- Caedarva Mire Teleporter Back to Aht Urhgan Whitegate
 -- @pos -264 -6 -28 79 (Dvucca)
 -- @pos 524 -28 -503 79 (Azouph)
------------------------------------
-package.loaded["scripts/zones/Caedarva_Mire/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/besieged");
 require("scripts/globals/teleports");
 require("scripts/globals/missions");
-require("scripts/zones/Caedarva_Mire/TextIDs");
+local text = require("scripts/zones/Caedarva_Mire/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -43,7 +41,7 @@ function onTrigger(player,npc)
                 player:startEvent(0x007d);
             end
         else
-            player:messageSpecial(RESPONSE);
+            player:messageSpecial(text.RESPONSE);
         end
     else                                                                         -- Azouph Staging Point
         if (player:getCurrentMission(TOAU)== IMMORTAL_SENTRIES) then
@@ -59,7 +57,7 @@ function onTrigger(player,npc)
                 player:startEvent(0x007c);
             end
         else
-            player:messageSpecial(RESPONSE);
+            player:messageSpecial(text.RESPONSE);
         end
     end
 end;
@@ -69,8 +67,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -78,8 +76,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x007c and option == 1) then
         if (player:getVar("TOAUM2") == 1) then

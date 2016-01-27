@@ -1,16 +1,14 @@
 -----------------------------------
---    Area: Windurst Woods
---    NPC:  Illu Bohjaa
---    Starts the repeatable quest "Creepy Crawlies"
---    Working 100% 
------------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
+-- Area: Windurst Woods
+--  NPC: Illu Bohjaa
+-- Starts the repeatable quest "Creepy Crawlies"
+-- Working 100%
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/titles");
 require("scripts/globals/settings");
-require("scripts/zones/Windurst_Woods/TextIDs");
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -40,7 +38,7 @@ CrepyCrawlies = player:getQuestStatus(WINDURST,CREEPY_CRAWLIES);
             player:startEvent(0x014f,GIL_RATE*600,816,938,1156);
         end
     end
-end; 
+end;
 
 -----------------------------------
 -- onTrigger Action
@@ -63,8 +61,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -72,13 +70,9 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x014d and option == 1) then
         player:addQuest(WINDURST,CREEPY_CRAWLIES);
     end
 end;
-
-
-
-

@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Gustav tunnel
--- NPC:  qm2 (???)
+--  NPC: qm2 (???)
 -- bastok 9-1
 -- @zone 212
 -- @pos -130 1.256 252.696
 -----------------------------------
-package.loaded["scripts/zones/Gustav_Tunnel/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Gustav_Tunnel/TextIDs");
+local text = require("scripts/zones/Gustav_Tunnel/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -31,18 +29,18 @@ if (GetMobAction(17645794)==0 and GetMobAction(17645795)==0 and GetMobAction(176
     if (player:getVar("BASTOK91") == 3) then
         if not(player:hasKeyItem(MIRACLESALT)) then
         player:addKeyItem(MIRACLESALT);
-        player:messageSpecial(KEYITEM_OBTAINED,MIRACLESALT);
+        player:messageSpecial(text.KEYITEM_OBTAINED,MIRACLESALT);
         else
-        player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+        player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
         end
 elseif (player:getVar("BASTOK91") ==2) then
 SpawnMob(17645794);
     else
-player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+    player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
     end    
     end
 else
-player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+    player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
 end
 end;
 
@@ -51,8 +49,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -60,6 +58,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

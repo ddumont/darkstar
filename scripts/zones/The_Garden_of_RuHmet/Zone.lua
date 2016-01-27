@@ -3,11 +3,9 @@
 -- Zone: The_Garden_of_RuHmet (35)
 --
 -----------------------------------
-package.loaded["scripts/zones/The_Garden_of_RuHmet/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
+local text = require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
 require("scripts/zones/The_Garden_of_RuHmet/MobIDs");
 require("scripts/globals/missions");
 require("scripts/globals/keyitems");
@@ -145,7 +143,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
     
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -251,8 +249,8 @@ end;
 -----------------------------------    
 
 function onEventUpdate(player,csid,option)    
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if ((csid >0x0095 and csid < 0x00B8)or  csid ==0x0066 or  csid ==0x0067 or csid ==0x0065) then
         player:setVar("Ru-Hmet-TP",1);
     
@@ -264,8 +262,8 @@ end;
 -----------------------------------    
 
 function onEventFinish(player,csid,option)    
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x0065 and option == 1) then
         player:setPos(540,-1,-499.900,62,0x24);

@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Selbina
--- NPC: Torapiont
+--  NPC: Torapiont
 -- Standard Merchant NPC
 -----------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/shop");
 
 -----------------------------------
@@ -22,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,TORAPIONT_SHOP_DIALOG);
+    player:showText(npc, text.TORAPIONT_SHOP_DIALOG);
 
-stock = {0x401B,11491,        --Claws
+    local stock =
+    {
+    0x401B,11491,        --Claws
      0x4043,7727,        --Mythril Dagger
      0x4081,11588,        --Tuck
      0x40C8,37800,        --Mythril Claymore
@@ -38,7 +38,7 @@ stock = {0x401B,11491,        --Claws
      0x43A6,3,        --Wooden Arrow
      0x43A8,7}        --Iron Arrow 
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -46,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,9 +55,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

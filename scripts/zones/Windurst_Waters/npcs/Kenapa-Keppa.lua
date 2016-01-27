@@ -1,19 +1,15 @@
 -----------------------------------
---  Area: Windurst Waters
---  NPC:  Kenapa Keppa
---  Involved in Quest: Food For Thought, Hat in Hand
---  Working 100%
---  @zone = 238
---  @pos = 27 -6 -199
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
-
-
+-- Area: Windurst Waters
+--  NPC: Kenapa Keppa
+-- Involved in Quest: Food For Thought, Hat in Hand
+-- Working 100%
+-- @zone = 238
+-- @pos = 27 -6 -199
 require("scripts/globals/quests");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -151,8 +147,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -160,8 +156,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0147 or csid == 0x014a) then
         if (player:getVar("Kerutoto_Food_var") == 3 and player:getVar("Kenapa_Food_var") == 3 and player:getVar("Ohbiru_Food_var") == 3) then -- If this is the last NPC to be fed
             player:addGil(GIL_RATE*120);
@@ -181,7 +177,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x014b) then
         if (player:getVar("Kerutoto_Food_var") == 3 and player:getVar("Kenapa_Food_var") == 3 and player:getVar("Ohbiru_Food_var") == 3) then -- If this is the last NPC to be fed
             player:addGil(GIL_RATE*120);
-            player:messageSpecial(GIL_OBTAINED,GIL_RATE*120); 
+            player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*120); 
             player:tradeComplete();
             player:completeQuest(WINDURST,FOOD_FOR_THOUGHT);
             player:addTitle(FAST_FOOD_DELIVERER);
@@ -193,7 +189,7 @@ function onEventFinish(player,csid,option)
         else
             player:tradeComplete();
             player:addGil(GIL_RATE*120);
-            player:messageSpecial(GIL_OBTAINED,GIL_RATE*120); 
+            player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*120); 
             player:setVar("Kenapa_Food_var",4); -- If this is NOT the last NPC given food, flag this NPC as completed.
         end
     elseif  (csid == 0x0038) then  -- Show Off Hat
@@ -228,7 +224,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x015c) then
         player:addItem(12590);
         player:delKeyItem(SMALL_BAG);
-        player:messageSpecial(ITEM_OBTAINED,12590); 
+        player:messageSpecial(text.ITEM_OBTAINED,12590); 
         player:completeQuest(WINDURST,OVERNIGHT_DELIVERY);
         player:addFame(WINDURST,WIN_FAME*100);
         player:needToZone(true);
@@ -236,6 +232,3 @@ function onEventFinish(player,csid,option)
         player:setVar("Kenapa_Overnight_Hour_var",0);
     end
 end;
-
-
-

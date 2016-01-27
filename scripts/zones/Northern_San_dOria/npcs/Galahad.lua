@@ -1,14 +1,11 @@
 -----------------------------------
---  Area: Northern San d'Oria
+-- Area: Northern San d'Oria
 --  NPC: Galahad
---  Type: Consulate Representative NPC
---  @zone: 231
---  @pos -51.984 -2.000 -15.373
+-- Type: Consulate Representative NPC
+-- @zone: 231
+-- @pos -51.984 -2.000 -15.373
 --
------------------------------------
-
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,GALAHAD_DIALOG);
+    player:showText(npc, text.GALAHAD_DIALOG);
 end;
 
 -----------------------------------

@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area: San d'Oria-Jeuno Airship
--- NPC:  ???
+--  NPC: ???
 -- Involved In Quest: The Stars Of Ifrit
 -- @zone 223
 -- @pos 77 -9 -5 -13
------------------------------------
-package.loaded["scripts/zones/San_dOria-Jeuno_Airship/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
 require("scripts/globals/weather");
-require("scripts/zones/San_dOria-Jeuno_Airship/TextIDs");
+local text = require("scripts/zones/San_dOria-Jeuno_Airship/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -31,7 +29,7 @@ function onTrigger(player,npc)
     if (TOTD == TIME_NIGHT and IsMoonFull()) then
         if (TheStarsOfIfrit == QUEST_ACCEPTED and player:hasKeyItem(CARRIER_PIGEON_LETTER) == false) then
             player:addKeyItem(CARRIER_PIGEON_LETTER);
-            player:messageSpecial(KEYITEM_OBTAINED,CARRIER_PIGEON_LETTER);
+            player:messageSpecial(text.KEYITEM_OBTAINED,CARRIER_PIGEON_LETTER);
         end
     end
 end;

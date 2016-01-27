@@ -3,10 +3,7 @@
 -- Zone: Desuetia Empyreal Paradox (290)
 --
 -----------------------------------
-package.loaded["scripts/zones/Desuetia_Empyreal_Paradox/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Desuetia_Empyreal_Paradox/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/zone");
 

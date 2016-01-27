@@ -1,10 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: Animated Scythe
+-- MOB: Animated Scythe
 -----------------------------------
 
 require("scripts/globals/status");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobEngaged

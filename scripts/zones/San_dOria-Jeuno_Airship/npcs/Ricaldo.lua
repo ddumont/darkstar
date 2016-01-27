@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: San d'Oria-Jeuno Airship
--- NPC:  Ricaldo
+--  NPC: Ricaldo
 -- Standard Info NPC
------------------------------------
-
-package.loaded["scripts/zones/San_dOria-Jeuno_Airship/TextIDs"] = nil;
-
-require("scripts/zones/San_dOria-Jeuno_Airship/TextIDs");
+local text = require("scripts/zones/San_dOria-Jeuno_Airship/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -74,7 +70,7 @@ function onTrigger(player,npc)
         vHour = 0;
     end
 
-    player:messageSpecial( message, math.floor((2.4 * vMinutes) / 60), math.floor( vMinutes / 60 + 0.5));
+    player:messageSpecial(text.message, math.floor((2.4 * vMinutes) / 60), math.floor( vMinutes / 60 + 0.5));
 end;
 
 -----------------------------------

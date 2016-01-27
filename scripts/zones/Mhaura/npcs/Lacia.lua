@@ -1,17 +1,15 @@
 -----------------------------------
---    Area: Mhaura
---    NPC: Lacia
---    Starts Quest: Trial Size Trial By Lightning
---  The "TrialSizeLightning_date" still needs to be set at the BCNM/Mob level to reflect defeat by the Avatar
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Lacia
+-- Starts Quest: Trial Size Trial By Lightning
+-- The "TrialSizeLightning_date" still needs to be set at the BCNM/Mob level to reflect defeat by the Avatar
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/status");
 require("scripts/globals/quests");
 require("scripts/globals/teleports");
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -53,8 +51,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -62,28 +60,25 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x2729 and option == 1) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1548); --Mini tuning fork 
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1548); --Mini tuning fork 
         else
             player:setVar("TrialSizeLightning_date", 0);
             player:addQuest(OTHER_AREAS,TRIAL_SIZE_TRIAL_BY_LIGHTNING);
             player:addItem(1548); 
-            player:messageSpecial(ITEM_OBTAINED,1548); 
+            player:messageSpecial(text.ITEM_OBTAINED,1548); 
         end
     elseif (csid == 0x272d and option == 1) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1548); --Mini tuning fork 
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1548); --Mini tuning fork 
         else
             player:addItem(1548); 
-            player:messageSpecial(ITEM_OBTAINED,1548); 
+            player:messageSpecial(text.ITEM_OBTAINED,1548); 
         end
     elseif (csid == 0x272a and option == 1) then
         toCloisterOfStorms(player);
     end    
 end;
-
-
-

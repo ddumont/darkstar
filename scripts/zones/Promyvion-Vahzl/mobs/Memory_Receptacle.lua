@@ -1,9 +1,7 @@
 -----------------------------------
 -- Area: Promyvion-Vahzl
---  MOB: Memory Receptacle
+-- MOB: Memory Receptacle
 -- Todo: clean up disgustingly bad formatting
------------------------------------
-package.loaded["scripts/zones/Promyvion-Vahzl/TextIDs"] = nil;
 -----------------------------------
 require( "scripts/zones/Promyvion-Vahzl/TextIDs" );
 require("scripts/globals/status");
@@ -177,8 +175,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 ----------------------------------
@@ -186,6 +184,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

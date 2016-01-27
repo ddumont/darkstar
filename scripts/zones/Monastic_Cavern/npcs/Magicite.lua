@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Monastic Cavern
--- NPC:  Magicite
+--  NPC: Magicite
 -- Involved in Mission: Magicite
 -- @pos -22 1 -66 150
 -----------------------------------
-package.loaded["scripts/zones/Monastic_Cavern/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Monastic_Cavern/TextIDs");
+local text = require("scripts/zones/Monastic_Cavern/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -30,7 +28,7 @@ function onTrigger(player,npc)
             player:startEvent(0x0000); -- don't play Lion part of the CS 
         end
     else
-        player:messageSpecial(THE_MAGICITE_GLOWS_OMINOUSLY);
+        player:messageSpecial(text.THE_MAGICITE_GLOWS_OMINOUSLY);
     end
     
 end;
@@ -55,7 +53,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x0000) then
         player:setVar("MissionStatus",4);
         player:addKeyItem(MAGICITE_OPTISTONE);
-        player:messageSpecial(KEYITEM_OBTAINED,MAGICITE_OPTISTONE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,MAGICITE_OPTISTONE);
     end
     
 end;

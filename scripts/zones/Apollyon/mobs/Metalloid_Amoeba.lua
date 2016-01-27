@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon SE
--- NPC:  Metalloid_Amoeba
+--  NPC: Metalloid_Amoeba
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

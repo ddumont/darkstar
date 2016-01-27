@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Al Zahbi
---   NPC: Djinabaha
---  Type: AH Manager
+-- Area: Al Zahbi
+--  NPC: Djinabaha
+-- Type: AH Manager
 -- @zone: 48
---  @pos -17.661 -1 -117.352
+-- @pos -17.661 -1 -117.352
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

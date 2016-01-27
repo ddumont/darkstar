@@ -1,12 +1,10 @@
 -----------------------------------
---  Area: Newton Movalpolos
---  NPC:  Sleakachiq
---  @pos 162.504 14.999 136.901 12
------------------------------------
-package.loaded["scripts/zones/Newton_Movalpolos/TextIDs"] = nil;
+-- Area: Newton Movalpolos
+--  NPC: Sleakachiq
+-- @pos 162.504 14.999 136.901 12
 -----------------------------------
 
-require("scripts/zones/Newton_Movalpolos/TextIDs");
+local text = require("scripts/zones/Newton_Movalpolos/TextIDs");
 
 -----------------------------------
 -- onTrade Action

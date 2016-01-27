@@ -3,9 +3,7 @@
 --  NPC: ??? (Spawn Vulpangue(ZNM T1))
 -- @pos -697 -7 -123 51
 -----------------------------------
-package.loaded["scripts/zones/Wajaom_Woodlands/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Wajaom_Woodlands/TextIDs");
+local text = require("scripts/zones/Wajaom_Woodlands/TextIDs");
 require("scripts/globals/status");
 
 -----------------------------------
@@ -27,7 +25,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_HAPPENS);
+    player:messageSpecial(text.NOTHING_HAPPENS);
 end;
 
 -----------------------------------

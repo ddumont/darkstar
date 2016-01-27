@@ -1,16 +1,13 @@
 -----------------------------------
---  Area: Bastok Markets
---   NPC: Zon-Fobun
---  Type: Quest Giver
+-- Area: Bastok Markets
+--  NPC: Zon-Fobun
+-- Type: Quest Giver
 -- @zone: 235
---  @pos -241.293 -3 63.406
+-- @pos -241.293 -3 63.406
 --
 -- Auto-Script: Requires Verification. Verified standard dialog - thrydwolf 12/18/2011
------------------------------------
-
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
 package.loaded["scripts/globals/quests"] = nil;
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
 require("scripts/globals/settings");
@@ -60,7 +57,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x00fb) then
         player:addQuest(BASTOK,THE_CURSE_COLLECTOR);
         player:addKeyItem(CURSEPAPER); -- Cursepaper
-        player:messageSpecial(KEYITEM_OBTAINED,CURSEPAPER);
+        player:messageSpecial(text.KEYITEM_OBTAINED,CURSEPAPER);
 
     elseif (csid == 0x00fc) then
         if (player:getFreeSlotsCount() >= 1) then
@@ -69,10 +66,10 @@ function onEventFinish(player,csid,option)
             player:setVar("cCollectCurse",0);
             player:addFame(BASTOK,BAS_FAME*30);
             player:completeQuest(BASTOK,THE_CURSE_COLLECTOR);
-            player:messageSpecial(ITEM_OBTAINED,16387); -- Poison Cesti
+            player:messageSpecial(text.ITEM_OBTAINED,16387); -- Poison Cesti
             player:addItem(16387,1);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,16387);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,16387);
         end
     end
 end;

@@ -1,14 +1,13 @@
 -----------------------------------
 -- Area: Batok Markets
--- NPC: Mjoll
+--  NPC: Mjoll
 -- Standard Merchant NPC
 --
 -- Updated Aug-09-2013 by Zerahn, based on bgwiki and gamerescape
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -23,8 +22,10 @@ end;
 
 function onTrigger(player,npc)
 
-    player:showText(npc,MJOLL_SHOP_DIALOG);
-    stock = {
+    player:showText(npc, text.MJOLL_SHOP_DIALOG);
+    local stock =
+    {
+    
         0x43A9,    16,1,     --Silver Arrow
 
         0x43A6,     3,2,     --Wooden Arrow
@@ -46,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,6 +56,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

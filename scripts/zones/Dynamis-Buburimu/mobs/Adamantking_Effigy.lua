@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Dynamis Buburimu
---  MOB: Adamantking_Effigy
+-- MOB: Adamantking_Effigy
 
------------------------------------
-package.loaded["scripts/zones/Dynamis-Buburimu/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Buburimu/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

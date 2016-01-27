@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Port Windurst
--- NPC:  Hakkuru-Rinkuru
+--  NPC: Hakkuru-Rinkuru
 -- Involved In Quest: Making Amends
 -- Starts and Ends Quest: Wonder Wands
 -- @pos -111 -4 101 240
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
 package.loaded["scripts/globals/missions"] = nil;
 -----------------------------------
 
@@ -14,7 +12,7 @@ require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
 require("scripts/globals/quests");
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -100,8 +98,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -109,8 +107,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x005a) then
         player:setVar("MissionStatus",1);
@@ -155,13 +153,13 @@ function onEventFinish(player,csid,option)
         player:setVar("SecondRewardVar",0);
     elseif (csid == 0x0109) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,12750); -- New Moon Armlets
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,12750); -- New Moon Armlets
         else
             player:tradeComplete();
             player:addGil(GIL_RATE*4800);
-            player:messageSpecial(GIL_OBTAINED, 4800);
+            player:messageSpecial(text.GIL_OBTAINED, 4800);
             player:addItem(12750); -- New Moon Armlets
-            player:messageSpecial(ITEM_OBTAINED, 12750); -- New Moon Armlets
+            player:messageSpecial(text.ITEM_OBTAINED, 12750); -- New Moon Armlets
             player:addFame(WINDURST,WIN_FAME*150);
             player:addTitle(DOCTOR_SHANTOTTOS_GUINEA_PIG);
             player:completeQuest(WINDURST,WONDER_WANDS);
@@ -170,7 +168,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x01C8) then
             player:setVar("MissionStatus",1);
             player:addKeyItem(SOUTHWESTERN_STAR_CHARM);
-            player:messageSpecial(KEYITEM_OBTAINED,SOUTHWESTERN_STAR_CHARM);
+            player:messageSpecial(text.KEYITEM_OBTAINED,SOUTHWESTERN_STAR_CHARM);
     end
     
 end;

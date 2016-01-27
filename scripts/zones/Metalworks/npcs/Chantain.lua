@@ -1,15 +1,12 @@
 -----------------------------------
---  Area: Metalworks
---   NPC: Chantain
---  Type: Consulate Representative
+-- Area: Metalworks
+--  NPC: Chantain
+-- Type: Consulate Representative
 -- @zone: 237
---  @pos 21.729 -17 -30.888
+-- @pos 21.729 -17 -30.888
 --
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-
-package.loaded["scripts/zones/Metalworks/TextIDs"] = nil;
-require("scripts/zones/Metalworks/TextIDs");
+local text = require("scripts/zones/Metalworks/TextIDs");
 
 -----------------------------------
 -- onTrade Action

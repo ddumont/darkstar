@@ -1,12 +1,10 @@
 -----------------------------------
---  Area: Grand Palace of Hu'Xzoi
---  NPC:  Particle Gate
---  @pos -483 0 259 34
------------------------------------
-package.loaded["scripts/zones/Grand_Palace_of_HuXzoi/TextIDs"] = nil;
+-- Area: Grand Palace of Hu'Xzoi
+--  NPC: Particle Gate
+-- @pos -483 0 259 34
 -----------------------------------
 
-require("scripts/zones/Grand_Palace_of_HuXzoi/TextIDs");
+local text = require("scripts/zones/Grand_Palace_of_HuXzoi/TextIDs");
 
 -----------------------------------
 -- onTrade Action

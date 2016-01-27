@@ -1,12 +1,10 @@
 -----------------------------------
---    Area: Chocobo_Circuit
---    NPC: Mediverchanne
---    Standard Info NPC
------------------------------------
-package.loaded["scripts/zones/Chocobo_Circuit/TextIDs"] = nil;
+-- Area: Chocobo_Circuit
+--  NPC: Mediverchanne
+-- Standard Info NPC
 -----------------------------------
 
-require("scripts/zones/Chocobo_Circuit/TextIDs");
+local text = require("scripts/zones/Chocobo_Circuit/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -28,8 +26,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -37,6 +35,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

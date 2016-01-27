@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Windurst Walls
+-- Area: Windurst Walls
 --  NPC: Selulu
---  Type: Item Deliverer
---  @zone: 239
---  @pos 58.027 -2.5 -60.548
+-- Type: Item Deliverer
+-- @zone: 239
+-- @pos 58.027 -2.5 -60.548
 --
------------------------------------
-
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

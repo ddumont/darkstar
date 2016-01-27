@@ -3,14 +3,12 @@
 -- Zone: Mount Kamihr
 --
 -----------------------------------
-package.loaded["scripts/zones/Mount_Kamihr/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Mount_Kamihr/TextIDs");
+local text = require("scripts/zones/Mount_Kamihr/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)

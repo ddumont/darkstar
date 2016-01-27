@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Lower Jeuno
--- NPC:  Harnek
+--  NPC: Harnek
 -- Starts and Finishes Quest: The Tenshodo Showdown (finish)
 -- @zone 245
 -- @pos 44 0 -19
------------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
 package.loaded["scripts/globals/settings"] = nil;
 -----------------------------------
 
@@ -13,7 +11,7 @@ require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -45,8 +43,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -54,21 +52,21 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x2725) then
         player:setVar("theTenshodoShowdownCS",2);
         player:delKeyItem(LETTER_FROM_THE_TENSHODO);
         player:addKeyItem(TENSHODO_ENVELOPE);
-        player:messageSpecial(KEYITEM_OBTAINED,TENSHODO_ENVELOPE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,TENSHODO_ENVELOPE);
     elseif (csid == 0x2726) then
         if (player:getFreeSlotsCount() == 0 or player:hasItem(16764)) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,16764); -- Marauder's Knife
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,16764); -- Marauder's Knife
         else
             player:delKeyItem(SIGNED_ENVELOPE);
             player:addItem(16764);
-            player:messageSpecial(ITEM_OBTAINED, 16764); -- Marauder's Knife
+            player:messageSpecial(text.ITEM_OBTAINED, 16764); -- Marauder's Knife
             player:setVar("theTenshodoShowdownCS",0);
             player:addFame(WINDURST,WIN_FAME*30);
             player:completeQuest(WINDURST,THE_TENSHODO_SHOWDOWN);

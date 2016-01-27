@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area: Windurst Waters
--- NPC: Chamama
--- Involved In Quest:     Inspector's Gadget
--- Starts Quest:        In a Pickle
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
+--  NPC: Chamama
+-- Involved In Quest: Inspector's Gadget
+-- Starts Quest:      In a Pickle
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -126,8 +124,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -135,19 +133,19 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0228) then
         player:tradeComplete();
         player:addKeyItem(FAKE_MOUSTACHE);
-        player:messageSpecial(KEYITEM_OBTAINED,FAKE_MOUSTACHE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,FAKE_MOUSTACHE);
     elseif (csid == 0x031d) then
         player:setVar("ThePromise",1);
     elseif (csid == 0x031f) then
         player:tradeComplete();
         player:addKeyItem(INVISIBLE_MAN_STICKER);
-        player:messageSpecial(KEYITEM_OBTAINED,INVISIBLE_MAN_STICKER);
+        player:messageSpecial(text.KEYITEM_OBTAINED,INVISIBLE_MAN_STICKER);
     elseif (csid == 0x028e and option == 1) then  -- IN A PICKLE + RARAB TAIL: Quest Begin
         player:addQuest(WINDURST,IN_A_PICKLE);
     elseif (csid == 0x0293) then  -- IN A PICKLE: Quest Turn In (1st Time)
@@ -155,9 +153,9 @@ function onEventFinish(player,csid,option)
         player:completeQuest(WINDURST,IN_A_PICKLE);    
         player:needToZone(true);
         player:addItem(12505);
-        player:messageSpecial(ITEM_OBTAINED,12505);
+        player:messageSpecial(text.ITEM_OBTAINED,12505);
         player:addGil(GIL_RATE*200);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*200);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*200);
         player:addFame(WINDURST,WIN_FAME*75);
     elseif (csid == 0x0295 and option == 1) then 
         player:setVar("QuestInAPickle_var",1)

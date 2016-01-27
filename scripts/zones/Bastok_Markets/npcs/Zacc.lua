@@ -1,14 +1,10 @@
 -----------------------------------
---  Area: Bastok Markets
---   NPC: Zacc
---  Type: Quest NPC
+-- Area: Bastok Markets
+--  NPC: Zacc
+-- Type: Quest NPC
 -- @zone: 235
---  @pos -255.709 -13 -91.379
------------------------------------
-
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-
-require("scripts/zones/Bastok_Markets/TextIDs");
+-- @pos -255.709 -13 -91.379
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 require("scripts/globals/quests");
 
 -----------------------------------

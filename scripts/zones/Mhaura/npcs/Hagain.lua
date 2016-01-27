@@ -1,12 +1,10 @@
 -----------------------------------
---    Area: Mhaura
---    NPC: Hagain
---    Standard Info NPC
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Hagain
+-- Standard Info NPC
 -----------------------------------
 
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
 
@@ -49,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -58,12 +56,12 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x2713) then
         player:setVar("hittingTheMarquisateHagainCS",2);
         player:addKeyItem(BOMB_INCENSE);
-        player:messageSpecial(KEYITEM_OBTAINED,BOMB_INCENSE);            
+        player:messageSpecial(text.KEYITEM_OBTAINED,BOMB_INCENSE);            
     elseif (csid == 0x2715) then
         player:setVar("hittingTheMarquisateHagainCS",9);    
         player:delKeyItem(BOMB_INCENSE);
@@ -71,6 +69,3 @@ function onEventFinish(player,csid,option)
     end
 
 end;
-
-
-

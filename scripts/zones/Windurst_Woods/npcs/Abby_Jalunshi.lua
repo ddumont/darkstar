@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Woods
---   NPC: Abby Jalunshi
---  Type: Moghouse Renter
+-- Area: Windurst Woods
+--  NPC: Abby Jalunshi
+-- Type: Moghouse Renter
 -- @zone: 241
---  @pos -101.895 -5 36.172
+-- @pos -101.895 -5 36.172
 --
 -- Auto-Script: Requires Verification (Verfied By Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------
@@ -42,4 +40,3 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
 end;
-

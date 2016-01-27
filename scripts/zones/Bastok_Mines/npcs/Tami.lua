@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC: Tami
+--  NPC: Tami
 -- Starts & Finishes Repeatable Quest: Groceries
 -- Note: Repeatable until proper completion
------------------------------------
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -44,7 +42,7 @@ GroceriesVar = player:getVar("Groceries");
     elseif (Groceries == QUEST_AVAILABLE or GroceriesVar == 0) then
         player:startEvent(0x006e);
     elseif (GroceriesVar == 1) then
-        player:showText(npc,10510);
+        player:showText(npc, text.10510);
     elseif (GroceriesVar == 2) then
         player:startEvent(0x0070);
     end
@@ -56,8 +54,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -65,8 +63,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x006e) then
         Groceries = player:getQuestStatus(BASTOK,GROCERIES);
@@ -75,13 +73,13 @@ function onEventFinish(player,csid,option)
             player:addQuest(BASTOK,GROCERIES);
         end
         player:addKeyItem(0x98);
-        player:messageSpecial(KEYITEM_OBTAINED,0x98);
+        player:messageSpecial(text.KEYITEM_OBTAINED,0x98);
         player:setVar("Groceries",1);
     elseif (csid == 0x0070) then
         player:addFame(BASTOK,BAS_FAME*8);
         player:setVar("Groceries",0);
         player:addGil(GIL_RATE*10);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*10);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*10);
     elseif (csid == 0x0071) then
         FreeSlots = player:getFreeSlotsCount();
     
@@ -92,14 +90,11 @@ function onEventFinish(player,csid,option)
             player:completeQuest(BASTOK,GROCERIES);
             player:addFame(BASTOK,BAS_FAME*75); 
             player:addItem(13594);
-            player:messageSpecial(ITEM_OBTAINED,13594);
+            player:messageSpecial(text.ITEM_OBTAINED,13594);
         else
-            player:messageSpecial(FULL_INVENTORY_AFTER_TRADE,13594);
+            player:messageSpecial(text.FULL_INVENTORY_AFTER_TRADE,13594);
         end
     end
     
 end;
-
-
-
 

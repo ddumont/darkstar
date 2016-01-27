@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Pashhow Marshlands
---  NPC:  Stone Monument
---  Involved in quest "An Explorer's Footsteps"
---  @pos -300.672 21.620 304.179 109
------------------------------------
-package.loaded["scripts/zones/Pashhow_Marshlands/TextIDs"] = nil;
+-- Area: Pashhow Marshlands
+--  NPC: Stone Monument
+-- Involved in quest "An Explorer's Footsteps"
+-- @pos -300.672 21.620 304.179 109
 -----------------------------------
 
-require("scripts/zones/Pashhow_Marshlands/TextIDs");
+local text = require("scripts/zones/Pashhow_Marshlands/TextIDs");
 
 -----------------------------------
 -- onTrigger
@@ -25,7 +23,7 @@ function onTrade(player,npc,trade)
     if (trade:getItemCount() == 1 and trade:hasItemQty(571,1)) then
         player:tradeComplete();
         player:addItem(570);
-        player:messageSpecial(ITEM_OBTAINED,570);
+        player:messageSpecial(text.ITEM_OBTAINED,570);
         player:setVar("anExplorer-CurrentTablet",0x00100);
     end
 end;
@@ -35,8 +33,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -44,6 +42,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

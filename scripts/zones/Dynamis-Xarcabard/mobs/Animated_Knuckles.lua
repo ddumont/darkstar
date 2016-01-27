@@ -1,10 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: Animated Knuckles
+-- MOB: Animated Knuckles
 -----------------------------------
 
 require("scripts/globals/status");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobEngaged

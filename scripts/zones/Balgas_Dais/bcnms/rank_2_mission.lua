@@ -2,12 +2,10 @@
 -- Area: Horlais Peak
 -- Name: Mission Rank 2
 -- @pos 299 -123 345 146
------------------------------------
-package.loaded["scripts/zones/Balgas_Dais/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Balgas_Dais/TextIDs");
+local text = require("scripts/zones/Balgas_Dais/TextIDs");
 
 -----------------------------------
 
@@ -52,7 +50,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         if (player:hasKeyItem(DARK_KEY)) then
             player:addKeyItem(KINDRED_CREST);
-            player:messageSpecial(KEYITEM_OBTAINED,KINDRED_CREST);
+            player:messageSpecial(text.KEYITEM_OBTAINED,KINDRED_CREST);
             player:setVar("MissionStatus",9);
             player:delKeyItem(DARK_KEY);
         end

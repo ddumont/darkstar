@@ -4,12 +4,10 @@
 -- Type: Woodworking Adv. Synthesis Image Support
 -- @pos -183.320 9.999 269.651 231
 -----------------------------------
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -58,7 +56,7 @@ function onEventFinish(player,csid,option)
 
     if (csid == 0x026F and option == 1) then
         player:delGil(Cost);
-        player:messageSpecial(IMAGE_SUPPORT,0,1,0);
+        player:messageSpecial(text.IMAGE_SUPPORT,0,1,0);
         player:addStatusEffect(EFFECT_WOODWORKING_IMAGERY,3,0,480);
     end
 end;

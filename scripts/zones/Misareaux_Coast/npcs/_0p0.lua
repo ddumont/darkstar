@@ -3,11 +3,9 @@
 --  NPC: Dilapidated Gate
 -- @pos 260 9 -435 25
 -----------------------------------
-package.loaded["scripts/zones/Misareaux_Coast/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Misareaux_Coast/TextIDs");
+local text = require("scripts/zones/Misareaux_Coast/TextIDs");
 
 -----------------------------------
 -- onTrade
@@ -33,10 +31,10 @@ function onTrigger(player,npc)
             SpawnMob(16879894,180):updateClaim(player);
             SpawnMob(16879895,180):updateClaim(player);
         else
-            player:messageSpecial(DOOR_CLOSED);
+            player:messageSpecial(text.DOOR_CLOSED);
         end
     else
-        player:messageSpecial(DOOR_CLOSED);
+        player:messageSpecial(text.DOOR_CLOSED);
     end
 end;
 

@@ -1,10 +1,8 @@
 -----------------------------------
---  Area: Carpenters' Landing
---  NPC:  Ratoulle
---  Type: Adventurer's Assistant
---  @pos -133.959 -3 60.839 2
------------------------------------
-package.loaded["scripts/zones/Carpenters_Landing/TextIDs"] = nil;
+-- Area: Carpenters' Landing
+--  NPC: Ratoulle
+-- Type: Adventurer's Assistant
+-- @pos -133.959 -3 60.839 2
 -----------------------------------
 
 -----------------------------------

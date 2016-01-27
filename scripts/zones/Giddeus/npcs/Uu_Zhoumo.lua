@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Giddeus
--- NPC:  Uu Zhoumo
+--  NPC: Uu Zhoumo
 -- Involved in Mission 2-3
 -- @pos -179 16 155 145
------------------------------------
-package.loaded["scripts/zones/Giddeus/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Giddeus/TextIDs");
+local text = require("scripts/zones/Giddeus/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -49,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -58,8 +56,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0028) then
         player:setVar("MissionStatus",5);
@@ -72,6 +70,3 @@ function onEventFinish(player,csid,option)
         player:delKeyItem(SHIELD_OFFERING);
     end
 end;
-
-
-

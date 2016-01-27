@@ -1,11 +1,10 @@
 -----------------------------------
 -- Area: Pashhow Marshlands
--- NPC:  Beastmen_s_Banner
+--  NPC: Beastmen_s_Banner
 -- @pos -172.764 25.119 93.640 109
 -----------------------------------
-package.loaded["scripts/zones/Pashhow_Marshlands/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Pashhow_Marshlands/TextIDs");
+
+local text = require("scripts/zones/Pashhow_Marshlands/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -19,7 +18,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(BEASTMEN_BANNER);
+    player:messageSpecial(text.BEASTMEN_BANNER);
 end;
 
 -----------------------------------
@@ -27,8 +26,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
 end;
 
 -----------------------------------
@@ -36,6 +35,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
 end;

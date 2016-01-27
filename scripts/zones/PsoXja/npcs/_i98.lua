@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Pso'Xja
--- NPC:  Stone Gate
------------------------------------
-package.loaded["scripts/zones/PsoXja/TextIDs"] = nil;
+--  NPC: Stone Gate
 -----------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/PsoXja/TextIDs");
+local text = require("scripts/zones/PsoXja/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -33,7 +31,7 @@ function onTrigger(player,npc)
             player:startEvent(0x0046);
         end
     else
-        player:messageSpecial(DOOR_LOCKED);
+        player:messageSpecial(text.DOOR_LOCKED);
     end
     return 1;
 end;
@@ -43,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

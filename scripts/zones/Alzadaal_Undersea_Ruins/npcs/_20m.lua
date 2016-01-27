@@ -4,13 +4,10 @@
 -- @pos 125 -2 20 72
 -----------------------------------
 
-package.loaded["scripts/zones/Alzadaal_Undersea_Ruins/TextIDs"] = nil;
------------------------------------
-
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
 require("scripts/globals/besieged");
-require("scripts/zones/Alzadaal_Undersea_Ruins/TextIDs");
+local text = require("scripts/zones/Alzadaal_Undersea_Ruins/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -33,7 +30,7 @@ function onTrigger(player,npc)
         end
         player:startEvent(0x0195, assaultid, -4, 0, recommendedLevel, 2, armband);
     else
-        player:messageSpecial(NOTHING_HAPPENS);
+        player:messageSpecial(text.NOTHING_HAPPENS);
     end
 end;
 

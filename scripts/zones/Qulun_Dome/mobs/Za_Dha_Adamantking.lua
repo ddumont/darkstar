@@ -1,10 +1,10 @@
 -----------------------------------
 -- Area: Qulun Dome
---  NM:  Za Dha Adamantking
+-- NM:  Za Dha Adamantking
 -----------------------------------
 
 require("scripts/globals/titles");
-require("scripts/zones/Qulun_Dome/TextIDs");
+local text = require("scripts/zones/Qulun_Dome/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

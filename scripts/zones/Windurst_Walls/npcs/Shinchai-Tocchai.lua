@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Walls
---   NPC: Shinchai-Tocchai
---  Type: Moghouse Renter
+-- Area: Windurst Walls
+--  NPC: Shinchai-Tocchai
+-- Type: Moghouse Renter
 -- @zone: 239
---  @pos -220.551 -0.001 -116.916
+-- @pos -220.551 -0.001 -116.916
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

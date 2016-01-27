@@ -1,12 +1,14 @@
 -----------------------------------
 -- Area: Dynamis Beaucedine
---  MOB: Angra Mainyu
+-- MOB: Angra Mainyu
 -- Mega Boss
 -----------------------------------
 
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/status");
+
+local text = require("scripts/zones/Dynamis-Beaucedine/TextIDs");
 
 -----------------------------------
 -- onMobInitialize Action
@@ -87,7 +89,7 @@ function onMobDeath(mob,killer,ally)
     
     if (ally:hasKeyItem(HYDRA_CORPS_INSIGNIA) == false) then
         ally:addKeyItem(HYDRA_CORPS_INSIGNIA);
-        ally:messageSpecial(KEYITEM_OBTAINED,HYDRA_CORPS_INSIGNIA);
+        ally:messageSpecial(text.KEYITEM_OBTAINED,HYDRA_CORPS_INSIGNIA);
     end
     
 end;

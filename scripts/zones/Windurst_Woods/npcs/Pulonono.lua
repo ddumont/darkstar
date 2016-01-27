@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Woods
---   NPC: Pulonono
---  Type: VCS Chocobo Trainer
+-- Area: Windurst Woods
+--  NPC: Pulonono
+-- Type: VCS Chocobo Trainer
 -- @zone: 241
---  @pos 130.124 -6.35 -119.341
+-- @pos 130.124 -6.35 -119.341
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------
@@ -42,4 +40,3 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
 end;
-

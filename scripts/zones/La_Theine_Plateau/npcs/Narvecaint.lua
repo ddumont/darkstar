@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: La Theine Plateau
--- NPC:  Narvecaint
+--  NPC: Narvecaint
 -- Involved in Mission: The Rescue Drill
 -- @pos -263 22 129 102
 -----------------------------------
-package.loaded["scripts/zones/La_Theine_Plateau/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/La_Theine_Plateau/TextIDs");
+local text = require("scripts/zones/La_Theine_Plateau/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -29,16 +27,16 @@ function onTrigger(player,npc)
         if (MissionStatus == 6) then
             player:startEvent(0x006b);
         elseif (MissionStatus == 7) then
-            player:showText(npc, RESCUE_DRILL + 14);
+            player:showText(npc, text.RESCUE_DRILL + 14);
         elseif (MissionStatus == 8) then
-            player:showText(npc, RESCUE_DRILL + 21);
+            player:showText(npc, text.RESCUE_DRILL + 21);
         elseif (MissionStatus >= 9) then
-            player:showText(npc, RESCUE_DRILL + 26);
+            player:showText(npc, text.RESCUE_DRILL + 26);
         else
-            player:showText(npc, RESCUE_DRILL);
+            player:showText(npc, text.RESCUE_DRILL);
         end
     else
-        player:showText(npc, RESCUE_DRILL);
+        player:showText(npc, text.RESCUE_DRILL);
     end
     
 end;
@@ -48,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x006b) then
         player:setVar("MissionStatus",7);

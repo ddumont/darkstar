@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Spire of Vahzl
--- NPC:  Radiant Aureole
------------------------------------
-package.loaded["scripts/zones/Spire_of_Vahzl/TextIDs"] = nil;
+--  NPC: Radiant Aureole
 -----------------------------------
 
-require("scripts/zones/Spire_of_Vahzl/TextIDs");
+local text = require("scripts/zones/Spire_of_Vahzl/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -27,8 +25,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("onUpdate CSID: %u",csid);
---printf("onUpdate RESULT: %u",option);
+    -- printf("onUpdate CSID: %u",csid);
+    -- printf("onUpdate RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -36,8 +34,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("onFinish CSID: %u",csid);
---printf("onFinish RESULT: %u",option);
+    -- printf("onFinish CSID: %u",csid);
+    -- printf("onFinish RESULT: %u",option);
     
     if (csid == 0x000F and option == 1) then
         player:setPos(-379.947, 48.045, 334.059, 192, 9); -- To Pso'Xja {R}

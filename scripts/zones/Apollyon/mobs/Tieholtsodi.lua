@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Apollyon SE
--- NPC:  Tieholtsodi
+--  NPC: Tieholtsodi
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
-
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

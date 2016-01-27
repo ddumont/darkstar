@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Hall of Transference
--- NPC:  Large Apparatus (Right) - Holla
+--  NPC: Large Apparatus (Right) - Holla
 -- @pos -242.301 -1.849 269.867 14
 -----------------------------------
-package.loaded["scripts/zones/Hall_of_Transference/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Hall_of_Transference/TextIDs");
+local text = require("scripts/zones/Hall_of_Transference/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -25,7 +23,7 @@ end;
 
 function onTrigger(player,npc)
     if (player:getVar("HollaChipRegistration") == 1) then
-        player:messageSpecial(NO_RESPONSE_OFFSET+6); -- Device seems to be functioning correctly. 
+        player:messageSpecial(text.NO_RESPONSE_OFFSET+6); -- Device seems to be functioning correctly. 
     else
         player:startEvent(0x00A5); -- Hexagonal Cones
     end
@@ -48,8 +46,8 @@ function onEventFinish(player,csid,option)
 -- printf("CSID: %u",csid);
 -- printf("RESULT: %u",option);
     if (csid == 0x00A6) then
-        player:messageSpecial(NO_RESPONSE_OFFSET+4,478); -- You fit.. 
-        player:messageSpecial(NO_RESPONSE_OFFSET+5);     -- Device has been repaired
+        player:messageSpecial(text.NO_RESPONSE_OFFSET+4,478); -- You fit.. 
+        player:messageSpecial(text.NO_RESPONSE_OFFSET+5);     -- Device has been repaired
         player:setVar("HollaChipRegistration",1); 
     end
 end;

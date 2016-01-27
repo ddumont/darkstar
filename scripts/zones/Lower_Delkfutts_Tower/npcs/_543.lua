@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Lower Delkfutt's Tower
--- NPC:  Cermet Door
------------------------------------
-package.loaded["scripts/zones/Lower_Delkfutts_Tower/TextIDs"] = nil;
+--  NPC: Cermet Door
 -----------------------------------
 
-require("scripts/zones/Lower_Delkfutts_Tower/TextIDs");
+local text = require("scripts/zones/Lower_Delkfutts_Tower/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -19,7 +17,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(DOOR_FIRMLY_SHUT);
+    player:messageSpecial(text.DOOR_FIRMLY_SHUT);
 end; 
 
 -----------------------------------
@@ -27,8 +25,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

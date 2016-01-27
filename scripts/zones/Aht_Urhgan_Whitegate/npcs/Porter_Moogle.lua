@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Aht Urhgan Whitegate
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 50
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Area: Aht Urhgan Whitegate
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 50
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

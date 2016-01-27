@@ -2,12 +2,10 @@
 -- Area: Full Moon Fountain
 -- Name: The Moonlit Path
 -----------------------------------
-package.loaded["scripts/zones/Full_Moon_Fountain/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Full_Moon_Fountain/TextIDs");
+local text = require("scripts/zones/Full_Moon_Fountain/TextIDs");
 
 -----------------------------------
 
@@ -61,6 +59,6 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         player:delKeyItem(MOON_BAUBLE);
         player:addKeyItem(WHISPER_OF_THE_MOON);
-        player:messageSpecial(KEYITEM_OBTAINED,WHISPER_OF_THE_MOON);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHISPER_OF_THE_MOON);
     end
 end;

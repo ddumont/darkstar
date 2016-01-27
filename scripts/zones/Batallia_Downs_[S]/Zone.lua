@@ -3,11 +3,8 @@
 -- Zone: Batallia_Downs_[S] (84)
 --
 -----------------------------------
-package.loaded["scripts/zones/Batallia_Downs_[S]/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Batallia_Downs_[S]/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -40,8 +37,8 @@ end;
 -----------------------------------    
 
 function onEventUpdate(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    
 
 -----------------------------------    
@@ -49,6 +46,6 @@ end;
 -----------------------------------    
 
 function onEventFinish(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    

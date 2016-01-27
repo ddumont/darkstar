@@ -1,13 +1,9 @@
 -----------------------------------
---  Area: Al'Taieu
---  NPC:  Swirling_Vortex
---  Type: Standard NPC
---  @zone 33
+-- Area: Al'Taieu
+--  NPC: Swirling_Vortex
+-- Type: Standard NPC
+-- @zone 33
 -----------------------------------
-package.loaded["scripts/zones/AlTaieu/TextIDs"] = nil;
------------------------------------
-
-require("scripts/zones/AlTaieu/TextIDs");
 require("scripts/globals/limbus");
 
 -----------------------------------

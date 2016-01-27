@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: La_Theine Plateau
--- NPC:  Shattered Telepoint
+--  NPC: Shattered Telepoint
 -- @pos 334 19 -60 102
------------------------------------
-package.loaded["scripts/zones/La_Theine_Plateau/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/La_Theine_Plateau/TextIDs");
+local text = require("scripts/zones/La_Theine_Plateau/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -33,7 +31,7 @@ function onTrigger(player,npc)
     elseif (player:getCurrentMission(COP) > THE_MOTHERCRYSTALS or player:hasCompletedMission(COP,THE_LAST_VERSE) or (player:getCurrentMission(COP) == BELOW_THE_ARKS and player:getVar("PromathiaStatus") > 1)) then
         player:startEvent(0x0ca); -- normal cs (third promyvion and each entrance after having that promyvion visited or mission completed)
     else
-        player:messageSpecial(TELEPOINT_HAS_BEEN_SHATTERED);
+        player:messageSpecial(text.TELEPOINT_HAS_BEEN_SHATTERED);
     end
 
 end;

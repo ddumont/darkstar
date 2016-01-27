@@ -2,13 +2,11 @@
 -- Area: Cloister of Tides
 -- BCNM: Trial by Water
 -----------------------------------
-package.loaded["scripts/zones/Cloister_of_Tides/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
-require("scripts/zones/Cloister_of_Tides/TextIDs");
+local text = require("scripts/zones/Cloister_of_Tides/TextIDs");
 
 -----------------------------------
 
@@ -50,11 +48,11 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         if (player:hasSpell(300) == false) then
         player:addSpell(300); -- Leviathan
-        player:messageSpecial(LEVIATHAN_UNLOCKED,0,0,2);
+        player:messageSpecial(text.LEVIATHAN_UNLOCKED,0,0,2);
         end
         if (player:hasItem(4181) == false) then
             player:addItem(4181);
-            player:messageSpecial(ITEM_OBTAINED,4181); -- Scroll of instant warp
+            player:messageSpecial(text.ITEM_OBTAINED,4181); -- Scroll of instant warp
         end
         player:setVar("TrialSizeWater_date", 0);
         player:addFame(NORG,NORG_FAME*30);

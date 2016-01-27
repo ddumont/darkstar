@@ -1,10 +1,10 @@
 -----------------------------------
 -- Area: Qulun_Dome
---  NM:  Diamond_Quadav
+-- NM:  Diamond_Quadav
 -- Note: PH for Za Dha Adamantking PH
 -----------------------------------
 
-require("scripts/zones/Qulun_Dome/TextIDs");
+local text = require("scripts/zones/Qulun_Dome/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

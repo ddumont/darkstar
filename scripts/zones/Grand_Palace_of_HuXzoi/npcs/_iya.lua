@@ -1,12 +1,10 @@
 -----------------------------------
---  Area: Grand Palace of Hu'Xzoi
---  NPC:  Gate of the Gods
---  @pos -20 0.1 -283 34
------------------------------------
-package.loaded["scripts/zones/Grand_Palace_of_HuXzoi/TextIDs"] = nil;
+-- Area: Grand Palace of Hu'Xzoi
+--  NPC: Gate of the Gods
+-- @pos -20 0.1 -283 34
 -----------------------------------
 
-require("scripts/zones/Grand_Palace_of_HuXzoi/TextIDs");
+local text = require("scripts/zones/Grand_Palace_of_HuXzoi/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -53,7 +51,7 @@ function onEventFinish(player,csid,option)
         player:completeMission(COP, GARDEN_OF_ANTIQUITY);
         player:addMission(COP, A_FATE_DECIDED);
         player:addItem(14672);
-        player:messageSpecial(ITEM_OBTAINED, 14672); 
+        player:messageSpecial(text.ITEM_OBTAINED, 14672); 
     end
     
 end;

@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Mhaura
--- NPC: Pekuku
+--  NPC: Pekuku
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 
 -----------------------------------
 -- onTrade Action

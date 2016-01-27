@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Temenos W T    
--- NPC: Enhanced_Pugil
+--  NPC: Enhanced_Pugil
 
 -----------------------------------
-package.loaded["scripts/zones/Temenos/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Temenos/TextIDs");
+local text = require("scripts/zones/Temenos/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

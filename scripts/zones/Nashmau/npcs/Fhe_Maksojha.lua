@@ -1,15 +1,13 @@
 -----------------------------------
---  Area: Nashmau
---  NPC:  Fhe Maksojha
---  Type: Standard NPC
---  @pos 19.084 -7 71.287 53
------------------------------------
-package.loaded["scripts/zones/Nashmau/TextIDs"] = nil;
+-- Area: Nashmau
+--  NPC: Fhe Maksojha
+-- Type: Standard NPC
+-- @pos 19.084 -7 71.287 53
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Nashmau/TextIDs");
+local text = require("scripts/zones/Nashmau/TextIDs");
 
 -----------------------------------
 
@@ -65,11 +63,11 @@ function onEventFinish(player,csid,option)
        player:setVar("notmeanttobeCS",3);
     elseif (csid == 0x0129) then
         if (player:getFreeSlotsCount() == 0) then
-           player:messageSpecial(ITEM_CANNOT_BE_OBTAINEDX,2187,3);
+           player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINEDX,2187,3);
         else
            player:setVar("notmeanttobeCS",0);
            player:addItem(2187,3);
-           player:messageSpecial(ITEM_OBTAINEDX,2187,3);
+           player:messageSpecial(text.ITEM_OBTAINEDX,2187,3);
            player:completeQuest(AHT_URHGAN,NOT_MEANT_TO_BE);
         end
     end

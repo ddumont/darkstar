@@ -3,6 +3,7 @@
 -- Zone: Dynamis-Beaucedine
 --
 -----------------------------------
+<<<<<<< HEAD
 package.loaded["scripts/zones/Dynamis-Beaucedine/TextIDs"] = nil;
 -----------------------------------
 
@@ -11,6 +12,14 @@ require("scripts/zones/Dynamis-Beaucedine/TextIDs");
 
 -----------------------------------
 --  onInitialize
+=======
+
+require("scripts/globals/settings");
+local text = require("scripts/zones/Dynamis-Beaucedine/TextIDs");
+
+-----------------------------------
+-- onInitialize
+>>>>>>> Safe, cacheable requires in lua.
 -----------------------------------
 
 function onInitialize(zone)
@@ -24,7 +33,11 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
+<<<<<<< HEAD
         conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+=======
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
+>>>>>>> Safe, cacheable requires in lua.
     end
 end;
 

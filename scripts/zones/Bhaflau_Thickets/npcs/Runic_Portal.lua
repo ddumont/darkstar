@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Bhaflau Thickets
--- NPC:  Runic Portal
+--  NPC: Runic Portal
 -- Mamook Ja Teleporter Back to Aht Urgan Whitegate
 -- @pos -211 -11 -818 52
------------------------------------
-package.loaded["scripts/zones/Bhaflau_Thickets/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/besieged");
 require("scripts/globals/teleports");
 require("scripts/globals/missions");
-require("scripts/zones/Bhaflau_Thickets/TextIDs");
+local text = require("scripts/zones/Bhaflau_Thickets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -38,7 +36,7 @@ function onTrigger(player,npc)
             player:startEvent(0x006F);
         end
     else
-        player:messageSpecial(RESPONSE);
+        player:messageSpecial(text.RESPONSE);
     end
 end; 
 
@@ -47,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -56,8 +54,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x006F and option == 1) then
         if (player:getVar("TOAUM2") == 1) then

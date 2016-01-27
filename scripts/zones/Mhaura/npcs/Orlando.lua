@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Mhaura
---  NPC:  Orlando
---  Type: Standard NPC
---  @pos -37.268 -9 58.047 249
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Orlando
+-- Type: Standard NPC
+-- @pos -37.268 -9 58.047 249
 -----------------------------------
 
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 require("scripts/globals/keyitems");
 require("scripts/globals/settings");
 require("scripts/globals/quests");
@@ -97,7 +95,7 @@ function onEventFinish(player,csid,option)
         player:tradeComplete();
         player:addFame(WINDURST,WIN_FAME*10);
         player:addGil(payout);
-        player:messageSpecial(GIL_OBTAINED,payout);
+        player:messageSpecial(text.GIL_OBTAINED,payout);
         player:completeQuest(OTHER_AREAS, ORLANDO_S_ANTIQUES);
         player:setVar("ANTIQUE_PAYOUT", 0);
         player:setLocalVar("OrlandoRepeat", 0);

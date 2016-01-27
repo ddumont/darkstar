@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Qufim Island
--- NPC: Trodden Snow
+--  NPC: Trodden Snow
 -- Mission: ASA - THAT_WHICH_CURDLES_BLOOD
 -- Mission: ASA - SUGAR_COATED_DIRECTIVE
 -- @zone 126
 -- @pos -19 -17 104
------------------------------------
-package.loaded["scripts/zones/Qufim_Island/TextIDs"] = nil;
 -------------------------------------
 
-require("scripts/zones/Qufim_Island/TextIDs");
+local text = require("scripts/zones/Qufim_Island/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
@@ -97,17 +95,17 @@ function onEventFinish(player,csid,option)
     
      if (csid==0x002c) then
             player:addKeyItem(DOMINAS_SCARLET_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,DOMINAS_SCARLET_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DOMINAS_SCARLET_SEAL);
             player:addKeyItem(DOMINAS_CERULEAN_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,DOMINAS_CERULEAN_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DOMINAS_CERULEAN_SEAL);
             player:addKeyItem(DOMINAS_EMERALD_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,DOMINAS_EMERALD_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DOMINAS_EMERALD_SEAL);
             player:addKeyItem(DOMINAS_AMBER_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,DOMINAS_AMBER_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DOMINAS_AMBER_SEAL);
             player:addKeyItem(DOMINAS_VIOLET_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,DOMINAS_VIOLET_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DOMINAS_VIOLET_SEAL);
             player:addKeyItem(DOMINAS_AZURE_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,DOMINAS_AZURE_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DOMINAS_AZURE_SEAL);
         
             player:completeMission(ASA,THAT_WHICH_CURDLES_BLOOD);
         player:addMission(ASA,SUGAR_COATED_DIRECTIVE);

@@ -5,11 +5,10 @@
 -----------------------------------
 
 require("scripts/globals/settings");
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
-require("scripts/zones/Apollyon/TextIDs");
+local text = require("scripts/zones/Apollyon/TextIDs");
 require("scripts/globals/limbus");
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)
@@ -66,7 +65,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
     
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -76,7 +75,7 @@ end;
 -----------------------------------
 
 function onZoneIn(player,prevZone)
-cs = -1;
+    local cs = -1;
     if (prevZone~=33) then
       local playerLimbusID = player:getVar("LimbusID");
         if (playerLimbusID== 1290 or playerLimbusID== 1291 or playerLimbusID== 1294 or playerLimbusID== 1295 or playerLimbusID== 1296 or playerLimbusID== 1297) then
@@ -89,7 +88,7 @@ cs = -1;
         player:setPos(643,0.1,-600);        
     end 
     
-return cs;
+    return cs;
 end;
 
 -----------------------------------
@@ -227,7 +226,7 @@ function onEventUpdate(player,csid,option)
 -- printf("RESULT: %u",option);
    if (csid == 0x00D1 and option == 0 and GetServerVariable("[SW_Apollyon]MimicTrigger")==0) then
     SpawnCofferSWfloor3();
-    --printf("Mimics should be 1: %u",GetServerVariable("[SW_Apollyon]MimicTrigger"));
+    -- printf("Mimics should be 1: %u",GetServerVariable("[SW_Apollyon]MimicTrigger"));
    elseif (csid == 0x00CF and option == 0 and GetServerVariable("[SW_Apollyon]ElementalTrigger")==0) then 
     SetServerVariable("[SW_Apollyon]ElementalTrigger",VanadielDayElement()+1);
     -- printf("Elementals should be 1: %u",GetServerVariable("[SW_Apollyon]ElementalTrigger"));
@@ -247,6 +246,3 @@ function onEventFinish(player,csid,option)
     player:setPos(-561,0,443,242,0x21); -- APPOLLYON_NW_SW exit
    end   
 end;
-
-
-

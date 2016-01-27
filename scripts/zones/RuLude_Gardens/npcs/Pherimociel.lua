@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Ru'Lude Gardens
--- NPC:  Pherimociel
+--  NPC: Pherimociel
 -- Involved in mission: COP 1-2
 -- @pos -31.627 1.002 67.956 243
 -----------------------------------
-package.loaded["scripts/zones/RuLude_Gardens/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/RuLude_Gardens/TextIDs");
+local text = require("scripts/zones/RuLude_Gardens/TextIDs");
 
 -----------------------------------
 -- onTrade Action

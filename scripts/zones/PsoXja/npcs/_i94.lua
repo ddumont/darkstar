@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area:  Pso'Xja
--- NPC:   _i94 (Stone Gate)
+--  NPC:  _i94 (Stone Gate)
 -- Notes: Blue Bracelet Door
 -- @pos -330.000 14.074 -261.600 9
 -----------------------------------
-package.loaded["scripts/zones/PsoXja/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/PsoXja/TextIDs");
+local text = require("scripts/zones/PsoXja/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -29,10 +27,10 @@ function onTrigger(player,npc)
         if (player:hasKeyItem(595)==true) then -- Blue Bracelet
             player:startEvent(0x003d);
         else
-            player:messageSpecial(ARCH_GLOW_BLUE);    
+            player:messageSpecial(text.ARCH_GLOW_BLUE);    
         end    
     elseif (Z <= -262) then
-        player:messageSpecial(CANNOT_OPEN_SIDE);
+        player:messageSpecial(text.CANNOT_OPEN_SIDE);
     end
 
 end;
@@ -42,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

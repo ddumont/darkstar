@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Alzadaal Undersea Ruins
--- NPC:  Runic Portal
+--  NPC: Runic Portal
 -- Arrapago Reef Teleporter Back to Aht Urgan Whitegate
 -- @pos 206.500 -1.220 33.500 72
 -- @pos 206.500 -1.220 6.500 72
 -----------------------------------
-package.loaded["scripts/zones/Alzadaal_Undersea_Ruins/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/besieged");
 require("scripts/globals/teleports");
-require("scripts/zones/Alzadaal_Undersea_Ruins/TextIDs");
+local text = require("scripts/zones/Alzadaal_Undersea_Ruins/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -35,7 +33,7 @@ function onTrigger(player,npc)
                 player:startEvent(0x0079);
             end
         else
-            player:messageSpecial(RESPONSE);
+            player:messageSpecial(text.RESPONSE);
         end
     else
         if (player:getCurrentMission(TOAU) > IMMORTAL_SENTRIES) then
@@ -45,7 +43,7 @@ function onTrigger(player,npc)
                 player:startEvent(0x007a);
             end
         else
-            player:messageSpecial(RESPONSE);
+            player:messageSpecial(text.RESPONSE);
         end
     end
     
@@ -56,8 +54,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

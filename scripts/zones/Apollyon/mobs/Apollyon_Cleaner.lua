@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon NE    
--- NPC:  Apollyon Cleaner
+--  NPC: Apollyon Cleaner
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

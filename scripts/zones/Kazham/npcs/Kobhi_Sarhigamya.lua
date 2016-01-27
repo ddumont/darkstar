@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Kazham
+-- Area: Kazham
 --  NPC: Kobhi Sarhigamya
---  Type: Item Deliverer
---  @zone: 250
---  @pos -115.29    -11    -22.609
+-- Type: Item Deliverer
+-- @zone: 250
+-- @pos -115.29    -11    -22.609
 --
------------------------------------
-
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

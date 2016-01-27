@@ -1,10 +1,8 @@
 -----------------------------------
---  Area: Castle Oztroja
---  NPC:  Daa Bola the Seer
---  Type: Quest NPC
---  @pos -157.978 -18.179 193.458 151
------------------------------------
-package.loaded["scripts/zones/Castle_Oztroja/TextIDs"] = nil;
+-- Area: Castle Oztroja
+--  NPC: Daa Bola the Seer
+-- Type: Quest NPC
+-- @pos -157.978 -18.179 193.458 151
 -----------------------------------
 
 -----------------------------------

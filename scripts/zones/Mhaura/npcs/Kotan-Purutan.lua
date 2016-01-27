@@ -1,10 +1,8 @@
 -----------------------------------
---  Area: Mhaura
---  NPC:  Kotan-Purutan
---  Involved in Quest: Overnight Delivery
---  @pos 40.323 -8.999 44.242 249
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Kotan-Purutan
+-- Involved in Quest: Overnight Delivery
+-- @pos 40.323 -8.999 44.242 249
 -----------------------------------
 
 -----------------------------------
@@ -58,7 +56,7 @@ function onEventFinish(player,csid,option)
         player:addKeyItem(SMALL_BAG);
         player:setVar("Kenapa_Overnight_Day_var",VanadielDayOfTheYear());
         player:setVar("Kenapa_Overnight_Hour_var",VanadielHour());
-        player:messageSpecial(KEYITEM_OBTAINED,SMALL_BAG);
+        player:messageSpecial(text.KEYITEM_OBTAINED,SMALL_BAG);
     end
 end;
 

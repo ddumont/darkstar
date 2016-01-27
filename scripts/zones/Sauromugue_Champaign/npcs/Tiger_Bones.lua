@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Sauromugue Champaign
--- NPC:  Tiger Bones
+--  NPC: Tiger Bones
 -- Involed in Quest: The Fanged One.
 -- @pos 666 -8 -379 120
--------------------------------------
-package.loaded["scripts/zones/Sauromugue_Champaign/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Sauromugue_Champaign/TextIDs");
+local text = require("scripts/zones/Sauromugue_Champaign/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -30,11 +28,11 @@ function onTrigger(player,npc)
 
         if (deadTiger == 1 and player:hasKeyItem(OLD_TIGERS_FANG) == false) then
             player:addKeyItem(OLD_TIGERS_FANG);
-            player:messageSpecial(KEYITEM_OBTAINED, OLD_TIGERS_FANG);
+            player:messageSpecial(text.KEYITEM_OBTAINED, OLD_TIGERS_FANG);
         elseif (deadTiger == 0) then
             if (GetMobAction(17268808) == 0) then
                 SpawnMob(17268808):addStatusEffect(EFFECT_POISON,40,10,210);
-                player:messageSpecial(OLD_SABERTOOTH_DIALOG_I);
+                player:messageSpecial(text.OLD_SABERTOOTH_DIALOG_I);
                 player:setVar("TheFangedOne_Died",1);
             end
         end
@@ -47,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -56,7 +54,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
 end;

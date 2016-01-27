@@ -1,11 +1,8 @@
 -----------------------------------
 -- Area: Port Windurst
--- NPC: Mhoji Roccoruh
+--  NPC: Mhoji Roccoruh
 -- Map Seller NPC
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
-
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 require("scripts/globals/magic_maps");
 
 -----------------------------------

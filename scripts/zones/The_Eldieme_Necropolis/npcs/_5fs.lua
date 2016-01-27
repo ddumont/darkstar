@@ -1,6 +1,10 @@
 -----------------------------------
 -- Area: The Eldieme Necropolis
+<<<<<<< HEAD
 -- NPC:  South Plate
+=======
+--  NPC: South Plate
+>>>>>>> Safe, cacheable requires in lua.
 -- @pos 185 -32 -10 195
 -----------------------------------
 
@@ -71,8 +75,13 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
+<<<<<<< HEAD
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
+=======
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
+>>>>>>> Safe, cacheable requires in lua.
 end;
 
 -----------------------------------
@@ -80,6 +89,11 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
+<<<<<<< HEAD
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
+=======
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
+>>>>>>> Safe, cacheable requires in lua.
 end;

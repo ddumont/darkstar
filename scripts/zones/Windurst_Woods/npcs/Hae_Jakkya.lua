@@ -1,7 +1,7 @@
 -----------------------------------
---    Area: Windurst Woods
---    NPC:  Hae Jakkya
---    Working 100%
+-- Area: Windurst Woods
+--  NPC: Hae Jakkya
+-- Working 100%
 -----------------------------------
 
 require("scripts/globals/settings");
@@ -23,15 +23,15 @@ function onTrigger(player,npc)
     if (player:hasKeyItem(126) ==true) then
         player:startEvent(0x0196);
     elseif (player:getVar("CHASING_TALES_TRACK_BOOK") == 1) then
-        player:startEvent(0x0193); 
-        
+        player:startEvent(0x0193);
+
     elseif (player:hasKeyItem(149)) then
         player:startEvent(0x0192); -- Neeed CS here
-        
-    else    
+
+    else
         player:startEvent(0x29);
-    end    
-        
+    end
+
 end;
 
 -----------------------------------
@@ -39,8 +39,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -48,9 +48,9 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0192) then
         player:setVar("CHASING_TALES_TRACK_BOOK",1);
-    end        
+    end
 end;

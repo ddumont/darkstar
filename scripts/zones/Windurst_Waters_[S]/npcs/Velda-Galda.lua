@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters (S)
---   NPC: Velda-Galda
---  Type: Mission NPC
+-- Area: Windurst Waters (S)
+--  NPC: Velda-Galda
+-- Type: Mission NPC
 -- @zone: 94
---  @pos 138.631 -3.112 61.658
+-- @pos 138.631 -3.112 61.658
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters_[S]/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

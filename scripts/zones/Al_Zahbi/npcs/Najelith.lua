@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Al Zahbi
---   NPC: Najelith
---  Type: Galeserpent General
+-- Area: Al Zahbi
+--  NPC: Najelith
+-- Type: Galeserpent General
 -- @zone: 48
---  @pos -64.526 -8 39.372
+-- @pos -64.526 -8 39.372
 --
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

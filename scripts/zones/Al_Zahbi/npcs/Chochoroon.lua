@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Al Zahbi
---   NPC: Chochoroon
---  Type: Appraiser
+-- Area: Al Zahbi
+--  NPC: Chochoroon
+-- Type: Appraiser
 -- @zone: 48
---  @pos -42.739 -1 -45.987
+-- @pos -42.739 -1 -45.987
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

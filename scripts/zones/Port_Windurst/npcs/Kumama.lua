@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Port Windurst
--- NPC: Kumama
+--  NPC: Kumama
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,KUMAMA_SHOP_DIALOG);
+    player:showText(npc, text.KUMAMA_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x3239,  2268,1,     --Linen Slops
         0x32b9,  1462,1,     --Holly Clogs
         0x3004,  4482,1,     --Mahogany Shield
@@ -49,8 +50,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -58,6 +59,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

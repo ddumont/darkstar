@@ -1,14 +1,12 @@
 -----------------------------------
---    Area: Port Windurst
---    NPC:  Gold Skull
---    Mission NPC
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
+-- Area: Port Windurst
+--  NPC: Gold Skull
+-- Mission NPC
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -35,7 +33,7 @@ function onTrigger(player,npc)
             if (missionStatus == 7) then
                 player:startEvent(0x003e);
             elseif (missionStatus == 8) then
-                player:showText(npc,GOLD_SKULL_DIALOG + 27);
+                player:showText(npc, text.GOLD_SKULL_DIALOG + 27);
             elseif (missionStatus == 9) then
                 player:startEvent(0x0039);
             end
@@ -45,7 +43,7 @@ function onTrigger(player,npc)
             elseif (missionStatus == 12) then
                 player:startEvent(0x0036);
             elseif (missionStatus == 14) then
-                player:showText(npc,GOLD_SKULL_DIALOG);
+                player:showText(npc, text.GOLD_SKULL_DIALOG);
             elseif (missionStatus == 15) then
                 player:startEvent(0x0039);
             end
@@ -61,8 +59,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -70,12 +68,12 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0035) then
         player:addKeyItem(DULL_SWORD);
-        player:messageSpecial(KEYITEM_OBTAINED,DULL_SWORD);
+        player:messageSpecial(text.KEYITEM_OBTAINED,DULL_SWORD);
         player:delKeyItem(SWORD_OFFERING);
     end
     

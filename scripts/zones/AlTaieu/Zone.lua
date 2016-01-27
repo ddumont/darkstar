@@ -3,11 +3,9 @@
 -- Zone: AlTaieu (33)
 --
 -----------------------------------
-package.loaded["scripts/zones/AlTaieu/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/AlTaieu/TextIDs");
+local text = require("scripts/zones/AlTaieu/TextIDs");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
@@ -27,7 +25,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
     
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -61,8 +59,8 @@ end;
 ----------------------------------- 
 
 function onEventUpdate(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;    
 
 ----------------------------------- 
@@ -70,12 +68,12 @@ end;
 ----------------------------------- 
 
 function onEventFinish(player,csid,option)    
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0001) then
         player:setVar("PromathiaStatus",1);
         player:addKeyItem(LIGHT_OF_ALTAIEU);
-        player:messageSpecial(KEYITEM_OBTAINED,LIGHT_OF_ALTAIEU);
+        player:messageSpecial(text.KEYITEM_OBTAINED,LIGHT_OF_ALTAIEU);
         player:addTitle(SEEKER_OF_THE_LIGHT);    
     elseif (csid == 0x00A7) then        
         player:setVar("PromathiaStatus",1);

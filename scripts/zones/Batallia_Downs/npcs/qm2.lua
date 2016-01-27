@@ -1,12 +1,10 @@
 -----------------------------------
---  Area: Batallia Downs
+-- Area: Batallia Downs
 --  NPC: qm2 (???)
---  Pop for the quest "Chasing Quotas"
------------------------------------
-package.loaded["scripts/zones/Batallia_Downs/TextIDs"] = nil;
+-- Pop for the quest "Chasing Quotas"
 -----------------------------------
 
-require("scripts/zones/Batallia_Downs/TextIDs");
+local text = require("scripts/zones/Batallia_Downs/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -20,11 +18,11 @@ function onTrigger(player,npc)
         SpawnMob(17207696,300):updateClaim(player);
     elseif (Sturmtiger == 1) then
         player:addKeyItem(RANCHURIOMES_LEGACY);
-        player:messageSpecial(KEYITEM_OBTAINED,RANCHURIOMES_LEGACY);
+        player:messageSpecial(text.KEYITEM_OBTAINED,RANCHURIOMES_LEGACY);
         player:setVar("ChasingQuotas_Progress",6);
         player:setVar("SturmtigerKilled",0);
     else
-        player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+        player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
     end
 end;
 
@@ -40,8 +38,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -49,6 +47,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

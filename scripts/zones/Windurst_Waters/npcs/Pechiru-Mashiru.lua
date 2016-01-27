@@ -1,18 +1,16 @@
 -----------------------------------
---    Area: Windurst Waters
---    NPC: Pechiru-Mashiru
---    Involved in Quests: Hat in Hand
---    Working 100%
---  @zone = 238
---  @pos = 162 -2 159
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
+-- Area: Windurst Waters
+--  NPC: Pechiru-Mashiru
+-- Involved in Quests: Hat in Hand
+-- Working 100%
+-- @zone = 238
+-- @pos = 162 -2 159
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -42,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -51,13 +49,10 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0036) then  -- Show Off Hat
         player:setVar("QuestHatInHand_var",player:getVar("QuestHatInHand_var")+64);
         player:setVar("QuestHatInHand_count",player:getVar("QuestHatInHand_count")+1);
     end
 end;
-
-
-

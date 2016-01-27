@@ -3,11 +3,8 @@
 -- Zone: Castle_Zvahl_Keep_[S] (155)
 --
 -----------------------------------
-package.loaded["scripts/zones/Castle_Zvahl_Keep_[S]/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Castle_Zvahl_Keep_[S]/TextIDs");
 
 -----------------------------------
 -- onInitialize

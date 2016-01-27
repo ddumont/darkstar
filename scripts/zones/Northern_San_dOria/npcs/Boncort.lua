@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Northern San d'Oria
--- NPC: Boncort
+--  NPC: Boncort
 -- Standard Merchant NPC
------------------------------------
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -19,13 +17,13 @@ function onTrade(player,npc,trade)
 -- "Flyers for Regine" conditional script
 if (player:getQuestStatus(SANDORIA,FLYERS_FOR_REGINE) ==QUEST_ACCEPTED) then
     if (trade:hasItemQty(532,1) and trade:getItemCount() == 1 and player:getVar("tradeBoncort") == 0) then 
-        player:messageSpecial(BONCORT_DIALOG);
+        player:messageSpecial(text.BONCORT_DIALOG);
         player:setVar("FFR",player:getVar("FFR") - 1);
         player:setVar("tradeBoncort",1);
-        player:messageSpecial(FLYER_ACCEPTED);
+        player:messageSpecial(text.FLYER_ACCEPTED);
                 player:tradeComplete();
     elseif (player:getVar("tradeBoncort") ==1) then
-        player:messageSpecial(FLYER_ALREADY);
+        player:messageSpecial(text.FLYER_ALREADY);
     end
 end
 end;
@@ -34,9 +32,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,BONCORT_SHOP_DIALOG);
+    player:showText(npc, text.BONCORT_SHOP_DIALOG);
 
-    stock = {0x1159,837,1,    --Grape Juice 
+    local stock =
+    {
+    0x1159,837,1,    --Grape Juice 
              0x1104,180,2,    --White Bread 
              0x111c,198,2,    --Smoked Salmon
              0x1147,270,2,    --Apple Juice 
@@ -53,8 +53,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -62,10 +62,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-
 

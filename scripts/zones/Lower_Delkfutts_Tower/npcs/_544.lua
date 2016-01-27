@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area:  Lower Delkfutt's Tower
--- NPC:   Cermet Door
+--  NPC:  Cermet Door
 -- Notes: Door opens when you trade Delkfutt Key to it
 -- @pos 345 0.1 20 184
------------------------------------
-package.loaded["scripts/zones/Lower_Delkfutts_Tower/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Lower_Delkfutts_Tower/TextIDs");
+local text = require("scripts/zones/Lower_Delkfutts_Tower/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -44,8 +42,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
  
 -----------------------------------
@@ -59,7 +57,7 @@ function onEventFinish(player,csid,option,npc)
     if (csid == 0x0010 and option == 1) then 
         if (player:hasKeyItem(DELKFUTT_KEY) == false) then
             player:tradeComplete();
-            player:messageSpecial(KEYITEM_OBTAINED,DELKFUTT_KEY);
+            player:messageSpecial(text.KEYITEM_OBTAINED,DELKFUTT_KEY);
             player:addKeyItem(DELKFUTT_KEY);
         end
     end

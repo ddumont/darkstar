@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: The Eldieme Necropolis [S]
---  NPC:  Turbulent Storm
+--  NPC: Turbulent Storm
 -- Note: Starts Quest "The Fighting Fourth"
 -- @pos 422.461 -48.000 175
 -----------------------------------
-package.loaded["scripts/zones/The_Eldieme_Necropolis_[S]/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/The_Eldieme_Necropolis_[S]/TextIDs");
+local text = require("scripts/zones/The_Eldieme_Necropolis_[S]/TextIDs");
 require("scripts/globals/keyitems");
 require("scripts/globals/settings");
 require("scripts/globals/quests");
@@ -56,6 +54,6 @@ function onEventFinish(player,csid,option)
     -- printf("RESULT: %u",option);
     if (csid == 0x0007 and option == 0) then
         player:addKeyItem(BLUE_RECOMMENDATION_LETTER);
-        player:messageSpecial(KEYITEM_OBTAINED,BLUE_RECOMMENDATION_LETTER);
+        player:messageSpecial(text.KEYITEM_OBTAINED,BLUE_RECOMMENDATION_LETTER);
     end
 end;

@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC:  Galzerio
+--  NPC: Galzerio
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -20,9 +19,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,GELZERIO_SHOP_DIALOG);
+    player:showText(npc, text.GELZERIO_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x338E, 19602,1,     --Swordbelt
         0x43ED,   486,1,     --Bamboo Fishing Rod
 
@@ -51,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -60,6 +61,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

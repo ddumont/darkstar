@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Metalworks
--- NPC:  Grohm
+--  NPC: Grohm
 -- Involved In Mission: Journey Abroad
 -- @pos -18 -11 -27 237
 -----------------------------------
-package.loaded["scripts/zones/Metalworks/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Metalworks/TextIDs");
+local text = require("scripts/zones/Metalworks/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -80,11 +78,11 @@ function onEventFinish(player,csid,option)
     
     if (csid == 0x01a7 or csid == 0x01a9) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,605); -- Pickaxes
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,605); -- Pickaxes
             player:setVar("notReceivePickaxe",1);
         else
             player:addItem(605,5);
-            player:messageSpecial(ITEM_OBTAINED,605); -- Pickaxes
+            player:messageSpecial(text.ITEM_OBTAINED,605); -- Pickaxes
             player:setVar("MissionStatus",5);
             player:setVar("notReceivePickaxe",0);
         end

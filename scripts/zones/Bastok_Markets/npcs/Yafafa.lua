@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC:  Yafafa
+--  NPC: Yafafa
 -- Only sells when Bastok controls Kolshushu
 --
 -- Updated Aug-09-2013 by Zerahn, based on bgwiki and gamerescape
@@ -8,8 +8,7 @@
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -26,9 +25,9 @@ function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(KOLSHUSHU);
 
     if (RegionOwner ~= BASTOK) then 
-        player:showText(npc,YAFAFA_CLOSED_DIALOG);
+        player:showText(npc, text.YAFAFA_CLOSED_DIALOG);
     else
-        player:showText(npc,YAFAFA_OPEN_DIALOG);
+        player:showText(npc, text.YAFAFA_OPEN_DIALOG);
 
         stock = {
             0x1197, 184,     --Buburimu Grape
@@ -48,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,6 +56,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

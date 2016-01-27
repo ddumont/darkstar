@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Windurst Walls
--- NPC: Scavnix
+--  NPC: Scavnix
 -- Standard merchant, though he acts like a guild merchant
 -- @pos 17.731 0.106 239.626 239
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ end;
 
 function onTrigger(player,npc)
     if (player:sendGuild(60418,11,22,6)) then
-        player:showText(npc,SCAVNIX_SHOP_DIALOG);
+        player:showText(npc, text.SCAVNIX_SHOP_DIALOG);
     end
 end;
 
@@ -33,8 +31,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -42,6 +40,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

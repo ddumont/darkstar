@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Port San d'Oria
--- NPC: Nogelle
+--  NPC: Nogelle
 -- Starts Lufet's Lake Salt
------------------------------------
-package.loaded["scripts/zones/Port_San_dOria/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/titles");
-require("scripts/zones/Port_San_dOria/TextIDs");
+local text = require("scripts/zones/Port_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +20,7 @@ FlyerForRegine = player:getQuestStatus(SANDORIA,FLYERS_FOR_REGINE);
         count = trade:getItemCount();
         MagicFlyer = trade:hasItemQty(532,1);
         if (MagicFlyer == true and count == 1) then
-            player:messageSpecial(FLYER_REFUSED);
+            player:messageSpecial(text.FLYER_REFUSED);
         end
     end
     
@@ -63,8 +61,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -72,16 +70,13 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x000c and option == 1) then
         player:addQuest(SANDORIA,LUFET_S_LAKE_SALT);
     elseif (csid == 0x000b) then
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*600);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*600);
     end
 end;
-
-
-
 

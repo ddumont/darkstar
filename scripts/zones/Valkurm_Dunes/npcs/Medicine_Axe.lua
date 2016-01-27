@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Valkurm Dunes
--- NPC:  Medicine Axe
+--  NPC: Medicine Axe
 -- Type: Outpost Vendor
 -- @pos 144 -7 104 103
------------------------------------
-package.loaded["scripts/zones/Valkurm_Dunes/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-require("scripts/zones/Valkurm_Dunes/TextIDs");
+local text = require("scripts/zones/Valkurm_Dunes/TextIDs");
 
 local region     = ZULKHEIM;
 local csid    = 0x7ff4;
@@ -47,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
     
     player:updateEvent(player:getGil(),OP_TeleFee(player,region),0,OP_TeleFee(player,region),player:getCP());
     

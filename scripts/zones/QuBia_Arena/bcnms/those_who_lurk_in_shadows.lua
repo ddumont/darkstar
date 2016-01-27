@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Qu'Bia Arena
--- NPC:  Those Who Lurk in Shadows
+--  NPC: Those Who Lurk in Shadows
 -- @pos -221 -24 19 206
------------------------------------
-package.loaded["scripts/zones/QuBia_Arena/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/QuBia_Arena/TextIDs");
+local text = require("scripts/zones/QuBia_Arena/TextIDs");
 
 -----------------------------------
 
@@ -61,7 +59,7 @@ function onEventFinish(player,csid,option)
         if (player:hasKeyItem(IVORY_KEY) == false and player:getCurrentMission(ACP) >= THOSE_WHO_LURK_IN_SHADOWS_III) then
             player:addKeyItem(IVORY_KEY);
             player:setVar("LastIvoryKey", os.date("%j"));
-            player:messageSpecial(KEYITEM_OBTAINED,IVORY_KEY);
+            player:messageSpecial(text.KEYITEM_OBTAINED,IVORY_KEY);
         end
     end
 end;

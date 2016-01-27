@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: VeLugannon Palace
--- NPC:  ??? (qm1)
+--  NPC: ??? (qm1)
 -- @pos -370.039 16.014 -274.378 177
 -----------------------------------
-package.loaded["scripts/zones/VeLugannon_Palace/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/VeLugannon_Palace/TextIDs");
+local text = require("scripts/zones/VeLugannon_Palace/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -23,12 +21,12 @@ function onTrigger(player,npc)
     
     if (player:hasItem(16575) == false and player:getFreeSlotsCount() >= 1) then
         player:addItem(16575);
-        player:messageSpecial(ITEM_OBTAINED,16575); -- Curtana
+        player:messageSpecial(text.ITEM_OBTAINED,16575); -- Curtana
         
         -- ??? dissapears for 2 hours and reappears on new position
         local hideTime = 7200;
     else
-        player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,16575); -- Curtana
+        player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,16575); -- Curtana
         
         -- ??? just change position
         local hideTime = 1;
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -66,6 +64,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

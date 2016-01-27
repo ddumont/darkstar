@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Bastok Markets [S]
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 87
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets_[S]/TextIDs"] = nil;
+-- Area: Bastok Markets [S]
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 87
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Bastok_Markets_[S]/TextIDs");
+local text = require("scripts/zones/Bastok_Markets_[S]/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

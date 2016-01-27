@@ -1,15 +1,13 @@
 -----------------------------------
---    Area: Ru'Lud Gardens
---    NPC:  Pakh Jatalfih
---    @pos 34 8 -35 243
------------------------------------
-package.loaded["scripts/zones/RuLude_Gardens/TextIDs"] = nil;
+-- Area: Ru'Lud Gardens
+--  NPC: Pakh Jatalfih
+-- @pos 34 8 -35 243
 package.loaded["scripts/globals/missions"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/RuLude_Gardens/TextIDs");
+local text = require("scripts/zones/RuLude_Gardens/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -68,8 +66,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -77,8 +75,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x002B) then
         player:setVar("MissionStatus",2);

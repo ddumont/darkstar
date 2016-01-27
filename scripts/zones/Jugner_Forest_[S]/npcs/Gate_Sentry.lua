@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Jugner Forest (S)
---  NPC:  Gate Sentry
---  Type: Standard NPC
---  @pos -265.235 -2.399 405.246 82
------------------------------------
-package.loaded["scripts/zones/Jugner_Forest_[S]/TextIDs"] = nil;
+-- Area: Jugner Forest (S)
+--  NPC: Gate Sentry
+-- Type: Standard NPC
+-- @pos -265.235 -2.399 405.246 82
 -----------------------------------
 
-require("scripts/zones/Jugner_Forest_[S]/TextIDs");
+local text = require("scripts/zones/Jugner_Forest_[S]/TextIDs");
 
 -----------------------------------
 -- onTrade Action

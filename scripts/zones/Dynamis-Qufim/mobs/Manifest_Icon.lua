@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Dynamis-Qufim
--- NPC:  Manifest_Icon
------------------------------------
-package.loaded["scripts/zones/Dynamis-Qufim/TextIDs"] = nil;
+--  NPC: Manifest_Icon
 -----------------------------------
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Qufim/TextIDs");
+
 -----------------------------------
 -- onMobSpawn Action
 -----------------------------------

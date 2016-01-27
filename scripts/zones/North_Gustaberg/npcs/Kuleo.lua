@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: North Gustaberg
--- NPC:  Kuleo
+--  NPC: Kuleo
 -- Type: Outpost Vendor
 -- @pos -586 39 61 106
------------------------------------
-package.loaded["scripts/zones/North_Gustaberg/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-require("scripts/zones/North_Gustaberg/TextIDs");
+local text = require("scripts/zones/North_Gustaberg/TextIDs");
 
 local region     = GUSTABERG;
 local csid    = 0x7ff4;
@@ -47,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
     
     player:updateEvent(player:getGil(),OP_TeleFee(player,region),0,OP_TeleFee(player,region),player:getCP());
     
@@ -59,8 +57,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
     
     if (option == 1) then
         ShowOPVendorShop(player);

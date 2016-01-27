@@ -3,13 +3,11 @@
 -- Zone: Promyvion-Dem (18)
 --
 -----------------------------------
-package.loaded["scripts/zones/Promyvion-Dem/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/status");
 require("scripts/globals/missions");
-require("scripts/zones/Promyvion-Dem/TextIDs");
+local text = require("scripts/zones/Promyvion-Dem/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -204,8 +202,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x002e and option == 1) then
         player:setPos(-226.193, -46.459, -280.046, 127, 14); -- To Hall of Transference {R}

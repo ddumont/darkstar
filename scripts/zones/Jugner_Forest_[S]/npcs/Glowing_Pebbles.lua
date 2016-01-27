@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Jugner Forest (S)
---  NPC:  Glowing Pebbles
---  Type: Involved in Quest
---  @pos 
---  player:startEvent(0x006a); Left over Cutscene
------------------------------------
-package.loaded["scripts/zones/Jugner_Forest_[S]/TextIDs"] = nil;
+-- Area: Jugner Forest (S)
+--  NPC: Glowing Pebbles
+-- Type: Involved in Quest
+-- @pos 
+-- player:startEvent(0x006a); Left over Cutscene
 -----------------------------------
 
-require("scripts/zones/Jugner_Forest_[S]/TextIDs");
+local text = require("scripts/zones/Jugner_Forest_[S]/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -26,7 +24,7 @@ function onTrigger(player,npc)
     if (player:getVar("Lakeside_Minuet_Progress") == 3 and player:hasKeyItem(STARDUST_PEBBLE) == false) then
         player:startEvent(0x0064);
         player:addKeyItem(STARDUST_PEBBLE);
-        player:messageSpecial(KEYITEM_OBTAINED,STARDUST_PEBBLE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,STARDUST_PEBBLE);
     end
 end;
 

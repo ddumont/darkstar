@@ -5,11 +5,10 @@
 -----------------------------------
 
 require("scripts/globals/settings");
-package.loaded["scripts/zones/Morimar_Basalt_Fields/TextIDs"] = nil;
-require("scripts/zones/Morimar_Basalt_Fields/TextIDs");
+local text = require("scripts/zones/Morimar_Basalt_Fields/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)
@@ -20,11 +19,11 @@ end;
 -----------------------------------
 
 function onZoneIn(player,prevZone)
-cs = -1;
+    local cs = -1;
 if ((player:getXPos() == 0) and (player:getYPos() == 0) and (player:getZPos() == 0)) then
-player:setPos(579,-7,-484,199);
+    player:setPos(579,-7,-484,199);
 end
-return cs;
+    return cs;
 end;
 
 -----------------------------------
@@ -39,8 +38,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -48,9 +47,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

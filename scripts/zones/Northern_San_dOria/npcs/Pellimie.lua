@@ -1,14 +1,11 @@
 -----------------------------------
---  Area: Northern San d'Oria
+-- Area: Northern San d'Oria
 --  NPC: Pellimie
---  Type: Standard Dialogue NPC
---  @zone: 231
---  @pos 145.459 0.000 131.540
+-- Type: Standard Dialogue NPC
+-- @zone: 231
+-- @pos 145.459 0.000 131.540
 --
------------------------------------
-
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,PELLIMIE_DIALOG);
+    player:showText(npc, text.PELLIMIE_DIALOG);
 end;
 
 -----------------------------------

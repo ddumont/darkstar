@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Valkurm
---  MOB: Adamantking_Effigy
------------------------------------
-package.loaded["scripts/zones/Dynamis-Valkurm/TextIDs"] = nil;
+-- MOB: Adamantking_Effigy
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Valkurm/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

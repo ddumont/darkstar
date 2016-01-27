@@ -3,9 +3,7 @@
 --  NPC: ??? (Spawn Tinnin(ZNM T4))
 -- @pos 278 0 -703 51
 -----------------------------------
-package.loaded["scripts/zones/Wajaom_Woodlands/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Wajaom_Woodlands/TextIDs");
+local text = require("scripts/zones/Wajaom_Woodlands/TextIDs");
 require("scripts/globals/status");
 
 -----------------------------------
@@ -27,7 +25,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_HAPPENS);
+    player:messageSpecial(text.NOTHING_HAPPENS);
 end;
 
 -----------------------------------

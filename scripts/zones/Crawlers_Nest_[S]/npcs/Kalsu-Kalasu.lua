@@ -4,12 +4,10 @@
 -- @pos 304.768 -33.519 -19.168 171
 -- Notes: Gives Green Letter required to start "Snake on the plains"
 -----------------------------------
-package.loaded["scripts/zones/Crawlers_Nest_[S]/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Crawlers_Nest_[S]/TextIDs");
+local text = require("scripts/zones/Crawlers_Nest_[S]/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -55,6 +53,6 @@ function onEventFinish(player,csid,option)
     -- printf("RESULT: %u",option);
     if (csid == 0x0001 and option == 0) then
         player:addKeyItem(GREEN_RECOMMENDATION_LETTER);
-        player:messageSpecial(KEYITEM_OBTAINED, GREEN_RECOMMENDATION_LETTER);
+        player:messageSpecial(text.KEYITEM_OBTAINED, GREEN_RECOMMENDATION_LETTER);
     end
 end;

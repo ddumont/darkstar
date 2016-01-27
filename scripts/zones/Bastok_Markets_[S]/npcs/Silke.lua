@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Bastok Markets (S)
--- NPC: Silke
+--  NPC: Silke
 -- Standard Merchant NPC
 -----------------------------------
-package.loaded["scripts/zones/Bastok_Markets_[S]/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Bastok_Markets_[S]/TextIDs");
+local text = require("scripts/zones/Bastok_Markets_[S]/TextIDs");
 require("scripts/globals/shop");
 
 -----------------------------------
@@ -22,13 +20,15 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,SILKE_SHOP_DIALOG);
+    player:showText(npc, text.SILKE_SHOP_DIALOG);
 
-stock = {0x17ab,29925,        -- Animus Augeo Schema
+    local stock =
+    {
+    0x17ab,29925,        -- Animus Augeo Schema
      0x17ac,29925,        -- Animus Minuo Schema
      0x17ad,36300}        -- Adloquim Schema
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -36,8 +36,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -45,9 +45,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

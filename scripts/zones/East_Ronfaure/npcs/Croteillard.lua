@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: East Ronfaure
---  NPC:  Croteillard
---  Type: Gate Guard
---  @pos 87.426 -62.999 266.709 101
------------------------------------
-package.loaded["scripts/zones/East_Ronfaure/TextIDs"] = nil;
+-- Area: East Ronfaure
+--  NPC: Croteillard
+-- Type: Gate Guard
+-- @pos 87.426 -62.999 266.709 101
 -----------------------------------
 
-require("scripts/zones/East_Ronfaure/TextIDs");
+local text = require("scripts/zones/East_Ronfaure/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, CROTEILLARD_DIALOG);
+    player:showText(npc, text.CROTEILLARD_DIALOG);
 end;
 
 -----------------------------------

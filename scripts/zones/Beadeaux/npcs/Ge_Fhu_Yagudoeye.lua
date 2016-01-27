@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Beadeaux
---  NPC:  Ge'Fhu Yagudoeye
---  Type: Quest NPC
---  @pos -91.354 -4.251 -127.831 147
------------------------------------
-package.loaded["scripts/zones/Beadeaux/TextIDs"] = nil;
+-- Area: Beadeaux
+--  NPC: Ge'Fhu Yagudoeye
+-- Type: Quest NPC
+-- @pos -91.354 -4.251 -127.831 147
 -----------------------------------
 
-require("scripts/zones/Beadeaux/TextIDs");
+local text = require("scripts/zones/Beadeaux/TextIDs");
 
 -----------------------------------
 -- onTrade Action

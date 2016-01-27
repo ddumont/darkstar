@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Dynamis Xarcabard
---  MOB: Tombstone Prototype
------------------------------------
-package.loaded["scripts/zones/Dynamis-Xarcabard/TextIDs"] = nil;
+-- MOB: Tombstone Prototype
 -----------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Xarcabard/TextIDs");
 
 -----------------------------------
 -- onMobInitialize Action

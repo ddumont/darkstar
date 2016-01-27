@@ -1,12 +1,8 @@
 -----------------------------------
---  Area: Port San d'Oria
---   NPC: Louis
---  Type: Standard NPC
------------------------------------
-
-package.loaded["scripts/zones/Port_San_dOria/TextIDs"] = nil;
-
-require("scripts/zones/Port_San_dOria/TextIDs");
+-- Area: Port San d'Oria
+--  NPC: Louis
+-- Type: Standard NPC
+local text = require("scripts/zones/Port_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action

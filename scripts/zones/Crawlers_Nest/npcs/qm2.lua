@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Crawlers' Nest
--- NPC:  ??? - Guardian Crawler (Spawn 2)
+--  NPC: ??? - Guardian Crawler (Spawn 2)
 -- @pos 44.436 -2.602 195.381 197
 -----------------------------------
-package.loaded["scripts/zones/Crawlers_Nest/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Crawlers_Nest/TextIDs");
+local text = require("scripts/zones/Crawlers_Nest/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -20,7 +18,7 @@ function onTrade(player,npc,trade)
             SpawnMob(17584130,120):updateClaim(player); -- Guardian Crawler
             npc:setStatus(STATUS_DISAPPEAR) -- hide ???
         else 
-            player:messageSpecial(NOTHING_SEEMS_TO_HAPPEN);                
+            player:messageSpecial(text.NOTHING_SEEMS_TO_HAPPEN);                
         end
     end
 end; 

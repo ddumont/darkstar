@@ -3,11 +3,9 @@
 --  NPC: Excavation Site (Olduum Ring quest)
 -- @pos 390 1 349 68
 -----------------------------------
-package.loaded["scripts/zones/Aydeewa_Subterrane/TextIDs"] = nil;
------------------------------------
  
 require("scripts/globals/keyitems");
-require("scripts/zones/Aydeewa_Subterrane/TextIDs");
+local text = require("scripts/zones/Aydeewa_Subterrane/TextIDs");
  
 -----------------------------------
 -- onTrade Action
@@ -26,7 +24,7 @@ function onTrade(player,npc,trade)
             if (player:hasKeyItem(ELECTROCELL) or player:hasKeyItem(ELECTROPOT) or player:hasKeyItem(ELECTROLOCOMOTIVE)) == false then
                 player:tradeComplete();
                 player:addKeyItem(keyItems[KI]);
-                player:messageSpecial(KEYITEM_OBTAINED, keyItems[KI]);
+                player:messageSpecial(text.KEYITEM_OBTAINED, keyItems[KI]);
             end
         end
     end
@@ -37,7 +35,7 @@ end;
 -----------------------------------
  
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_HAPPENS);
+    player:messageSpecial(text.NOTHING_HAPPENS);
 end;
  
 -----------------------------------

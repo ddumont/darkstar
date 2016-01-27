@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Windurst Walls
---  NPC:  Naih Arihmepp
---  Type: Standard NPC
---  @pos -64.578 -13.465 202.147 239
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
+-- Area: Windurst Walls
+--  NPC: Naih Arihmepp
+-- Type: Standard NPC
+-- @pos -64.578 -13.465 202.147 239
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 
 -----------------------------------
 -- onTrade Action

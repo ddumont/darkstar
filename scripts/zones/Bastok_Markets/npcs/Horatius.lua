@@ -1,16 +1,14 @@
 -----------------------------------
---  Area: Bastok Markets
---  NPC:  Horatius
---  Type: Quest Giver
---  Starts and Finishes: Breaking Stones
---  @pos -158.392 -5.839 -117.061 235
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
+-- Area: Bastok Markets
+--  NPC: Horatius
+-- Type: Quest Giver
+-- Starts and Finishes: Breaking Stones
+-- @pos -158.392 -5.839 -117.061 235
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -64,7 +62,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x0065) then
         player:tradeComplete();
         player:addGil(GIL_RATE*400);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*400);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*400);
         player:completeQuest(BASTOK,BREAKING_STONES);
     elseif (csid == 0x01ac) then
         player:setMaskBit(player:getVar("WildcatBastok"),"WildcatBastok",12,true);

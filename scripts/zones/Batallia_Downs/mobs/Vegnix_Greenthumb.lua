@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Batallia Downs
---  MOB: Vegnix Greenthumb
------------------------------------
-package.loaded["scripts/zones/Batallia_Downs/TextIDs"] = nil;
+-- MOB: Vegnix Greenthumb
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Batallia_Downs/TextIDs");
+local text = require("scripts/zones/Batallia_Downs/TextIDs");
 
 -----------------------------------
 -- onMobDeath
@@ -16,6 +14,6 @@ require("scripts/zones/Batallia_Downs/TextIDs");
 function onMobDeath(mob,killer,ally)
     if (ally:hasKeyItem(SEEDSPALL_ROSEUM) == false and ally:hasKeyItem(VIRIDIAN_KEY) == false) then
         ally:addKeyItem(SEEDSPALL_ROSEUM);
-        ally:messageSpecial(KEYITEM_OBTAINED,SEEDSPALL_ROSEUM);
+        ally:messageSpecial(text.KEYITEM_OBTAINED,SEEDSPALL_ROSEUM);
     end
 end;

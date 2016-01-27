@@ -1,17 +1,13 @@
 -----------------------------------
 -- Area: Aht Urhgan Whitegate
--- NPC:  Waoud
+--  NPC: Waoud
 -- Standard Info NPC
 -- Involved in quest: An Empty Vessel
 -- @pos 65 -6 -78 50
 -----------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
-
 -----------------------------------
 -- onTrade Action
 -----------------------------------

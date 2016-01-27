@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Tahrongi_Canyon
--- NPC:  Shattered Telepoint
+--  NPC: Shattered Telepoint
 -- @pos 179 35 255 117
------------------------------------
-package.loaded["scripts/zones/Tahrongi_Canyon/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Tahrongi_Canyon/TextIDs");
+local text = require("scripts/zones/Tahrongi_Canyon/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -33,7 +31,7 @@ function onTrigger(player,npc)
     elseif (player:getCurrentMission(COP) > THE_MOTHERCRYSTALS or player:hasCompletedMission(COP,THE_LAST_VERSE) or (player:getCurrentMission(COP) == BELOW_THE_ARKS and player:getVar("PromathiaStatus") > 1)) then
         player:startEvent(0x0391); -- normal cs (third promyvion and each entrance after having that promyvion visited or mission completed)
     else
-        player:messageSpecial(TELEPOINT_HAS_BEEN_SHATTERED);
+        player:messageSpecial(text.TELEPOINT_HAS_BEEN_SHATTERED);
     end
 
 end;

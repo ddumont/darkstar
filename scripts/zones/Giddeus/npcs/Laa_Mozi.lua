@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Giddeus
--- NPC:  Laa Mozi
+--  NPC: Laa Mozi
 -- Involved in Mission 1-3
 -- @pos -22 0 148 145
------------------------------------
-package.loaded["scripts/zones/Giddeus/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/missions");
 require("scripts/globals/keyitems");
-require("scripts/zones/Giddeus/TextIDs");
+local text = require("scripts/zones/Giddeus/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -31,10 +29,10 @@ function onTrigger(player,npc)
             player:startEvent(0x002d);
         else
             if (player:getVar("laa_talk") == 1) then
-                -- npc: You want your offering back?
+                --  NPC: You want your offering back?
                 player:startEvent(0x002e);
             elseif (player:getVar("laa_talk") == 2) then
-                -- npc: You'll have to crawl back to treasure chamber, etc
+                --  NPC: You'll have to crawl back to treasure chamber, etc
                 player:startEvent(0x002f);
             else
                 -- We don't have the offerings yet or anymore
@@ -52,8 +50,8 @@ end
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -61,8 +59,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x002d) then
         player:delKeyItem(FOOD_OFFERINGS);

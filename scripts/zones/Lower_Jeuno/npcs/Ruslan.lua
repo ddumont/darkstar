@@ -1,19 +1,17 @@
 -----------------------------------
---  Area: Lower Jeuno
---  NPC:  Ruslan
---    Involved In Quest: Wondering Minstrel
---    Working 100%
---  @zone = 245
---  @pos = -19 -1 -58
------------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
+-- Area: Lower Jeuno
+--  NPC: Ruslan
+-- Involved In Quest: Wondering Minstrel
+-- Working 100%
+-- @zone = 245
+-- @pos = -19 -1 -58
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");    
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -53,8 +51,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -62,9 +60,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

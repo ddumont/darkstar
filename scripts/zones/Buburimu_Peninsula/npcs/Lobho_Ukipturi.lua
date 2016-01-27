@@ -1,14 +1,11 @@
 -----------------------------------
 -- Area: Buburimu Peninsula
--- NPC:  Lobho Ukipturi
+--  NPC: Lobho Ukipturi
 -- @pos -485 -31 50 118
------------------------------------
-package.loaded["scripts/zones/Buburimu_Peninsula/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-require("scripts/zones/Buburimu_Peninsula/TextIDs");
 
 local region     = KOLSHUSHU;
 local csid    = 0x7ff4;
@@ -46,8 +43,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
 end;
 
 -----------------------------------
@@ -55,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("OPTION: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("OPTION: %u",option);
     
     if (option == 1) then
         ShowOPVendorShop(player);

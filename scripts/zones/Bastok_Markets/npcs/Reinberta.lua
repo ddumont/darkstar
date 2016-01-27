@@ -4,12 +4,10 @@
 -- Type: Goldsmithing Guild Master
 -- @pos -190.605 -7.814 -59.432 235
 -----------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -61,10 +59,10 @@ function onEventFinish(player,csid,option)
         local crystal = math.random(4096,4101);
 
         if (player:getFreeSlotsCount() == 0) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,crystal);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,crystal);
         else
             player:addItem(crystal);
-            player:messageSpecial(ITEM_OBTAINED,crystal);
+            player:messageSpecial(text.ITEM_OBTAINED,crystal);
             signupGuild(player, SKILL_GOLDSMITHING);
         end
     end

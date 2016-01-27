@@ -4,15 +4,13 @@
 -- @pos -48 0.1 435 105
 -- Teleports Players to Batallia Downs [S]
 -----------------------------------
-package.loaded["scripts/zones/Batallia_Downs/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/teleports");
 require("scripts/globals/missions");
 require("scripts/globals/campaign");
-require("scripts/zones/Batallia_Downs/TextIDs");
+local text = require("scripts/zones/Batallia_Downs/TextIDs");
 require("scripts/globals/titles");
 
 -----------------------------------
@@ -39,7 +37,7 @@ function onTrigger(player,npc)
         player:startEvent(910);
         end
     else
-        player:messageSpecial(NOTHING_HAPPENS);
+        player:messageSpecial(text.NOTHING_HAPPENS);
     end
 end;
 
@@ -62,7 +60,7 @@ function onEventFinish(player,csid,option)
     if (csid == 500) then
         local r = math.random(1,3);
         player:addKeyItem(PURE_WHITE_FEATHER);
-        player:messageSpecial(KEYITEM_OBTAINED,PURE_WHITE_FEATHER);
+        player:messageSpecial(text.KEYITEM_OBTAINED,PURE_WHITE_FEATHER);
         player:completeMission(WOTG,CAVERNOUS_MAWS);
         player:addMission(WOTG,BACK_TO_THE_BEGINNING);
         if (r == 1) then

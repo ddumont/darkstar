@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Outer Horutoto Ruins
--- NPC:  Cracked Wall
+--  NPC: Cracked Wall
 -- Involved In Mission: The Jester Who'd Be King
 -- @pos -424.255 -1.909 619.995
------------------------------------
-package.loaded["scripts/zones/Outer_Horutoto_Ruins/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Outer_Horutoto_Ruins/TextIDs");
+local text = require("scripts/zones/Outer_Horutoto_Ruins/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -36,8 +34,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
 end;
 
@@ -46,11 +44,11 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0047) then
         player:addKeyItem(ORASTERY_RING);
-        player:messageSpecial(KEYITEM_OBTAINED,ORASTERY_RING);
+        player:messageSpecial(text.KEYITEM_OBTAINED,ORASTERY_RING);
         player:setVar("MissionStatus",6)
     end
 end;

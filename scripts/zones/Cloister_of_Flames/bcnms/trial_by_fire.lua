@@ -2,13 +2,11 @@
 -- Area: Cloister of Flames
 -- BCNM: Trial by Fire
 -- @pos -721 0 -598 207
------------------------------------
-package.loaded["scripts/zones/Cloister_of_Flames/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Cloister_of_Flames/TextIDs");
+local text = require("scripts/zones/Cloister_of_Flames/TextIDs");
 
 -----------------------------------
 
@@ -53,7 +51,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         player:delKeyItem(TUNING_FORK_OF_FIRE);
         player:addKeyItem(WHISPER_OF_FLAMES);
-        player:messageSpecial(KEYITEM_OBTAINED,WHISPER_OF_FLAMES);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHISPER_OF_FLAMES);
     end
     
 end;

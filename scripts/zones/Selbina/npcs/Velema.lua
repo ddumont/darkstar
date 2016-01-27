@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Selbina
+-- Area: Selbina
 --  NPC: Velema
---  Type: Standard NPC
---  @pos 28.164 -3.947 -12.788 248
------------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
+-- Type: Standard NPC
+-- @pos 28.164 -3.947 -12.788 248
 -----------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 
 -----------------------------------
 -- onTrade Action

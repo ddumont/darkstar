@@ -1,19 +1,17 @@
 -----------------------------------
---    Area: Windurst Waters
---    NPC:  Machitata
---    Involved in Quest: Hat in Hand
---    Working 100%
---  @zone = 238
---  @pos = 163 0 -22
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
+-- Area: Windurst Waters
+--  NPC: Machitata
+-- Involved in Quest: Hat in Hand
+-- Working 100%
+-- @zone = 238
+-- @pos = 163 0 -22
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -43,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -52,9 +50,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

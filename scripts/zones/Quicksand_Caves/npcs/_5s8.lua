@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Quicksand Caves
--- NPC:  Ornate Door
+--  NPC: Ornate Door
 -- Door blocked by Weight system
 -- @pos -334 0 659 208
 -----------------------------------
-package.loaded["scripts/zones/Quicksand_Caves/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Quicksand_Caves/TextIDs");
+local text = require("scripts/zones/Quicksand_Caves/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -28,7 +26,7 @@ function onTrigger(player,npc)
         return -1;
     end
     
-    player:messageSpecial(DOOR_FIRMLY_SHUT);
+    player:messageSpecial(text.DOOR_FIRMLY_SHUT);
     return 1;
 end; 
 
@@ -37,8 +35,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -46,6 +44,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -3,15 +3,12 @@
 -- Zone: Abyssea - La_Theine
 --
 -----------------------------------
-package.loaded["scripts/zones/Abyssea-La_Theine/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Abyssea-La_Theine/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)

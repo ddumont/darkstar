@@ -1,19 +1,17 @@
 -----------------------------------
---    Area: Windurst Waters
---    NPC:  Aramu-Paramu
---    Involved In Quest: Wondering Minstrel
---    Working 100%
---  @zone = 238
---  @pos = -63 -4 27
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
+-- Area: Windurst Waters
+--  NPC: Aramu-Paramu
+-- Involved In Quest: Wondering Minstrel
+-- Working 100%
+-- @zone = 238
+-- @pos = -63 -4 27
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -42,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -51,9 +49,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

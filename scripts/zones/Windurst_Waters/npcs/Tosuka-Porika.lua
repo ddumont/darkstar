@@ -1,12 +1,10 @@
 -----------------------------------
---    Area: Windurst Waters
---    NPC:  Tosuka-Porika
---  Starts Quests: Early Bird Catches the Bookworm, Chasing Tales
---    Involved in Quests: Hat in Hand, Past Reflections, Blessed Radiance
---  Involved in Missions: Windurst 2-1, Windurst 7-1, Windurst 8-2, CoP 3-3
---  @pos -26 -6 103 238
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
+-- Area: Windurst Waters
+--  NPC: Tosuka-Porika
+-- Starts Quests: Early Bird Catches the Bookworm, Chasing Tales
+-- Involved in Quests: Hat in Hand, Past Reflections, Blessed Radiance
+-- Involved in Missions: Windurst 2-1, Windurst 7-1, Windurst 8-2, CoP 3-3
+-- @pos -26 -6 103 238
 package.loaded["scripts/globals/missions"] = nil;
 -----------------------------------
 
@@ -14,7 +12,7 @@ require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/missions");
 require("scripts/globals/quests");
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -96,8 +94,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -105,8 +103,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0037) then  -- Show Off Hat
         player:setVar("QuestHatInHand_var",player:getVar("QuestHatInHand_var")+32);
@@ -123,13 +121,13 @@ function onEventFinish(player,csid,option)
         player:setVar("MEMORIES_OF_A_MAIDEN_Status",11);
     elseif (csid == 0x02cb) then
         player:addKeyItem(OPTISTERY_RING);
-        player:messageSpecial(KEYITEM_OBTAINED,OPTISTERY_RING);
+        player:messageSpecial(text.KEYITEM_OBTAINED,OPTISTERY_RING);
         player:setVar("MissionStatus",1);
     elseif (csid == 0x02d4) then
         finishMissionTimeline(player,3,csid,option);
     elseif (csid == 0x0321) then
         player:addKeyItem(OPTISTERY_RING);
-        player:messageSpecial(KEYITEM_OBTAINED,OPTISTERY_RING);
+        player:messageSpecial(text.KEYITEM_OBTAINED,OPTISTERY_RING);
         if (player:hasKeyItem(AURASTERY_RING) and player:hasKeyItem(RHINOSTERY_RING)) then
             player:setVar("MissionStatus",2)
         end

@@ -1,14 +1,11 @@
 -----------------------------------
---  Area: Northern San d'Oria
+-- Area: Northern San d'Oria
 --  NPC: Malfine
---  Type: Standard Dialogue NPC
---  @zone: 231
---  @pos 136.943 0.000 132.305
+-- Type: Standard Dialogue NPC
+-- @zone: 231
+-- @pos 136.943 0.000 132.305
 --
------------------------------------
-
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,MALFINE_DIALOG);
+    player:showText(npc, text.MALFINE_DIALOG);
 end;
 
 -----------------------------------

@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Al Zahbi
--- NPC:  Chocobo
------------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
+--  NPC: Chocobo
 -----------------------------------
 
-require("scripts/zones/Al_Zahbi/TextIDs");
+local text = require("scripts/zones/Al_Zahbi/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -19,7 +17,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    npc:showText(npc, CHOCOBO_HAPPY);
+    npc:showText(npc, text.CHOCOBO_HAPPY);
 end; 
 
 -----------------------------------
@@ -27,8 +25,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -36,8 +34,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 

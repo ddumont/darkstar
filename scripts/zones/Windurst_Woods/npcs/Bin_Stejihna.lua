@@ -1,14 +1,14 @@
 -----------------------------------
 -- Area: Windurst_Woods
--- NPC: Bin Stejihna
+--  NPC: Bin Stejihna
 -- Only sells when Windurst controlls Zulkheim Region
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
-require("scripts/zones/Windurst_Woods/TextIDs");
+
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -23,10 +23,10 @@ end;
 
 function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(ZULKHEIM);
-    if (RegionOwner ~= WINDURST) then 
-        player:showText(npc,BIN_STEJIHNA_CLOSED_DIALOG);
+    if (RegionOwner ~= WINDURST) then
+        player:showText(npc, text.text.BIN_STEJIHNA_CLOSED_DIALOG);
     else
-        player:showText(npc,BIN_STEJIHNA_OPEN_DIALOG);
+        player:showText(npc, text.text.BIN_STEJIHNA_OPEN_DIALOG);
 
         rank = getNationRank(BASTOK);
         if (rank ~= 3) then
@@ -48,15 +48,15 @@ function onTrigger(player,npc)
 
     end
 
-end; 
+end;
 
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -64,6 +64,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

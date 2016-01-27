@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Port Windurst
---   NPC: Paytah
---  Type: Standard NPC
+-- Area: Port Windurst
+--  NPC: Paytah
+-- Type: Standard NPC
 -- @zone: 240
---  @pos 77.550 -6 117.769
+-- @pos 77.550 -6 117.769
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

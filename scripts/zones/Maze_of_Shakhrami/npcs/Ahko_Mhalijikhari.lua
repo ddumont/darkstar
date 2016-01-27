@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Maze of Shakhrami
---  NPC:  Ahko Mhalijikhari
---  Type: Quest NPC
---  @pos -344.617 -12.226 -166.233 198
---  0x003d  0x003e  0x003f  0x0040  0x0041
------------------------------------
-package.loaded["scripts/zones/Maze_of_Shakhrami/TextIDs"] = nil;
+-- Area: Maze of Shakhrami
+--  NPC: Ahko Mhalijikhari
+-- Type: Quest NPC
+-- @pos -344.617 -12.226 -166.233 198
+-- 0x003d  0x003e  0x003f  0x0040  0x0041
 -----------------------------------
 
-require("scripts/zones/Maze_of_Shakhrami/TextIDs");
+local text = require("scripts/zones/Maze_of_Shakhrami/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");

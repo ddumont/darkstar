@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Heavens Tower
--- NPC:  Rakano-Marukano
+--  NPC: Rakano-Marukano
 -- Type: Immigration NPC
 -- @pos 6.174 -1 32.285 242
------------------------------------
-package.loaded["scripts/zones/Heavens_Tower/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/conquest");

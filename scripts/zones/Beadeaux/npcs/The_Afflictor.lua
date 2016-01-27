@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Beadeaux
--- NPC:  The Afflictor
+--  NPC: The Afflictor
 -- @zone 147
 -- @pos <many>
 -----------------------------------
-package.loaded["scripts/zones/Beadeaux/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Beadeaux/TextIDs");
 require("scripts/globals/quests");
 require("scripts/globals/settings");
 
@@ -34,8 +31,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -43,6 +40,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

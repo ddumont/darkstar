@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Selbina
--- NPC:  Graegham
+--  NPC: Graegham
 -- Guild Merchant NPC: Fishing Guild 
 -- @pos -12.423 -7.287 8.665 248
------------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ end;
 
 function onTrigger(player,npc)
     if (player:sendGuild(5182,3,18,5)) then
-        player:showText(npc,FISHING_SHOP_DIALOG);
+        player:showText(npc, text.FISHING_SHOP_DIALOG);
     end
 end; 
 
@@ -33,8 +31,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -42,9 +40,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

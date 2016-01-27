@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Rabao
--- NPC: Amaja-Kumaja
+--  NPC: Amaja-Kumaja
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Rabao/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Rabao/TextIDs");
+local text = require("scripts/zones/Rabao/TextIDs");
 
 -----------------------------------
 -- onTrade Action

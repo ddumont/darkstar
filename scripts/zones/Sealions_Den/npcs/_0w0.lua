@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Sealion's Den
--- NPC:  Iron Gate
+--  NPC: Iron Gate
 -- @pos 612 132 774 32
------------------------------------
-package.loaded["scripts/zones/Sealions_Den/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/bcnm");
 require("scripts/globals/missions");
 require("scripts/globals/titles");
 require("scripts/globals/teleports");
-require("scripts/zones/Sealions_Den/TextIDs");
+local text = require("scripts/zones/Sealions_Den/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -43,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("onUpdate CSID: %u",csid);
---printf("onUpdate RESULT: %u",option);
+    -- printf("onUpdate CSID: %u",csid);
+    -- printf("onUpdate RESULT: %u",option);
     EventUpdateBCNM(player,csid,option)
 end;
 
@@ -53,8 +51,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("onFinish CSID: %u",csid);
---printf("onFinish RESULT: %u",option);
+    -- printf("onFinish CSID: %u",csid);
+    -- printf("onFinish RESULT: %u",option);
     
     if (EventFinishBCNM(player,csid,option)) then
         return;

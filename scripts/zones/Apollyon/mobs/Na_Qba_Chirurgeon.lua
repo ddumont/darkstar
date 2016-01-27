@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon CS
---  MOB: Na_Qba_Chirurgeon
+-- MOB: Na_Qba_Chirurgeon
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

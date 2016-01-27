@@ -1,16 +1,13 @@
 -----------------------------------
 -- Area: Kazham
--- NPC: Magriffon
+--  NPC: Magriffon
 -- Involved in Quest: Gullible's Travels, Even More Gullible's Travels,
 -- Location: (I-7)
------------------------------------
-
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
 require("scripts/globals/settings");
 require("scripts/globals/quests");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 
 
 -----------------------------------
@@ -67,8 +64,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -94,7 +91,7 @@ function onEventFinish(player,csid,option)
         player:setVar("EVEN_MORE_GULLIBLES_PROGRESS", 1);
         player:setTitle(286);
         player:addKeyItem(256);
-        player:messageSpecial(KEYITEM_OBTAINED,TREASURE_MAP);
+        player:messageSpecial(text.KEYITEM_OBTAINED,TREASURE_MAP);
     elseif (csid == 0x0098) then
         player:setVar("EVEN_MORE_GULLIBLES_PROGRESS", 0);
         player:addFame(KAZHAM, WIN_FAME*30);

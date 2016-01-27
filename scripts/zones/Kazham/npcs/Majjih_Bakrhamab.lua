@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Kazham
--- NPC: Majjih Bakrhamab
+--  NPC: Majjih Bakrhamab
 -- Standard Info NPC
------------------------------------
-
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
-
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 
 -----------------------------------
 -- onTrade Action

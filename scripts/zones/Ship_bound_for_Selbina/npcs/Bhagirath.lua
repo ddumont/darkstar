@@ -1,13 +1,9 @@
 -----------------------------------
 -- Area:  Ship_bound_for_Selbina
--- NPC:   Bhagirath
+--  NPC:  Bhagirath
 -- Notes: Tells ship ETA time
 -- @pos 0.278 -14.707 -1.411 220
------------------------------------
-
-package.loaded["scripts/zones/Ship_bound_for_Selbina/TextIDs"] = nil;
-
-require("scripts/zones/Ship_bound_for_Selbina/TextIDs");
+local text = require("scripts/zones/Ship_bound_for_Selbina/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -67,7 +63,7 @@ function onTrigger(player,npc)
         vHour = 7;
     end
 
-    player:messageSpecial( message, math.floor((2.4 * ((vHour * 60) + 40 - vMin)) / 60), vHour);
+    player:messageSpecial(text.message, math.floor((2.4 * ((vHour * 60) + 40 - vMin)) / 60), vHour);
 end; 
 
 -----------------------------------

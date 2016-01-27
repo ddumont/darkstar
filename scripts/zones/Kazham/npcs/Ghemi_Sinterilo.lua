@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Kazham
--- NPC: Ghemi Senterilo
+--  NPC: Ghemi Senterilo
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
 
-player:showText(npc,GHEMISENTERILO_SHOP_DIALOG);
+    player:showText(npc, text.GHEMISENTERILO_SHOP_DIALOG);
 
-stock = {0x1174,72,    -- Pamamas
+    local stock =
+    {
+    0x1174,72,    -- Pamamas
      0x1150,54,    -- Kazham Pineapple
      0x1126,36,    -- Mithran Tomato
      0x0264,54,    -- Kazham Peppers
@@ -34,7 +35,7 @@ stock = {0x1174,72,    -- Pamamas
      0x0b35,9100,    -- Kazham Waystone
      0x02DB,2877}    -- Aquilaria Log
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -42,8 +43,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -51,9 +52,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

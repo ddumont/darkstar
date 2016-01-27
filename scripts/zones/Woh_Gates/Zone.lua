@@ -3,14 +3,12 @@
 -- Zone: Woh Gates
 --
 -----------------------------------
-package.loaded["scripts/zones/Woh_Gates/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Woh_Gates/TextIDs");
+local text = require("scripts/zones/Woh_Gates/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)

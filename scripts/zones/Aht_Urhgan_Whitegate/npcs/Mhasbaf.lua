@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Aht Urhgan Whitegate
---  NPC:  Mhasbaf
---  Type: Standard NPC
---  @pos 54.701 -6.999 11.387 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Area: Aht Urhgan Whitegate
+--  NPC: Mhasbaf
+-- Type: Standard NPC
+-- @pos 54.701 -6.999 11.387 50
 -----------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action

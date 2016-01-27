@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Dynamis-Qufim
--- NPC:  Serjeant_Tombstone
+--  NPC: Serjeant_Tombstone
 
------------------------------------
-package.loaded["scripts/zones/Dynamis-Qufim/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Qufim/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Southern San d'Oria
---  NPC:  Varchet
---  Type: NPC
---  @pos 116.484 -1 91.554 230
------------------------------------
-package.loaded["scripts/zones/Southern_San_dOria/TextIDs"] = nil;
+-- Area: Southern San d'Oria
+--  NPC: Varchet
+-- Type: NPC
+-- @pos 116.484 -1 91.554 230
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Southern_San_dOria/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria/TextIDs");
 
 local GAME_WON = 0;
 local GAME_LOST = 2;
@@ -71,8 +69,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
-    --printf("F CSID: %u",csid);
-    --printf("F RESULT: %u",option);
+    -- printf("F CSID: %u",csid);
+    -- printf("F RESULT: %u",option);
 
     local exitTheGambler = player:getQuestStatus(SANDORIA,EXIT_THE_GAMBLER);
     local npc = player:getEventTarget();
@@ -82,13 +80,13 @@ function onEventFinish(player,csid,option)
             npc.giveGil(player, 10, {rate=false});
         if (exitTheGambler == QUEST_ACCEPTED) then
           player:completeQuest(SANDORIA,EXIT_THE_GAMBLER);
-          player:showText(npc,7629);
+          player:showText(npc, text.7629);
         end
           elseif (option == GAME_TIE) then
             npc.giveGil(player, 5, {rate=false});
-          player:showText(npc,7622);
+          player:showText(npc, text.7622);
           else
-            player:showText(npc,7620);
+            player:showText(npc, text.7620);
           end
         end
 end;

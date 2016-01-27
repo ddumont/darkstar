@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Batallia Downs
---  MOB: Goblin Shaman
------------------------------------
-package.loaded["scripts/zones/Batallia_Downs/TextIDs"] = nil;
+-- MOB: Goblin Shaman
 -----------------------------------
 
 require("scripts/globals/fieldsofvalor");
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Batallia_Downs/TextIDs");
+local text = require("scripts/zones/Batallia_Downs/TextIDs");
 
 -----------------------------------
 -- onMobDeath
@@ -21,7 +19,7 @@ function onMobDeath(mob,killer,ally)
         -- Guesstimating 15% chance
         if (math.random(1,100) >= 85) then
             ally:addKeyItem(BOWL_OF_BLAND_GOBLIN_SALAD);
-            ally:messageSpecial(KEYITEM_OBTAINED,BOWL_OF_BLAND_GOBLIN_SALAD);
+            ally:messageSpecial(text.KEYITEM_OBTAINED,BOWL_OF_BLAND_GOBLIN_SALAD);
         end
     end
 

@@ -1,16 +1,14 @@
 -----------------------------------
---  Area: Aht Urhgan Whitegate
+-- Area: Aht Urhgan Whitegate
 --  NPC: Tehf Kimasnahya
---  Type: Standard NPC
---  @pos -89.897 -1 6.199 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Type: Standard NPC
+-- @pos -89.897 -1 6.199 50
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 
@@ -81,12 +79,12 @@ function onEventFinish(player,csid,option)
        
     elseif (csid == 0x0210) then
         if (player:getFreeSlotsCount() == 0) then
-           player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,18257);
+           player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,18257);
         else
            player:setVar("Wait1DayForgotitallCS_date",0);
            player:setVar("gotitallCS",0);
            player:addItem(18257); -- Bibiki Seashell
-           player:messageSpecial(ITEM_OBTAINED,18257);
+           player:messageSpecial(text.ITEM_OBTAINED,18257);
            player:completeQuest(AHT_URHGAN,GOT_IT_ALL);
         end    
     elseif (csid == 0x034b and option == 1) then

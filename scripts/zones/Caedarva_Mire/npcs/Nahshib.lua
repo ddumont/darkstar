@@ -1,15 +1,13 @@
 -----------------------------------
---  Area: Caedarva Mire
---  NPC:  Nahshib
---  Type: Assault
---  @pos -274.334 -9.287 -64.255 79
------------------------------------
-package.loaded["scripts/zones/Caedarva_Mire/TextIDs"] = nil;
+-- Area: Caedarva Mire
+--  NPC: Nahshib
+-- Type: Assault
+-- @pos -274.334 -9.287 -64.255 79
 -----------------------------------
 
 require("scripts/globals/missions");
 require("scripts/globals/keyitems");
-require("scripts/zones/Caedarva_Mire/TextIDs");
+local text = require("scripts/zones/Caedarva_Mire/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -64,7 +62,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x0094 and option == 1) then
         player:delCurrency("imperial_standing", 50);
         player:addKeyItem(ASSAULT_ARMBAND);
-        player:messageSpecial(KEYITEM_OBTAINED,ASSAULT_ARMBAND);
+        player:messageSpecial(text.KEYITEM_OBTAINED,ASSAULT_ARMBAND);
     elseif (csid == 0x0005 and option == 1) then
         player:delKeyItem(SUPPLIES_PACKAGE);
         player:setVar("TOAUM2",1);

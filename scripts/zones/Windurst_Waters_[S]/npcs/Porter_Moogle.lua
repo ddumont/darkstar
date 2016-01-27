@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Windurst Waters [S]
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 94
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters_[S]/TextIDs"] = nil;
+-- Area: Windurst Waters [S]
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 94
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Windurst_Waters_[S]/TextIDs");
+local text = require("scripts/zones/Windurst_Waters_[S]/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

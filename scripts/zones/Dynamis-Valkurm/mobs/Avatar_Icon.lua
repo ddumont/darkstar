@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Dynamis Valkurm
--- NPC:  Manifest_Icon
------------------------------------
-package.loaded["scripts/zones/Dynamis-Valkurm/TextIDs"] = nil;
+--  NPC: Manifest_Icon
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Valkurm/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

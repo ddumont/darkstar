@@ -1,14 +1,11 @@
 -----------------------------------
 --  NPC: ??? (QM4)
---  Type: Grasswix dice roll game part 2
---  @zone: 191
---  Involved in quest "As Thick As Thieves"
------------------------------------
-package.loaded["scripts/zones/Dangruf_Wadi/TextIDs"] = nil;
+-- Type: Grasswix dice roll game part 2
+-- @zone: 191
+-- Involved in quest "As Thick As Thieves"
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Dangruf_Wadi/TextIDs");
 
 -----------------------------------
 -- onTrade Action

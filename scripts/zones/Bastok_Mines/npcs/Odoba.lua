@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC: Odoba
+--  NPC: Odoba
 -- Guild Merchant NPC: Alchemy Guild 
 -- @pos 108.473 5.017 1.089 234
------------------------------------
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ end;
 
 function onTrigger(player,npc)
     if (player:sendGuild(526,8,23,6)) then
-        player:showText(npc, ODOBA_SHOP_DIALOG);
+        player:showText(npc, text.ODOBA_SHOP_DIALOG);
     end
 end;
 

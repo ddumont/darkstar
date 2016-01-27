@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Tavnazian Safehold
--- NPC:  Justinius
+--  NPC: Justinius
 -- Involved in mission : COP2-3
 -- @pos 76 -34 68 26
------------------------------------
-package.loaded["scripts/zones/Tavnazian_Safehold/TextIDs"] = nil;
 -----------------------------------
 require("scripts/globals/titles");
 require("scripts/globals/missions");

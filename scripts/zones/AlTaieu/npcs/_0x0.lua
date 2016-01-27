@@ -1,12 +1,10 @@
 -----------------------------------
---  Area: Al'Taieu
---  NPC:  Crystalline Field
---  @pos .1 -10 -464 33
------------------------------------
-package.loaded["scripts/zones/AlTaieu/TextIDs"] = nil;
+-- Area: Al'Taieu
+--  NPC: Crystalline Field
+-- @pos .1 -10 -464 33
 -----------------------------------
 
-require("scripts/zones/AlTaieu/TextIDs");
+local text = require("scripts/zones/AlTaieu/TextIDs");
 require("scripts/globals/missions");
 
 -----------------------------------
@@ -34,7 +32,7 @@ function onTrigger(player,npc)
     elseif (player:getCurrentMission(COP) > GARDEN_OF_ANTIQUITY or (player:getCurrentMission(COP) == GARDEN_OF_ANTIQUITY and player:getVar("PromathiaStatus") == 3)) then
         player:startEvent(0x0064); -- Teleport inside
     else
-        player:messageSpecial(NOTHING_OUT_OF_ORDINARY); -- Access should be restricted if below requirements. Message is probably wrong, though. 
+        player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY); -- Access should be restricted if below requirements. Message is probably wrong, though. 
     end
 end;
 

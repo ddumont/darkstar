@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Lower Jeuno
--- NPC:  Muckvix
+--  NPC: Muckvix
 -- Involved in Mission: Magicite
 -- @zone 245
 -- @pos -26.824 3.601 -137.082
 -----------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -55,7 +53,7 @@ function onEventFinish(player,csid,option)
     
     if (csid == 0x00b8) then
         player:addKeyItem(YAGUDO_TORCH);
-        player:messageSpecial(KEYITEM_OBTAINED,YAGUDO_TORCH);
+        player:messageSpecial(text.KEYITEM_OBTAINED,YAGUDO_TORCH);
         player:setVar("YagudoTorchCS",0);
     end
     

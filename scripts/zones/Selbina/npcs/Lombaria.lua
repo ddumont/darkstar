@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Selbina
--- NPC: Lombaria
+--  NPC: Lombaria
 -- Map Seller NPC
 -----------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/magic_maps");
 
 -----------------------------------
@@ -42,7 +40,4 @@ end;
 function onEventFinish(player,csid,option)
 
 end;
-
-
-
 

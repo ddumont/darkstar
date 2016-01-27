@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Metalworks
---  NPC:  Kaela
---  Type: Adventurer's Assistant
---  @pos 40.167 -14.999 16.073 237
------------------------------------
-package.loaded["scripts/zones/Metalworks/TextIDs"] = nil;
+-- Area: Metalworks
+--  NPC: Kaela
+-- Type: Adventurer's Assistant
+-- @pos 40.167 -14.999 16.073 237
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Metalworks/TextIDs");
+local text = require("scripts/zones/Metalworks/TextIDs");
 
 -----------------------------------
 -- onTrade Action

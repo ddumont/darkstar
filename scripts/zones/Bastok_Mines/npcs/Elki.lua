@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC: Elki
+--  NPC: Elki
 -- Starts Quests: Hearts of Mythril, The Eleventh's Hour
------------------------------------
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -59,17 +57,17 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0029 and option == 0) then
         player:addQuest(BASTOK,HEARTS_OF_MYTHRIL);
         player:addKeyItem(0x17);
-        player:messageSpecial(KEYITEM_OBTAINED,0x17);
+        player:messageSpecial(text.KEYITEM_OBTAINED,0x17);
     elseif (csid == 0x002a) then
         player:addTitle(84);
         player:addItem(12840);
-        player:messageSpecial(ITEM_OBTAINED,12840);
+        player:messageSpecial(text.ITEM_OBTAINED,12840);
         player:completeQuest(BASTOK,HEARTS_OF_MYTHRIL);
         player:addFame(BASTOK,BAS_FAME*80);
         player:setVar("HeartsOfMythril",0);
@@ -81,7 +79,4 @@ function onEventFinish(player,csid,option)
     end
 
 end;
-
-
-
 

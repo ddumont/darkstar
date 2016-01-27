@@ -3,11 +3,9 @@
 -- Name: Storms of Fate
 -- @pos 299 -123 345 146
 -----------------------------------
-package.loaded["scripts/zones/Riverne-Site_B01/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Riverne-Site_B01/TextIDs");
+local text = require("scripts/zones/Riverne-Site_B01/TextIDs");
 require("scripts/globals/quests");
 require("scripts/globals/status");
 require("scripts/globals/bcnm");
@@ -58,7 +56,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         if (player:getQuestStatus(JEUNO,STORMS_OF_FATE) == QUEST_ACCEPTED and player:getVar('StormsOfFate') == 2) then
             player:addKeyItem(WHISPER_OF_THE_WYRMKING);
-            player:messageSpecial(KEYITEM_OBTAINED,WHISPER_OF_THE_WYRMKING);
+            player:messageSpecial(text.KEYITEM_OBTAINED,WHISPER_OF_THE_WYRMKING);
             player:setVar('StormsOfFate',3);
             player:addTitle(CONQUEROR_OF_FATE);
             if (ENABLE_COP_ZONE_CAP == 1) then -- restore level cap on exit if the setting is enabled

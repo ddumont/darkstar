@@ -1,14 +1,13 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Hortense
+--  NPC: Hortense
 -- Standard Merchant NPC
 --
 -- Updated Aug-09-2013 by Zerahn, based on bgwiki and gamerescape
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,9 +21,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,HORTENSE_SHOP_DIALOG);
+    player:showText(npc, text.HORTENSE_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x1370,    64,3,     --Scroll of Foe Requiem
         0x1371,   441,3,     --Scroll of Foe Requiem II
         0x1372,  3960,3,     --Scroll of Foe Requiem III
@@ -49,8 +50,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -58,6 +59,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Gusgen Mines
--- NPC:  _5ge (Lever E)
+--  NPC: _5ge (Lever E)
 -- @pos 20 -20.561 143.801 196
 -----------------------------------
-package.loaded["scripts/zones/Gusgen_Mines/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Gusgen_Mines/TextIDs");
+local text = require("scripts/zones/Gusgen_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 
 function onTrigger(player,npc)
     --local nID = npc:getID();
-    --printf("id: %u", nID);
+    -- printf("id: %u", nID);
     
     local Lever = npc:getID();    
     
@@ -39,8 +37,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -48,6 +46,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

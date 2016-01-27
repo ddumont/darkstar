@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Ru'Lude Gardens
+-- Area: Ru'Lude Gardens
 --  NPC: Dugga
---  Type: Item Deliverer
---  @zone: 243
---  @pos -55.429    5.999    1.27
+-- Type: Item Deliverer
+-- @zone: 243
+-- @pos -55.429    5.999    1.27
 --
------------------------------------
-
-package.loaded["scripts/zones/RuLude_Gardens/TextIDs"] = nil;
-require("scripts/zones/RuLude_Gardens/TextIDs");
+local text = require("scripts/zones/RuLude_Gardens/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

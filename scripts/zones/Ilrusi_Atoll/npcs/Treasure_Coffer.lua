@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: 
--- NPC:  Treasure Coffer
+--  NPC: Treasure Coffer
 -- @zone illrusi atoll
 -- @pos
------------------------------------
-package.loaded["scripts/zones/Ilrusi_Atoll/TextIDs"] = nil;
 package.loaded["scripts/globals/bcnm"] = nil;
 -------------------------------------
 
@@ -12,7 +10,7 @@ require("scripts/globals/bcnm");
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Ilrusi_Atoll/TextIDs");
+local text = require("scripts/zones/Ilrusi_Atoll/TextIDs");
 
 
 -----------------------------------
@@ -28,13 +26,13 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
- player:messageSpecial(CHEST);
+ player:messageSpecial(text.CHEST);
   local npcID = npc:getID();
   local correctcofferID = GetServerVariable("correctcoffer");
  print(npcID);
  print(correctcofferID);
   if (npcID == correctcofferID) then --correct coffer ??
-   player:messageSpecial( GOLDEN);
+   player:messageSpecial(text.GOLDEN);
    
    if (player:getCurrentMission(ASSAULT)==GOLDEN_SALVAGE) then
    player:completeMission(ASSAULT,GOLDEN_SALVAGE);
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -66,6 +64,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

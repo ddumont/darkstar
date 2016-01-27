@@ -1,14 +1,11 @@
 -----------------------------------
---  Area: Northern San d'Oria
+-- Area: Northern San d'Oria
 --  NPC: Fittesegat
---  Type: Standard Dialogue NPC
---  @zone: 231
---  @pos 144.250 0.000 138.203
+-- Type: Standard Dialogue NPC
+-- @zone: 231
+-- @pos 144.250 0.000 138.203
 --
------------------------------------
-
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,FITTESEGAT_DIALOG);
+    player:showText(npc, text.FITTESEGAT_DIALOG);
 end;
 
 -----------------------------------

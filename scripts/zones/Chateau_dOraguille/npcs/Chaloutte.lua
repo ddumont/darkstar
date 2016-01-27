@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Chateau d'Oraguille
---   NPC: Chaloutte
---  Type: Event Scene Replayer
+-- Area: Chateau d'Oraguille
+--  NPC: Chaloutte
+-- Type: Event Scene Replayer
 -- @zone: 233
---  @pos 10.450 -1 -11.985
+-- @pos 10.450 -1 -11.985
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Chateau_dOraguille/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

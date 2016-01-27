@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC: Romilda
+--  NPC: Romilda
 -- Involved in Quest: Forever to Hold
 -- Starts & Ends Quest: Till Death Do Us Part
------------------------------------
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/titles");
 require("scripts/globals/quests");
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -56,8 +54,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -65,15 +63,15 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x80) then
         player:addQuest(BASTOK,TILL_DEATH_DO_US_PART);
     elseif (csid == 0x81) then
         player:addTitle(QIJIS_RIVAL);
         player:addGil(GIL_RATE*2000);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*2000);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*2000);
         player:addFame(BASTOK,BAS_FAME*160);
         player:completeQuest(BASTOK,TILL_DEATH_DO_US_PART);
     end

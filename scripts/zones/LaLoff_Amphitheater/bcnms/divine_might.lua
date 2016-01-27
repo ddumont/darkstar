@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: LaLoff Amphitheater
 -- Name: Divine Might
------------------------------------
-package.loaded["scripts/zones/LaLoff_Amphitheater/TextIDs"] = nil;
 -------------------------------------
 
-require("scripts/zones/LaLoff_Amphitheater/TextIDs");
+local text = require("scripts/zones/LaLoff_Amphitheater/TextIDs");
 require("scripts/globals/missions");
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
@@ -76,7 +74,7 @@ function onEventFinish(player,csid,option)
          player:setVar("DivineMight",2); -- Used to use 2 to track completion, so that's preserved to maintain compatibility
          for i=SHARD_OF_APATHY, SHARD_OF_RAGE do
             player:addKeyItem(i);
-            player:messageSpecial(KEYITEM_OBTAINED,i);
+            player:messageSpecial(text.KEYITEM_OBTAINED,i);
          end
          if (player:getCurrentMission(ZILART) == ARK_ANGELS) then
             player:completeMission(ZILART,ARK_ANGELS);

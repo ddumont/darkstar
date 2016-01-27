@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: West Ronfaure
--- NPC:  qm4 (???)
+--  NPC: qm4 (???)
 -- Involved in Quest: The Dismayed Customer
 -- @pos -399 -10 -438 100
------------------------------------
-package.loaded["scripts/zones/West_Ronfaure/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/missions");
 require("scripts/globals/keyitems");
-require("scripts/zones/West_Ronfaure/TextIDs");
+local text = require("scripts/zones/West_Ronfaure/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -29,7 +27,7 @@ function onTrigger(player,npc)
         if (GetMobAction(17187273) == 0) then
             if (player:getVar("Mission7-1MobKilled") == 1) then
                 player:addKeyItem(ANCIENT_SANDORIAN_TABLET);
-                player:messageSpecial(KEYITEM_OBTAINED,ANCIENT_SANDORIAN_TABLET);
+                player:messageSpecial(text.KEYITEM_OBTAINED,ANCIENT_SANDORIAN_TABLET);
                 player:setVar("Mission7-1MobKilled",0);
                 player:setVar("MissionStatus",2);
             else
@@ -45,8 +43,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -54,6 +52,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);    
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);    
 end;

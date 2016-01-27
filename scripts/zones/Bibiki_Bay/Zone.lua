@@ -2,14 +2,12 @@
 --
 -- Zone: Bibiki_Bay (4)
 --
------------------------------------
-package.loaded["scripts/zones/Bibiki_Bay/TextIDs"] = nil;
 package.loaded["scripts/globals/chocobo_digging"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Bibiki_Bay/TextIDs");
+local text = require("scripts/zones/Bibiki_Bay/TextIDs");
 require("scripts/globals/chocobo_digging");
 
 -----------------------------------
@@ -98,7 +96,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -158,14 +156,14 @@ function onTransportEvent(player,transport)
             local remainingticket=player:getVar("Manaclipper_Ticket");
             player:setVar("Manaclipper_Ticket",(remainingticket - 1));
                 if ( (remainingticket - 1) > 0) then
-                    player:messageSpecial(LEFT_BILLET,0,MANACLIPPER_MULTITICKET,(remainingticket - 1));
+                    player:messageSpecial(text.LEFT_BILLET,0,MANACLIPPER_MULTITICKET,(remainingticket - 1));
                 else
-                    player:messageSpecial(END_BILLET,0,MANACLIPPER_MULTITICKET);
+                    player:messageSpecial(text.END_BILLET,0,MANACLIPPER_MULTITICKET);
                     player:delKeyItem(MANACLIPPER_MULTITICKET);
                 end
             player:startEvent(0x000E);
         else
-            player:messageSpecial(NO_BILLET,MANACLIPPER_TICKET);
+            player:messageSpecial(text.NO_BILLET,MANACLIPPER_TICKET);
             player:setVar("bibiki",0);
             player:setPos(489,-3,713,200);
         end

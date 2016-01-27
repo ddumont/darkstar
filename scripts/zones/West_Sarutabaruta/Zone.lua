@@ -3,11 +3,10 @@
 -- Zone: West_Sarutabaruta (115)
 --
 -----------------------------------
-package.loaded[ "scripts/zones/West_Sarutabaruta/TextIDs"] = nil;
 package.loaded["scripts/globals/chocobo_digging"] = nil;
 -----------------------------------
 
-require( "scripts/zones/West_Sarutabaruta/TextIDs");
+local text = require("scripts/zones/West_Sarutabaruta/TextIDs");
 require( "scripts/globals/icanheararainbow");
 require("scripts/globals/zone");
 require("scripts/globals/conquest");
@@ -39,7 +38,7 @@ local itemMap = {
                     { 1237, 10, DIGREQ_NIGHT },
                 };
 
-local messageArray = { DIG_THROW_AWAY, FIND_NOTHING, ITEM_OBTAINED };
+local messageArray = { text.DIG_THROW_AWAY, text.FIND_NOTHING, text.ITEM_OBTAINED };
 
 -----------------------------------
 -- onChocoboDig
@@ -95,7 +94,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -111,8 +110,8 @@ end;
 -----------------------------------
 
 function onEventUpdate( player, csid, option)
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0030) then
         lightCutsceneUpdate(player); -- Quest: I Can Hear A Rainbow
     elseif (csid == 0x003e or csid == 0x003f) then
@@ -131,8 +130,8 @@ end;
 -----------------------------------
 
 function onEventFinish( player, csid, option)
-    --printf("CSID: %u",csid);
-    --printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0030) then
         lightCutsceneFinish(player); -- Quest: I Can Hear A Rainbow
     elseif (csid == 0x003e or csid == 0x003f) then

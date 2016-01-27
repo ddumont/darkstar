@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: LaLoff Amphitheater
---  MOB: Ark Angel HM
+-- MOB: Ark Angel HM
 -----------------------------------
-package.loaded["scripts/zones/LaLoff_Amphitheater/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/LaLoff_Amphitheater/TextIDs");
+local text = require("scripts/zones/LaLoff_Amphitheater/TextIDs");
 require("scripts/globals/status");
 
 -----------------------------------

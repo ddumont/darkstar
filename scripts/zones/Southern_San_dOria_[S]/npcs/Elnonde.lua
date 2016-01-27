@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Southern SandOria [S]
--- NPC: Elnonde
+--  NPC: Elnonde
 -- @zone 80
 -- @pos 86 2 -0
------------------------------------
-package.loaded["scripts/zones/Southern_San_dOria_[S]/TextIDs"] = nil;
-require("scripts/zones/Southern_San_dOria_[S]/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria_[S]/TextIDs");
 require("scripts/globals/quests");
 -----------------------------------
 -- onTrade Action
@@ -25,7 +23,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-player:startEvent(0x0267); -- Default Dialogue
+    player:startEvent(0x0267); -- Default Dialogue
 end;
 
 -----------------------------------
@@ -33,8 +31,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -42,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x01E) then -- Gifts Of Griffon Trade
         player:tradeComplete();
         local mask = player:getVar("GiftsOfGriffonPlumes");

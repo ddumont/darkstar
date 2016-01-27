@@ -1,16 +1,14 @@
 -----------------------------------
---    Area: Mhaura
---    NPC:  Take
---  Involved In Quest: RYCHARDE_THE_CHEF
---  Starts and finishes quest: Expertice
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Take
+-- Involved In Quest: RYCHARDE_THE_CHEF
+-- Starts and finishes quest: Expertice
 -----------------------------------
 
 require("scripts/globals/titles");
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 
 -- player:startEvent(0x3b); -- standar dialog
 -- player:startEvent(0x3c); -- tell to look for ricarde
@@ -76,8 +74,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -85,8 +83,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x3c) then  
         player:setVar("QuestRychardetheChef_var",2); -- second stage on quest
     elseif (csid == 0x3d) then  -- accept quest EXPERTICE
@@ -94,10 +92,10 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x3e) then   -- end quest expertice
         player:addFame(WINDURST,WIN_FAME*120);
         if (player:getFreeSlotsCount() < 1) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,132);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,132);
         else
             player:addItem(132);
-            player:messageSpecial(ITEM_OBTAINED,132);
+            player:messageSpecial(text.ITEM_OBTAINED,132);
             player:addTitle(THREESTAR_PURVEYOR);
             player:setVar("QUEST_EXPERTISE_STATE_var",0); --done cooking
             player:setVar("QuestHNIVCCompDay_var",0); -- completition day of unending chase
@@ -109,6 +107,3 @@ function onEventFinish(player,csid,option)
         end
     end
 end;
-
-
-

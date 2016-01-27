@@ -5,11 +5,10 @@
 -----------------------------------
 
 require("scripts/globals/settings");
-package.loaded["scripts/zones/The_Ashu_Talif/TextIDs"] = nil;
-require("scripts/zones/The_Ashu_Talif/TextIDs");
+local text = require("scripts/zones/The_Ashu_Talif/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)
@@ -20,9 +19,9 @@ end;
 -----------------------------------
 
 function onZoneIn(player,prevZone)
-cs = -1;
+    local cs = -1;
 
-return cs;
+    return cs;
 end;
 
 -----------------------------------
@@ -37,8 +36,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -46,9 +45,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

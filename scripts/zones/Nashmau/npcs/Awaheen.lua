@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Nashmau
--- NPC: Awaheen
+--  NPC: Awaheen
 -- Standard Info NPC
 -----------------------------------
-package.loaded["scripts/zones/Nashmau/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Nashmau/TextIDs");
+local text = require("scripts/zones/Nashmau/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,35 +22,35 @@ local reward = 0;
         elseif (trade:hasItemQty(2186,1)) then nbr = 2 ; reward = 2185;
         elseif (trade:hasItemQty(2185,1)) then nbr = 5 ; reward = 2184;
         end
-     end 
+     end
      if (reward > 0) then
      local boucle;
          if (player:getFreeSlotsCount() >= 1) then
          player:tradeComplete();
          player:addItem(reward,nbr);
-             for boucle=1,nbr,1 do player:messageSpecial(ITEM_OBTAINED,reward);
+             for boucle=1,nbr,1 do player:messageSpecial(text.ITEM_OBTAINED,reward);
              end
          else
-         player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,reward);
+         player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,reward);
          end
-     end   
-end; 
+     end
+end;
 
 -----------------------------------
 -- onTrigger Action
 -----------------------------------
 
 function onTrigger(player,npc)
-player:startEvent(0x00F0);
-end; 
+    player:startEvent(0x00F0);
+end;
 
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -60,9 +58,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

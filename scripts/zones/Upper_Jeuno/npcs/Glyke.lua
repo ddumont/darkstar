@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC: Glyke
+--  NPC: Glyke
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
     
-player:showText(npc,GLYKE_SHOP_DIALOG);
+    player:showText(npc, text.GLYKE_SHOP_DIALOG);
 
-stock = {0x1193,92,    -- Iron Bread
+    local stock =
+    {
+    0x1193,92,    -- Iron Bread
      0x1138,128,    -- Tortilla
      0x1104,184,    -- White Bread
      0x1140,1400,    -- Pea Soup
@@ -38,7 +39,7 @@ stock = {0x1193,92,    -- Iron Bread
      0x1148,1012,    -- Mellon Juice
      0x1159,855}    -- Grape Juice
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -46,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,9 +56,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

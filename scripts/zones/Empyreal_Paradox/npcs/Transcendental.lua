@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Empyreal_Paradox
--- NPC:  Transcendental
------------------------------------
-package.loaded["scripts/zones/Empyreal_Paradox/TextIDs"] = nil;
+--  NPC: Transcendental
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Empyreal_Paradox/TextIDs");
 require("scripts/globals/missions");
 require("scripts/globals/keyitems");
 require("scripts/globals/bcnm");
@@ -41,8 +38,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("onUpdate CSID: %u",csid);
---printf("onUpdate RESULT: %u",option);
+    -- printf("onUpdate CSID: %u",csid);
+    -- printf("onUpdate RESULT: %u",option);
     
     EventUpdateBCNM(player,csid,option)
 end;
@@ -52,8 +49,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("onFinish CSID: %u",csid);
---printf("onFinish RESULT: %u",option);
+    -- printf("onFinish CSID: %u",csid);
+    -- printf("onFinish RESULT: %u",option);
     if ( csid == 0x0002) then
      player:setVar("PromathiaStatus",2);
     elseif (EventFinishBCNM(player,csid,option)) then

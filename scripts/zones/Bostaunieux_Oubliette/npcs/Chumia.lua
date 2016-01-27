@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Bostaunieux Oubliette
---  NPC:  Chumia
---  Type: Standard NPC
---  @pos 102.420 -25.001 70.457 167
------------------------------------
-package.loaded["scripts/zones/Bostaunieux_Oubliette/TextIDs"] = nil;
+-- Area: Bostaunieux Oubliette
+--  NPC: Chumia
+-- Type: Standard NPC
+-- @pos 102.420 -25.001 70.457 167
 -----------------------------------
 
-require("scripts/zones/Bostaunieux_Oubliette/TextIDs");
+local text = require("scripts/zones/Bostaunieux_Oubliette/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, CHUMIA_DIALOG);
+    player:showText(npc, text.CHUMIA_DIALOG);
 end;
 
 -----------------------------------

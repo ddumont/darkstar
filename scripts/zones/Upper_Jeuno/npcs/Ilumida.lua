@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC: Ilumida
+--  NPC: Ilumida
 -- Starts and Finishes Quest: A Candlelight Vigil
 -- @pos -75 -1 58 244
------------------------------------
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
 package.loaded["scripts/globals/settings"] = nil;
 -----------------------------------
 
@@ -13,7 +11,7 @@ require("scripts/globals/keyitems");
 require("scripts/globals/titles");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -76,8 +74,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -85,8 +83,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if ((csid == 0x00c0 and option == 1) or (csid == 0x00c1 and option == 1)) then --just start quest
         player:addQuest(JEUNO,A_CANDLELIGHT_VIGIL);
         player:setVar("QuestACandlelightVigil_denied", 0);
@@ -96,12 +94,12 @@ function onEventFinish(player,csid,option)
     
     elseif (csid == 0x00c2) then --finish quest
         if (player:getFreeSlotsCount() == 0) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,13094);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,13094);
         else
             player:addTitle(ACTIVIST_FOR_KINDNESS);
             player:delKeyItem(HOLY_CANDLE);
             player:addItem(13094);
-            player:messageSpecial(ITEM_OBTAINED,13094);
+            player:messageSpecial(text.ITEM_OBTAINED,13094);
             player:needToZone(true);
             player:addFame(JEUNO, JEUNO_FAME*30);
             player:completeQuest(JEUNO,A_CANDLELIGHT_VIGIL);
@@ -118,12 +116,12 @@ function onEventFinish(player,csid,option)
         
     elseif (csid == 0x00c6) then --finish quest, note: no title granted
         if (player:getFreeSlotsCount() == 0) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,4882);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,4882);
         else
             player:delKeyItem(MOONDROP);
-            player:messageSpecial(GIL_OBTAINED, GIL_RATE*3000)
+            player:messageSpecial(text.GIL_OBTAINED, GIL_RATE*3000)
             player:addItem(4882);
-            player:messageSpecial(ITEM_OBTAINED,4882);
+            player:messageSpecial(text.ITEM_OBTAINED,4882);
             player:addFame(JEUNO, JEUNO_FAME*30);
             player:completeQuest(JEUNO,SEARCHING_FOR_THE_RIGHT_WORDS);
             player:setVar("SearchingForRightWords_postcs", -2);

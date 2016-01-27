@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Norg
--- NPC: Mamaulabion
+--  NPC: Mamaulabion
 -- Starts and finishes Quest: Mama Mia
 -- @zone 252
 -- @pos -57 -9 68 (88)
@@ -27,12 +27,10 @@
 --will require changing other avatar quests and making a variable for it all. (if this gets scripted, please remove this comment)
 
 -----------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -170,8 +168,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -179,8 +177,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x00BF) then
         player:addQuest(OUTLANDS,MAMA_MIA);
@@ -194,10 +192,10 @@ function onEventFinish(player,csid,option)
     
     elseif (csid == 0x00C5) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,14625); -- Evokers Ring
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,14625); -- Evokers Ring
         else
             player:addItem(14625); -- Evokers Ring
-            player:messageSpecial(ITEM_OBTAINED,14625); -- Evokers Ring
+            player:messageSpecial(text.ITEM_OBTAINED,14625); -- Evokers Ring
             player:addFame(OUTLANDS,NORG_FAME*30); --idk how much fame the quest adds, just left at 30 which the levi quest gave.
             player:completeQuest(OUTLANDS,MAMA_MIA);
             player:setVar("tradesMamaMia",0)

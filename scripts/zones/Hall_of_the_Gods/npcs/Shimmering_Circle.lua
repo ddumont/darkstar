@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Hall of the Gods
--- NPC:  Shimmering Circle
+--  NPC: Shimmering Circle
 -- Lifts players up to the sky!
 -- @pos 0 -20 147 251
------------------------------------
-package.loaded["scripts/zones/Hall_of_the_Gods/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Hall_of_the_Gods/TextIDs");
+local text = require("scripts/zones/Hall_of_the_Gods/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -33,7 +31,7 @@ function onTrigger(player,npc)
          (ZilartProgress == THE_GATE_OF_THE_GODS and ZVar > 0)) then
             player:startEvent(0x000a);
       else
-         player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+         player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
         end
     else
         player:startEvent(0x000b);
@@ -46,8 +44,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,8 +53,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x0003) then
         player:setVar("ZilartStatus",1);

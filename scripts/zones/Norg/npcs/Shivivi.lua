@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area: Norg
--- NPC: Shivivi
+--  NPC: Shivivi
 -- Starts Quest: Secret of the Damp Scroll
 -- @zone 252
 -- @pos 68.729 -6.281 -6.432
------------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 require("scripts/globals/pathfind");
 
 local path = {
@@ -96,8 +94,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -105,14 +103,11 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option,npc)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x001f) then
         player:addQuest(OUTLANDS,SECRET_OF_THE_DAMP_SCROLL);
     end
 
     npc:wait(0);
 end;
-
-
-

@@ -1,11 +1,10 @@
 -----------------------------------
 -- Area: Windurst Woods
--- NPC: Pehki Machumaht
+--  NPC: Pehki Machumaht
 -- Map Seller NPC
 -----------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
 
-require("scripts/zones/Windurst_Woods/TextIDs");
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
 require("scripts/globals/magic_maps");
 
 -----------------------------------

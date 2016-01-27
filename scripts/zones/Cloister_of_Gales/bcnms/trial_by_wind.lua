@@ -2,13 +2,11 @@
 -- Area: Cloister of Gales
 -- BCNM: Trial by Wind
 -- @zone -361 1 -381 201
------------------------------------
-package.loaded["scripts/zones/Cloister_of_Gales/TextIDs"] = nil;
 -------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Cloister_of_Gales/TextIDs");
+local text = require("scripts/zones/Cloister_of_Gales/TextIDs");
 
 -----------------------------------
 
@@ -53,7 +51,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         player:delKeyItem(TUNING_FORK_OF_WIND);
         player:addKeyItem(WHISPER_OF_GALES);
-        player:messageSpecial(KEYITEM_OBTAINED,WHISPER_OF_GALES);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHISPER_OF_GALES);
     end
     
 end;

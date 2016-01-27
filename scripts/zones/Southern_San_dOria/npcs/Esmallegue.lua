@@ -1,16 +1,14 @@
 -----------------------------------
---    Area: Southern San d'Oria
---    NPC: Esmallegue
---  General Info NPC
---  @zone 230
---  @pos 0 2 -83
--------------------------------------
-package.loaded["scripts/zones/Southern_San_dOria/TextIDs"] = nil;
+-- Area: Southern San d'Oria
+--  NPC: Esmallegue
+-- General Info NPC
+-- @zone 230
+-- @pos 0 2 -83
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Southern_San_dOria/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria/TextIDs");
 
 ----------------------------------- 
 -- onTrade Action 
@@ -24,7 +22,7 @@ FlyerForRegine = player:getQuestStatus(SANDORIA,FLYERS_FOR_REGINE);
         count = trade:getItemCount();
         MagicFlyer = trade:hasItemQty(532,1);
         if (MagicFlyer == true and count == 1) then
-            player:messageSpecial(FLYER_REFUSED);
+            player:messageSpecial(text.FLYER_REFUSED);
         end
     end
 end;
@@ -34,7 +32,7 @@ end;
 -----------------------------------
  
 function onTrigger(player,npc) 
---    player:startEvent(0x37e);-- cavernous maw
+-- player:startEvent(0x37e);-- cavernous maw
     player:startEvent(0x0375)
 end; 
 
@@ -43,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -52,10 +50,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-
 

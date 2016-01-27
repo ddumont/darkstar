@@ -1,18 +1,16 @@
 -----------------------------------
---  Area: Bastok Markets
+-- Area: Bastok Markets
 --  NPC: Shamarhaan
---  Type: Quest Starter
---  Involved in quest: No Strings Attached
---  @zone: 235
---  @pos -285.382 -13.021 -84.743
+-- Type: Quest Starter
+-- Involved in quest: No Strings Attached
+-- @zone: 235
+-- @pos -285.382 -13.021 -84.743
 --
---  Auto-Script: Requires Verification.  Verified standard dialog - thrydwolf 12/8/2011
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
+-- Auto-Script: Requires Verification.  Verified standard dialog - thrydwolf 12/8/2011
 -----------------------------------
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action

@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Selbina
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 248
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
+-- Area: Selbina
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 248
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

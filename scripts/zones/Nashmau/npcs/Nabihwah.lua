@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Nashmau
---  NPC:  Nabihwah
---  Type: Standard NPC
---  @pos 9.988 -7 68.585 53
------------------------------------
-package.loaded["scripts/zones/Nashmau/TextIDs"] = nil;
+-- Area: Nashmau
+--  NPC: Nabihwah
+-- Type: Standard NPC
+-- @pos 9.988 -7 68.585 53
 -----------------------------------
 
-require("scripts/zones/Nashmau/TextIDs");
+local text = require("scripts/zones/Nashmau/TextIDs");
 
 -----------------------------------
 -- onTrade Action

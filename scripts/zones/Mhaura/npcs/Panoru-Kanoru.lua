@@ -1,13 +1,11 @@
 ----------------------------------
---  Area: Mhaura
+-- Area: Mhaura
 --  NPC: Panoru-Kanoru
---  Type: Item Deliverer
---  @pos 5.241    -4.035    93.891 249
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Type: Item Deliverer
+-- @pos 5.241    -4.035    93.891 249
 -----------------------------------
 
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, PANORU_DELIVERY_DIALOG);
+    player:showText(npc, text.PANORU_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

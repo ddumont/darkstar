@@ -1,13 +1,9 @@
 -----------------------------------
---  Area: Bibiki Bay
---  NPC:  Noih Tahparawh
---  Type: Manaclipper
---  @pos -392 -3 -385 4
------------------------------------
-
-package.loaded["scripts/zones/Bibiki_Bay/TextIDs"] = nil;
-
-require("scripts/zones/Bibiki_Bay/TextIDs");
+-- Area: Bibiki Bay
+--  NPC: Noih Tahparawh
+-- Type: Manaclipper
+-- @pos -392 -3 -385 4
+local text = require("scripts/zones/Bibiki_Bay/TextIDs");
 
 -----------------------------------
 -- onTrade Action

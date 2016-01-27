@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Port Windurst
---   NPC: Mojo-Pojo
---  Type: Standard NPC
+-- Area: Port Windurst
+--  NPC: Mojo-Pojo
+-- Type: Standard NPC
 -- @zone: 240
---  @pos -108.041 -4.25 109.545
+-- @pos -108.041 -4.25 109.545
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

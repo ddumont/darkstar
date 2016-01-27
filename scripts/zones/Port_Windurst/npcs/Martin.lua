@@ -1,12 +1,8 @@
 -----------------------------------
---  Area: Port Windurst
---   NPC: Martin
---  Type: Standard NPC
------------------------------------
-
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
-
-require("scripts/zones/Port_Windurst/TextIDs");
+-- Area: Port Windurst
+--  NPC: Martin
+-- Type: Standard NPC
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action

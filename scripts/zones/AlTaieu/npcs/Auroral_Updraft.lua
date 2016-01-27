@@ -1,12 +1,8 @@
 -----------------------------------
---  Area: Al'Taieu
---  NPC:  Auroral Updraft
---  Type: Standard NPC
+-- Area: Al'Taieu
+--  NPC: Auroral Updraft
+-- Type: Standard NPC
 -----------------------------------
-package.loaded["scripts/zones/AlTaieu/TextIDs"] = nil;
------------------------------------
-
-require("scripts/zones/AlTaieu/TextIDs");
 
 -----------------------------------
 -- onTrade Action

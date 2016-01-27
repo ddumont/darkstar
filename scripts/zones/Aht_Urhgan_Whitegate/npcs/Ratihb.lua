@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Aht Urhgan Whitegate
--- NPC: Ratihb
+--  NPC: Ratihb
 -- Standard Info NPC
 -- @pos 75.225 -6.000 -137.203 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
@@ -12,7 +10,7 @@ require("scripts/globals/settings");
 require("scripts/globals/status");
 require("scripts/globals/titles");
 require("scripts/globals/quests");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -66,18 +64,18 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0304) then
         local AFgun = 18702; 
         if (player:getFreeSlotsCount() >= 1) then
             player:addItem(AFgun) -- Receive Af1 Trump Gun
-            player:messageSpecial(ITEM_OBTAINED,AFgun);
+            player:messageSpecial(text.ITEM_OBTAINED,AFgun);
             player:completeQuest(AHT_URHGAN,EQUIPED_FOR_ALL_OCCASIONS);
             player:setVar("EquipedforAllOccasions",0);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,AFgun);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,AFgun);
         end
         
     elseif (csid == 0x031D) then
@@ -85,9 +83,6 @@ function onEventFinish(player,csid,option)
         player:setVar("AgainstAllOddsSideQuests",1); -- Set For Corsair Side Quests
         player:addQuest(AHT_URHGAN,AGAINST_ALL_ODDS); -- Start of af 3 not completed yet
         player:addKeyItem(LIFE_FLOAT); -- BCNM KEY ITEM TO ENTER BCNM
-        player:messageSpecial(KEYITEM_OBTAINED, LIFE_FLOAT);
+        player:messageSpecial(text.KEYITEM_OBTAINED, LIFE_FLOAT);
     end
 end;
-
-
-

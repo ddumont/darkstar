@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC:  Juroro
+--  NPC: Juroro
 -- Starts and Finishes Quest: Trial by Earth
 -- @pos 32 7 -41 236
------------------------------------
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -64,8 +62,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -73,23 +71,23 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0100) then
         if (player:getFreeSlotsCount() ~= 0) then
                 player:addItem(1169);
-                player:messageSpecial(ITEM_OBTAINED,1169);
+                player:messageSpecial(text.ITEM_OBTAINED,1169);
                 player:setVar("ThePuppetMasterProgress",2);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1169);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1169);
         end;
     elseif (csid == 0x0101) then
         if (player:getFreeSlotsCount() ~= 0) then
             player:addItem(1169);
-            player:messageSpecial(ITEM_OBTAINED,1169);
+            player:messageSpecial(text.ITEM_OBTAINED,1169);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1169);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,1169);
         end;
     elseif (csid == 0x0102) then
         player:setVar("ThePuppetMasterProgress",4);
@@ -100,10 +98,10 @@ function onEventFinish(player,csid,option)
         player:addQuest(BASTOK,TRIAL_BY_EARTH);
         player:setVar("TrialByEarth_date", 0);
         player:addKeyItem(TUNING_FORK_OF_EARTH);
-        player:messageSpecial(KEYITEM_OBTAINED,TUNING_FORK_OF_EARTH);
+        player:messageSpecial(text.KEYITEM_OBTAINED,TUNING_FORK_OF_EARTH);
     elseif (csid == 0x011c) then 
         player:addKeyItem(TUNING_FORK_OF_EARTH);
-        player:messageSpecial(KEYITEM_OBTAINED,TUNING_FORK_OF_EARTH);
+        player:messageSpecial(text.KEYITEM_OBTAINED,TUNING_FORK_OF_EARTH);
     elseif (csid == 0x00fc) then
         local item = 0;
         if (option == 1) then item = 17438;         -- Titan's Cudgel
@@ -113,17 +111,17 @@ function onEventFinish(player,csid,option)
         end
         
         if (player:getFreeSlotsCount() == 0 and (option ~= 5 or option ~= 6)) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,item);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,item);
         else 
             if (option == 5) then 
                 player:addGil(GIL_RATE*10000);
-                player:messageSpecial(GIL_OBTAINED,GIL_RATE*10000); -- Gils
+                player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*10000); -- Gils
             elseif (option == 6) then 
                 player:addSpell(299); -- Avatar Titan Spell
-                player:messageSpecial(TITAN_UNLOCKED,0,0,1);
+                player:messageSpecial(text.TITAN_UNLOCKED,0,0,1);
             else
                 player:addItem(item);
-                player:messageSpecial(ITEM_OBTAINED,item); -- Item
+                player:messageSpecial(text.ITEM_OBTAINED,item); -- Item
             end
             player:addTitle(HEIR_OF_THE_GREAT_EARTH);
             player:delKeyItem(WHISPER_OF_TREMORS); --Whisper of Tremors, as a trade for the above rewards

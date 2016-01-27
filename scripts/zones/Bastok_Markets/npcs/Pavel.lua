@@ -1,14 +1,11 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Pavel
+--  NPC: Pavel
 -- Involved in Quest: Stamp Hunt
 -- @pos -349.798 -10.002 -181.296 235
 -----------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action

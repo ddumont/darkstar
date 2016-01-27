@@ -4,12 +4,10 @@
 -- Type: Smithing Adv. Image Support
 -- @pos -106.336 2.000 26.117 237
 -----------------------------------
-package.loaded["scripts/zones/Metalworks/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Metalworks/TextIDs");
+local text = require("scripts/zones/Metalworks/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -58,7 +56,7 @@ function onEventFinish(player,csid,option)
 
     if (csid == 0x0067 and option == 1) then
         player:delGil(Cost);
-        player:messageSpecial(SMITHING_SUPPORT,0,2,0);
+        player:messageSpecial(text.SMITHING_SUPPORT,0,2,0);
         player:addStatusEffect(EFFECT_SMITHING_IMAGERY,3,0,480);
     end
 end;

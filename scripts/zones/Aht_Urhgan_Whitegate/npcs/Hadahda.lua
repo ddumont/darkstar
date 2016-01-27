@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Aht Urhgan Whitegate
---  NPC:  Hadahda
---  Type: Standard NPC
---  @pos -112.029 -6.999 -66.114 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Area: Aht Urhgan Whitegate
+--  NPC: Hadahda
+-- Type: Standard NPC
+-- @pos -112.029 -6.999 -66.114 50
 -----------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action

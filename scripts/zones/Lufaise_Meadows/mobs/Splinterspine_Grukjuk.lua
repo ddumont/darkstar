@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Lufaise Meadows (24)
---  MOB: Splinterspine_Grukjuk
+-- MOB: Splinterspine_Grukjuk
 -----------------------------------
-package.loaded["scripts/zones/Lufaise_Meadows/TextIDs"] = nil;
------------------------------------
-require("scripts/zones/Lufaise_Meadows/TextIDs");
+local text = require("scripts/zones/Lufaise_Meadows/TextIDs");
 require("scripts/globals/quests");
 
 -----------------------------------

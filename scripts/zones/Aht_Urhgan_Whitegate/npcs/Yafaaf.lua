@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Aht Urhgan Whitegate
---  NPC:  Yafaaf
---  Type: Standard Merchant
---  @pos 76.889 -7 -140.379 50
------------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
+-- Area: Aht Urhgan Whitegate
+--  NPC: Yafaaf
+-- Type: Standard Merchant
+-- @pos 76.889 -7 -140.379 50
 -----------------------------------
 
 require("scripts/globals/shop");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +20,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, YAFAAF_SHOP_DIALOG);
+    player:showText(npc, text.YAFAAF_SHOP_DIALOG);
 end;
 
 -----------------------------------

@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Metalworks
--- NPC:  Cid
+--  NPC: Cid
 -- Starts & Finishes Quest: Cid's Secret, The Usual, Dark Puppet (start)
 -- Involved in Mission: Bastok 7-1
 -- @pos -12 -12 1 237
------------------------------------
-package.loaded["scripts/zones/Metalworks/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
@@ -13,7 +11,7 @@ require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
 require("scripts/globals/quests");
-require("scripts/zones/Metalworks/TextIDs");
+local text = require("scripts/zones/Metalworks/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -108,7 +106,7 @@ function onTrigger(player,npc)
         end
     elseif (currentMission == THE_CRYSTAL_LINE) then
         if (player:hasKeyItem(C_L_REPORTS)) then
-            player:showText(npc,MISSION_DIALOG_CID_TO_AYAME);
+            player:showText(npc, text.MISSION_DIALOG_CID_TO_AYAME);
         else
             player:startEvent(0x01f9);
         end
@@ -142,8 +140,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -154,13 +152,13 @@ function onEventFinish(player,csid,option)
 -- local currentday = tonumber(os.date("%j"));  
 
 
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0381) then
             player:setVar("COP_tenzen_story",1);   
     elseif (csid == 0x037C) then
             player:addKeyItem(LETTERS_FROM_ULMIA_AND_PRISHE);
-            player:messageSpecial(KEYITEM_OBTAINED,LETTERS_FROM_ULMIA_AND_PRISHE);
+            player:messageSpecial(text.KEYITEM_OBTAINED,LETTERS_FROM_ULMIA_AND_PRISHE);
     elseif (csid == 0x037A) then
             player:setVar("PromathiaStatus",0);
             player:setVar("Promathia_CID_timer",0);
@@ -204,7 +202,7 @@ function onEventFinish(player,csid,option)
         player:setVar("darkPuppetCS",1);
     elseif (csid == 0x01f7) then
         player:addKeyItem(BLUE_ACIDITY_TESTER);
-        player:messageSpecial(KEYITEM_OBTAINED, BLUE_ACIDITY_TESTER);
+        player:messageSpecial(text.KEYITEM_OBTAINED, BLUE_ACIDITY_TESTER);
     elseif (csid == 0x01f8 or csid == 0x02fc) then
         finishMissionTimeline(player,1,csid,option);
     elseif (csid == 0x01f9 and option == 0) then
@@ -212,16 +210,16 @@ function onEventFinish(player,csid,option)
             if (player:getFreeSlotsCount(0) >= 1) then
                 crystal = math.random(4096,4103);
                 player:addItem(crystal);
-                player:messageSpecial(ITEM_OBTAINED, crystal);
+                player:messageSpecial(text.ITEM_OBTAINED, crystal);
                 player:setVar("MissionStatus",1);
             else
-                player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,crystal);
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,crystal);
             end
         end
     elseif (csid == 0x01fa and option == 0) then
         player:tradeComplete();
         player:addKeyItem(C_L_REPORTS);
-        player:messageSpecial(KEYITEM_OBTAINED, C_L_REPORTS);
+        player:messageSpecial(text.KEYITEM_OBTAINED, C_L_REPORTS);
     elseif (csid == 0x02fb) then
         player:setVar("MissionStatus",1);
     elseif (csid == 0x01fb) then
@@ -231,11 +229,11 @@ function onEventFinish(player,csid,option)
                 player:delKeyItem(UNFINISHED_LETTER);
                 player:setVar("CidsSecret_Event",0);
                 player:addItem(13570);
-                player:messageSpecial(ITEM_OBTAINED,13570); -- Ram Mantle
+                player:messageSpecial(text.ITEM_OBTAINED,13570); -- Ram Mantle
                 player:addFame(BASTOK,BAS_FAME*30);
                 player:completeQuest(BASTOK,CID_S_SECRET);
         else
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,13570);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,13570);
         end
      end
      -- complete chapter "tree path"
@@ -250,6 +248,3 @@ function onEventFinish(player,csid,option)
      
      
 end;
-
-
-

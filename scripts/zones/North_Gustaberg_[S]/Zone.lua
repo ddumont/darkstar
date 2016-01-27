@@ -3,11 +3,9 @@
 -- Zone: North_Gustaberg_[S] (88)
 --
 -----------------------------------
-package.loaded["scripts/zones/North_Gustaberg_[S]/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/North_Gustaberg_[S]/TextIDs");
+local text = require("scripts/zones/North_Gustaberg_[S]/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -57,6 +55,6 @@ function onEventFinish(player,csid,option)
     if (csid == 0x0001) then
         player:addQuest(CRYSTAL_WAR,BETTER_PART_OF_VALOR);
         player:addKeyItem(CLUMP_OF_ANIMAL_HAIR);
-        player:messageSpecial(KEYITEM_OBTAINED,CLUMP_OF_ANIMAL_HAIR);
+        player:messageSpecial(text.KEYITEM_OBTAINED,CLUMP_OF_ANIMAL_HAIR);
     end
 end;

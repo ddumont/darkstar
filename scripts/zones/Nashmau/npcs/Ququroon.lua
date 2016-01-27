@@ -1,15 +1,13 @@
 -----------------------------------
---  Area: Nashmau
---  NPC:  Ququroon
---  Type: Standard NPC
---  @pos -2.400 -1 66.824 53
------------------------------------
-package.loaded["scripts/zones/Nashmau/TextIDs"] = nil;
+-- Area: Nashmau
+--  NPC: Ququroon
+-- Type: Standard NPC
+-- @pos -2.400 -1 66.824 53
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Nashmau/TextIDs");
+local text = require("scripts/zones/Nashmau/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -62,11 +60,11 @@ function onEventFinish(player,csid,option)
        player:setVar("ratraceCS",4);
     elseif (csid == 0x0136) then
         if (player:getFreeSlotsCount() < 1) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,5595);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,5595);
         else
             player:tradeComplete();
             player:addItem(5595);
-            player:messageSpecial(ITEM_OBTAINED,5595);
+            player:messageSpecial(text.ITEM_OBTAINED,5595);
             player:setVar("ratraceCS",5);
         end
     end

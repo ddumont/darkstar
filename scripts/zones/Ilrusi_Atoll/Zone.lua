@@ -1,15 +1,14 @@
 -----------------------------------
 -- 
 -- Zone: Ilrusi_Atoll
---  zone 55
+-- zone 55
 -----------------------------------
 
 require("scripts/globals/settings");
-package.loaded["scripts/zones/Ilrusi_Atoll/TextIDs"] = nil;
-require("scripts/zones/Ilrusi_Atoll/TextIDs");
+local text = require("scripts/zones/Ilrusi_Atoll/TextIDs");
 require("scripts/globals/settings");
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)
@@ -20,7 +19,7 @@ end;
 -----------------------------------
 
 function onZoneIn(player,prevZone)
-cs = -1;
+    local cs = -1;
 
    --------------RANDOMIZE COFFER------------------------
   local correctcoffer = math.random(17002505,17002516);
@@ -31,7 +30,7 @@ cs = -1;
 
   
  
-return cs;
+    return cs;
 end;
 
 -----------------------------------
@@ -46,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,9 +54,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

@@ -1,15 +1,12 @@
 -----------------------------------
---  Area: Beaucedine Glacier
---  NPC:  Torino-Samarino
---  Type: Quest NPC
---     Involved in Quests: Curses, Foiled A-Golem!?, Tuning Out
---  @pos 105 -20 140 111
------------------------------------
-
-package.loaded["scripts/zones/Beaucedine_Glacier/TextIDs"] = nil;
+-- Area: Beaucedine Glacier
+--  NPC: Torino-Samarino
+-- Type: Quest NPC
+-- Involved in Quests: Curses, Foiled A-Golem!?, Tuning Out
+-- @pos 105 -20 140 111
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Beaucedine_Glacier/TextIDs");
+local text = require("scripts/zones/Beaucedine_Glacier/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -71,7 +68,7 @@ function onEventFinish(player,csid,option)
     -- Curses, Foiled A_Golem!?
     if (csid == 0x0068 and option == 1) then
         player:addKeyItem(SHANTOTTOS_NEW_SPELL);
-        player:messageSpecial(KEYITEM_OBTAINED,SHANTOTTOS_NEW_SPELL);  -- add new spell key item
+        player:messageSpecial(text.KEYITEM_OBTAINED,SHANTOTTOS_NEW_SPELL);  -- add new spell key item
     elseif (csid == 0x006C) then                                       -- start wait for new scroll
         player:delKeyItem(SHANTOTTOS_EXSPELL);
         player:setVar("golemday",VanadielDayOfTheYear());
@@ -79,7 +76,7 @@ function onEventFinish(player,csid,option)
         player:setVar("golemwait",1);
     elseif (csid == 0x006D) then
         player:addKeyItem(SHANTOTTOS_NEW_SPELL);
-        player:messageSpecial(KEYITEM_OBTAINED,SHANTOTTOS_NEW_SPELL);  -- add new spell key item
+        player:messageSpecial(text.KEYITEM_OBTAINED,SHANTOTTOS_NEW_SPELL);  -- add new spell key item
         player:setVar("golemday",0);
         player:setVar("golemyear",0);
         player:setVar("golemwait",0);

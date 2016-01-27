@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Bastok Markets (S)
---   NPC: Heumila
---  Type: Past Event Watcher
+-- Area: Bastok Markets (S)
+--  NPC: Heumila
+-- Type: Past Event Watcher
 -- @zone: 87
---  @pos 
+-- @pos 
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

@@ -1,16 +1,14 @@
 -----------------------------------
---  Area: Lower Jeuno
+-- Area: Lower Jeuno
 --  NPC: Akamafula
---  Type: Tenshodo Merchant
---  @pos 28.465 2.899 -46.699 245
------------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
+-- Type: Tenshodo Merchant
+-- @pos 28.465 2.899 -46.699 245
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/shop");
 require("scripts/globals/keyitems");
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -26,7 +24,7 @@ end;
 function onTrigger(player,npc)
     if (player:hasKeyItem(TENSHODO_MEMBERS_CARD)) then 
         if (player:sendGuild(60417,1,23,1)) then
-            player:showText(npc, AKAMAFULA_SHOP_DIALOG);
+            player:showText(npc, text.AKAMAFULA_SHOP_DIALOG);
         end
     else
         -- player:startEvent(0x0096);

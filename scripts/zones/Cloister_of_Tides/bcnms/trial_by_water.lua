@@ -2,12 +2,10 @@
 -- Area: Cloister of Tides
 -- BCNM: Trial by Water
 -----------------------------------
-package.loaded["scripts/zones/Cloister_of_Tides/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Cloister_of_Tides/TextIDs");
+local text = require("scripts/zones/Cloister_of_Tides/TextIDs");
 
 -----------------------------------
 
@@ -52,7 +50,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         player:delKeyItem(TUNING_FORK_OF_WATER);
         player:addKeyItem(WHISPER_OF_TIDES);
-        player:messageSpecial(KEYITEM_OBTAINED,WHISPER_OF_TIDES);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHISPER_OF_TIDES);
     end
     
 end;    

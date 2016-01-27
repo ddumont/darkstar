@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon CS
---  MOB: Dee_Wapa_the_Desolator
+-- MOB: Dee_Wapa_the_Desolator
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

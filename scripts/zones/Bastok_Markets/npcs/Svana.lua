@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Svana
+--  NPC: Svana
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action

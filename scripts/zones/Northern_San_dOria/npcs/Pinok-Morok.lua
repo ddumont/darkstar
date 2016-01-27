@@ -4,12 +4,10 @@
 -- Type: Smithing Synthesis Image Support
 -- @pos -186.650 10.25 148.380 231
 -----------------------------------
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -55,7 +53,7 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
     if (csid == 0x0275 and option == 1) then
-        player:messageSpecial(IMAGE_SUPPORT,0,2,1);
+        player:messageSpecial(text.IMAGE_SUPPORT,0,2,1);
         player:addStatusEffect(EFFECT_SMITHING_IMAGERY,1,0,120);
     end
 end;

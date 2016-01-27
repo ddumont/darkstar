@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area: Metalworks
--- NPC:  Lucius
+--  NPC: Lucius
 -- Involved in Mission: Bastok 3-3
 -- Involved in Quest: Riding on the Clouds
 -- @pos 59.959 -17.39 -42.321 237
------------------------------------
-package.loaded["scripts/zones/Metalworks/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
 require("scripts/globals/missions");
-require("scripts/zones/Metalworks/TextIDs");
+local text = require("scripts/zones/Metalworks/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,7 +22,7 @@ function onTrade(player,npc,trade)
             player:setVar("ridingOnTheClouds_2",0);
             player:tradeComplete();
             player:addKeyItem(SMILING_STONE);
-            player:messageSpecial(KEYITEM_OBTAINED,SMILING_STONE);
+            player:messageSpecial(text.KEYITEM_OBTAINED,SMILING_STONE);
         end
     end
     
@@ -64,7 +62,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x0142) then
         player:setVar("MissionStatus",1);
         player:addKeyItem(LETTER_TO_THE_AMBASSADOR);
-        player:messageSpecial(KEYITEM_OBTAINED,LETTER_TO_THE_AMBASSADOR);
+        player:messageSpecial(text.KEYITEM_OBTAINED,LETTER_TO_THE_AMBASSADOR);
     end
     
 end;

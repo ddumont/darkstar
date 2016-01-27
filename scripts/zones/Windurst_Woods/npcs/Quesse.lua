@@ -1,29 +1,30 @@
 -----------------------------------
 -- Area: Windurst Woods
--- NPC:  Quesse
+--  NPC: Quesse
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
-require("scripts/zones/Windurst_Woods/TextIDs");
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
 
 -----------------------------------
 -- onTrade Action
 -----------------------------------
 
 function onTrade(player,npc,trade)
-end; 
+end;
 
 -----------------------------------
 -- onTrigger Action
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,QUESSE_SHOP_DIALOG);
+    player:showText(npc, text.text.QUESSE_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x034D,  1150,1,     --Black Chocobo Feather
 
         0x439B,     9,2,     --Dart
@@ -37,18 +38,18 @@ function onTrigger(player,npc)
         0x45C8,   126,3,     --Herbal Broth
         0x45CA,   695,3,     --Carrion Broth
         0x13D1, 50784,3      --Scroll of Chocobo Mazurka
-    } 
+    }
     showNationShop(player, WINDURST, stock);
 
-end; 
+end;
 
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -56,6 +57,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

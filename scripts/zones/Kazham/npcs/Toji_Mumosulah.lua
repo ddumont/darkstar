@@ -1,12 +1,11 @@
 -----------------------------------
 -- Area: Kazham
--- NPC: Toji Mumosulah
+--  NPC: Toji Mumosulah
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Kazham/TextIDs"] = nil;
-require("scripts/zones/Kazham/TextIDs");
+local text = require("scripts/zones/Kazham/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 
 function onTrigger(player,npc)
 
-player:showText(npc,TOJIMUMOSULAH_SHOP_DIALOG);
+    player:showText(npc, text.TOJIMUMOSULAH_SHOP_DIALOG);
 
-stock = {0x0070,456,        -- Yellow Jar
+    local stock =
+    {
+    0x0070,456,        -- Yellow Jar
      0x338F,95,        -- Blood Stone
      0x3314,3510,        -- Fang Necklace
      0x3409,1667,        -- Bone Earring
@@ -38,7 +39,7 @@ stock = {0x0070,456,        -- Yellow Jar
      0x137C,3312,        -- Scroll of Army's Paeon III
      0x1364,8726}        -- Scroll of Monomi: Ichi
  
-showShop(player, STATIC, stock);
+    showShop(player, STATIC, stock);
 end; 
 
 -----------------------------------
@@ -46,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,9 +56,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

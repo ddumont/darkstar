@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Woods
---   NPC: Mocchi Katsartbih
---  Type: Standard NPC
+-- Area: Windurst Woods
+--  NPC: Mocchi Katsartbih
+-- Type: Standard NPC
 -- @zone: 241
---  @pos -13.225 -4.888 -164.108
+-- @pos -13.225 -4.888 -164.108
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------
@@ -42,4 +40,3 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
 end;
-

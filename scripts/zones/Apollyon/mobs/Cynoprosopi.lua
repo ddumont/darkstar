@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon NW
--- NPC: Cynoprosopi
+--  NPC: Cynoprosopi
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

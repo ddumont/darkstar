@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Garlaige Citadel
--- NPC:  Mashira
+--  NPC: Mashira
 -- Involved in Quests: Rubbish day, Making Amens!
 -- @pos 141 -6 138 200
------------------------------------
-package.loaded["scripts/zones/Garlaige_Citadel/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Garlaige_Citadel/TextIDs");
+local text = require("scripts/zones/Garlaige_Citadel/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -41,8 +39,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 RubbishDay = player:getQuestStatus(JEUNO,RUBBISH_DAY);
 MakingAmens = player:getQuestStatus(WINDURST,MAKING_AMENS);
     if (csid == 0x000b and option == 1 and RubbishDay == QUEST_ACCEPTED) then
@@ -59,10 +57,7 @@ MakingAmens = player:getQuestStatus(WINDURST,MAKING_AMENS);
         player:setVar("RubbishDayVar",1);
     elseif (csid == 0x000b and option == 0 and MakingAmens == QUEST_ACCEPTED) then
         player:addKeyItem(128); --Broken Wand
-        player:messageSpecial(KEYITEM_OBTAINED,128);
+        player:messageSpecial(text.KEYITEM_OBTAINED,128);
         player:tradeComplete();
     end
 end;
-
-
-

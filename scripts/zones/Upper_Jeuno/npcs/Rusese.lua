@@ -1,11 +1,8 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC: Rusese
+--  NPC: Rusese
 -- Map Seller NPC
------------------------------------
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
-
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 require("scripts/globals/magic_maps");
 
 -----------------------------------

@@ -1,14 +1,12 @@
 -----------------------------------
---  Area: Port Windurst
---  NPC:  Three of Clubs
---  Type: Standard NPC
---  @pos -7.238 -5 106.982 240
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
+-- Area: Port Windurst
+--  NPC: Three of Clubs
+-- Type: Standard NPC
+-- @pos -7.238 -5 106.982 240
 -----------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action

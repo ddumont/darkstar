@@ -4,12 +4,10 @@
 -- Type: Fishing Synthesis Image Support
 -- @pos -178.400 -3.835 60.480 240
 -----------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -55,7 +53,7 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
     if (csid == 0x271D and option == 1) then
-        player:messageSpecial(FISHING_SUPPORT,0,0,2);
+        player:messageSpecial(text.FISHING_SUPPORT,0,0,2);
         player:addStatusEffect(EFFECT_FISHING_IMAGERY,1,0,3600);
     end
 end;

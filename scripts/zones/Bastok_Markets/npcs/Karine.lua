@@ -1,11 +1,7 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Karine
+--  NPC: Karine
 -- Map Seller NPC
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-
-require("scripts/zones/Bastok_Markets/TextIDs");
 require("scripts/globals/magic_maps");
 
 -----------------------------------

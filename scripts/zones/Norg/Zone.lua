@@ -3,13 +3,11 @@
 -- Zone: Norg (252)
 --
 -----------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 
 -----------------------------------
 -- onInitialize
@@ -26,7 +24,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
     
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -63,8 +61,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -72,13 +70,13 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0001) then
         if (player:hasKeyItem(MAP_OF_NORG) == false) then
             player:addKeyItem(MAP_OF_NORG);
-            player:messageSpecial(KEYITEM_OBTAINED,MAP_OF_NORG);
+            player:messageSpecial(text.KEYITEM_OBTAINED,MAP_OF_NORG);
         end
         player:completeMission(ZILART,THE_NEW_FRONTIER);
         player:addMission(ZILART,WELCOME_TNORG);

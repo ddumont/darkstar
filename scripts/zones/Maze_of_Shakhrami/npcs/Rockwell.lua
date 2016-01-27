@@ -3,13 +3,11 @@
 -- Quest: Your Crystal Ball
 -- @pos -18 -13 181 198
 -----------------------------------
-package.loaded["scripts/zones/Maze_of_Shakhrami/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/quests");
-require("scripts/zones/Maze_of_Shakhrami/TextIDs");
+local text = require("scripts/zones/Maze_of_Shakhrami/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -34,7 +32,7 @@ function onTrigger(player,npc)
     if (player:getQuestStatus(JEUNO,YOUR_CRYSTAL_BALL) == QUEST_ACCEPTED and player:getVar("QuestYourCrystalBall_prog") == 1 and starttime ~= realday) then 
         player:startEvent(0x0034);
     else
-        player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+        player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
     end
 end; 
 
@@ -43,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -52,19 +50,16 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0034) then 
         if (player:getFreeSlotsCount() == 0) then
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,556);
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,556);
         else
             player:addItem(556);
-            player:messageSpecial(ITEM_OBTAINED,556);
+            player:messageSpecial(text.ITEM_OBTAINED,556);
             player:setVar("QuestYourCrystalBall_date", 0);
             player:setVar("QuestYourCrystalBall_prog", 0);
         end
     end
 end;
-
-
-

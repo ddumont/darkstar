@@ -1,17 +1,15 @@
 -----------------------------------
 -- Area:  Tavnazian_Safehold
--- NPC:   Hieroglyphics
+--  NPC:  Hieroglyphics
 -- Notes: Dynamis Tavnazia Enter
 -- @pos 3.674 -7.278 -27.856 26
------------------------------------
-package.loaded["scripts/zones/Tavnazian_Safehold/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/dynamis");
 require("scripts/globals/missions");
-require("scripts/zones/Tavnazian_Safehold/TextIDs");
+local text = require("scripts/zones/Tavnazian_Safehold/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -35,7 +33,7 @@ function onTrigger(player,npc)
         
     
         if (player:getMainLvl() < DYNA_LEVEL_MIN) then
-            player:messageSpecial(PLAYERS_HAVE_NOT_REACHED_LEVEL,DYNA_LEVEL_MIN);
+            player:messageSpecial(text.PLAYERS_HAVE_NOT_REACHED_LEVEL,DYNA_LEVEL_MIN);
         
         elseif ((dynaWaitxDay + (BETWEEN_2DYNA_WAIT_TIME * 24 * 60 * 60)) < realDay or player:getVar("DynamisID") == GetServerVariable("[DynaTavnazia]UniqueID")) then
             
@@ -44,10 +42,10 @@ function onTrigger(player,npc)
             dayRemaining = math.floor(((dynaWaitxDay + (BETWEEN_2DYNA_WAIT_TIME * 24 * 60 * 60)) - realDay)/3456);
             printf("dayRemaining : %u",dayRemaining );
             
-            player:messageSpecial(YOU_CANNOT_ENTER_DYNAMIS,dayRemaining,10);
+            player:messageSpecial(text.YOU_CANNOT_ENTER_DYNAMIS,dayRemaining,10);
         end
     else
-        player:messageSpecial(MYSTERIOUS_VOICE); 
+        player:messageSpecial(text.MYSTERIOUS_VOICE); 
     end
     
 end;
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("updateRESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("updateRESULT: %u",option);
 end;
 
 -----------------------------------
@@ -66,8 +64,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("finishRESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("finishRESULT: %u",option);
     
     
      if (csid == 0x024C and option == 0) then

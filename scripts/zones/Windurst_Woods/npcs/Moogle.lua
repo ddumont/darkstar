@@ -1,8 +1,9 @@
 -----------------------------------
 -- Area: Residential Area
--- NPC:  Moogle
--- 
+--  NPC: Moogle
+--
 -----------------------------------
+
 require("scripts/globals/moghouse")
 
 -----------------------------------
@@ -10,7 +11,7 @@ require("scripts/globals/moghouse")
 -----------------------------------
 function onTrade(player,npc,trade)
     moogleTrade(player,npc,trade);
-end; 
+end;
 
 -----------------------------------
 -- onTrigger Action
@@ -18,15 +19,15 @@ end;
 
 function onTrigger(player,npc)
     moogleTrigger(player,npc)
-end; 
+end;
 
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -34,8 +35,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x7530) then
         player:setVar("MoghouseExplication",0);
     end

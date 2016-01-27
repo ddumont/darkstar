@@ -2,14 +2,12 @@
 -- Area: The_Garden_of_RuHmet
 -- Name: when_angels_fall
 -----------------------------------
-package.loaded["scripts/zones/The_Garden_of_RuHmet/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
 require("scripts/globals/missions");
-require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
+local text = require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
 
 -----------------------------------
 -- EXAMPLE SCRIPT
@@ -52,7 +50,7 @@ function onBcnmLeave(player,instance,leavecode)
     elseif (leavecode == 4) then
         player:startEvent(0x7d02);
     end
-    --printf("leavecode: %u",leavecode);
+    -- printf("leavecode: %u",leavecode);
     
 end;
 

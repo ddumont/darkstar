@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Sauromugue Champaign
---  MOB: Goblin Leecher
------------------------------------
-package.loaded["scripts/zones/Sauromugue_Champaign/TextIDs"] = nil;
+-- MOB: Goblin Leecher
 -----------------------------------
 
 require("scripts/globals/fieldsofvalor");
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
-require("scripts/zones/Sauromugue_Champaign/TextIDs");
+local text = require("scripts/zones/Sauromugue_Champaign/TextIDs");
 
 -----------------------------------
 -- onMobDeath
@@ -22,7 +20,7 @@ function onMobDeath(mob,killer,ally)
         -- Guesstimating 15% chance
         if (math.random(1,100) >= 85) then
             ally:addKeyItem(CHUNK_OF_SMOKED_GOBLIN_GRUB);
-            ally:messageSpecial(KEYITEM_OBTAINED,CHUNK_OF_SMOKED_GOBLIN_GRUB);
+            ally:messageSpecial(text.KEYITEM_OBTAINED,CHUNK_OF_SMOKED_GOBLIN_GRUB);
         end
     end
 

@@ -1,11 +1,9 @@
 -----------------------------------
---    Area: Port Windurst
---    NPC:  Kuriodo-Moido
---  Involved In Quest: Making Amends, Wonder Wands
---  Starts and Finishes: Making Amens!
---    Working 100%
------------------------------------
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
+-- Area: Port Windurst
+--  NPC: Kuriodo-Moido
+-- Involved In Quest: Making Amends, Wonder Wands
+-- Starts and Finishes: Making Amens!
+-- Working 100%
 -----------------------------------
 
 require("scripts/globals/missions");
@@ -13,7 +11,7 @@ require("scripts/globals/quests");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -84,8 +82,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -93,8 +91,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0118) then
         player:addQuest(WINDURST,MAKING_AMENS);
     elseif (csid == 0x011c) then
@@ -102,11 +100,8 @@ function onEventFinish(player,csid,option)
         player:delKeyItem(BROKEN_WAND);
         player:addTitle(HAKKURURINKURUS_BENEFACTOR);
         player:addGil(GIL_RATE*6000);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*6000);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*6000);
         player:addFame(WINDURST,WIN_FAME*150);
         player:completeQuest(WINDURST,MAKING_AMENS);
     end
 end;
-
-
-

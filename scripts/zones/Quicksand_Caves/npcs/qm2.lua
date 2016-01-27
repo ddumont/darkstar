@@ -1,13 +1,11 @@
 -----------------------------------
---    Area: Quicksand Caves
---     NPC:  qm2
---  Notes: Used to spawn Tribunus VII-I
---     @pos -49.944 -0.891 -139.485 208
------------------------------------
-package.loaded["scripts/zones/Quicksand_Caves/TextIDs"] = nil;
+-- Area: Quicksand Caves
+--  NPC: qm2
+-- Notes: Used to spawn Tribunus VII-I
+-- @pos -49.944 -0.891 -139.485 208
 -----------------------------------
 
-require("scripts/zones/Quicksand_Caves/TextIDs");
+local text = require("scripts/zones/Quicksand_Caves/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -29,7 +27,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+    player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
 end;
 
 -----------------------------------
@@ -37,8 +35,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -46,6 +44,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

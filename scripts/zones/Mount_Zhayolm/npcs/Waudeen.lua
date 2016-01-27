@@ -1,15 +1,13 @@
 -----------------------------------
---  Area: Mount_Zhayolm
---  NPC:  Waudeen
---  Type: Assault
---  @pos 673.882 -23.995 367.604 61
------------------------------------
-package.loaded["scripts/zones/Mount_Zhayolm/TextIDs"] = nil;
+-- Area: Mount_Zhayolm
+--  NPC: Waudeen
+-- Type: Assault
+-- @pos 673.882 -23.995 367.604 61
 -----------------------------------
 
 require("scripts/globals/missions");
 require("scripts/globals/keyitems");
-require("scripts/zones/Mount_Zhayolm/TextIDs");
+local text = require("scripts/zones/Mount_Zhayolm/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -65,7 +63,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x00d1 and option == 1) then
        player:delCurrency("imperial_standing", 50);
        player:addKeyItem(ASSAULT_ARMBAND);
-       player:messageSpecial(KEYITEM_OBTAINED,ASSAULT_ARMBAND);   
+       player:messageSpecial(text.KEYITEM_OBTAINED,ASSAULT_ARMBAND);   
     elseif (csid == 0x0004 and option == 1) then
         player:delKeyItem(SUPPLIES_PACKAGE);
         player:setVar("TOAUM2",1);

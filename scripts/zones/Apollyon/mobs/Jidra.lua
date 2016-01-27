@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon SW
--- NPC:  Jidra 
+--  NPC: Jidra 
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

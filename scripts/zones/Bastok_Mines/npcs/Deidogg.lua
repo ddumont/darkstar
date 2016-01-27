@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC:  Deidogg
+--  NPC: Deidogg
 -- Starts and Finishes Quest: The Talekeeper's Truth, The Talekeeper's Gift (start)
 -- @pos -13 7 29 234
------------------------------------
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -103,10 +101,10 @@ function onEventFinish(player,csid,option)
         player:setVar("theTalekeeperTruth_timer",VanadielDayOfTheYear());
     elseif (csid == 0x00a5) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,14089); -- Fighter's Calligae
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,14089); -- Fighter's Calligae
         else
             player:addItem(14089);
-            player:messageSpecial(ITEM_OBTAINED, 14089); -- Fighter's Calligae
+            player:messageSpecial(text.ITEM_OBTAINED, 14089); -- Fighter's Calligae
             player:setVar("theTalekeeperTruthCS",0);
             player:setVar("theTalekeeperTruth_timer",0);
             player:setVar("DeidoggWait1DayForAF3",VanadielDayOfTheYear());

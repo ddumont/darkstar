@@ -1,13 +1,11 @@
 ----------------------------------
---  Area: Bastok Markets [S]
---  NPC:  Karlotte
---  Type: Item Deliverer
---  @pos -191.646 -8 -36.349 87
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets_[S]/TextIDs"] = nil;
+-- Area: Bastok Markets [S]
+--  NPC: Karlotte
+-- Type: Item Deliverer
+-- @pos -191.646 -8 -36.349 87
 -----------------------------------
 
-require("scripts/zones/Bastok_Markets_[S]/TextIDs");
+local text = require("scripts/zones/Bastok_Markets_[S]/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, KARLOTTE_DELIVERY_DIALOG);
+    player:showText(npc, text.KARLOTTE_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Port Jeuno
+-- Area: Port Jeuno
 --  NPC: Digaga
---  Type: Item Deliverer
---  @zone: 246
---  @pos -52.865    7.999    1.134
+-- Type: Item Deliverer
+-- @zone: 246
+-- @pos -52.865    7.999    1.134
 --
------------------------------------
-
-package.loaded["scripts/zones/Port_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Port_Jeuno/TextIDs");
+local text = require("scripts/zones/Port_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

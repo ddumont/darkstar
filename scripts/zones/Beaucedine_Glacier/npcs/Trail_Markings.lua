@@ -4,13 +4,11 @@
 -- Dynamis-Beaucedine Enter
 -- @pos -284 -39 -422 111
 -----------------------------------
-package.loaded["scripts/zones/Beaucedine_Glacier/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/dynamis");
-require("scripts/zones/Beaucedine_Glacier/TextIDs");
+local text = require("scripts/zones/Beaucedine_Glacier/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -39,15 +37,15 @@ function onTrigger(player,npc)
         end
 
         if (player:getMainLvl() < DYNA_LEVEL_MIN) then
-            player:messageSpecial(PLAYERS_HAVE_NOT_REACHED_LEVEL,DYNA_LEVEL_MIN);
+            player:messageSpecial(text.PLAYERS_HAVE_NOT_REACHED_LEVEL,DYNA_LEVEL_MIN);
         elseif ( (dynaWaitxDay + (BETWEEN_2DYNA_WAIT_TIME * 24 * 60 * 60)) < realDay or player:getVar("DynamisID") == GetServerVariable("[DynaBeaucedine]UniqueID")) then
             player:startEvent(0x0077,5,firstDyna,0,BETWEEN_2DYNA_WAIT_TIME,64,VIAL_OF_SHROUDED_SAND,4236,4237);
         else
             dayRemaining = math.floor(((dynaWaitxDay + (BETWEEN_2DYNA_WAIT_TIME * 24 * 60 * 60)) - realDay)/3456);
-            player:messageSpecial(YOU_CANNOT_ENTER_DYNAMIS,dayRemaining,5);
+            player:messageSpecial(text.YOU_CANNOT_ENTER_DYNAMIS,dayRemaining,5);
         end
     else
-        player:messageSpecial(UNUSUAL_ARRANGEMENT_OF_BRANCHES);
+        player:messageSpecial(text.UNUSUAL_ARRANGEMENT_OF_BRANCHES);
     end
 end;
 

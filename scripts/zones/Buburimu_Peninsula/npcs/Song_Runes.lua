@@ -1,16 +1,14 @@
 -----------------------------------
---    Area: Buburimu Peninsula
---    NPC:  Song Runes
---  Finishes Quest: The Old Monument
------------------------------------
-package.loaded["scripts/zones/Buburimu_Peninsula/TextIDs"] = nil;
+-- Area: Buburimu Peninsula
+--  NPC: Song Runes
+-- Finishes Quest: The Old Monument
 package.loaded["scripts/globals/settings"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/quests");
-require("scripts/zones/Buburimu_Peninsula/TextIDs");
+local text = require("scripts/zones/Buburimu_Peninsula/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -26,7 +24,7 @@ function onTrade(player,npc,trade)
             player:tradeComplete();
             player:completeQuest(JEUNO,THE_OLD_MONUMENT);
             player:addItem(634,1);
-            player:messageSpecial(ITEM_OBTAINED, 634);
+            player:messageSpecial(text.ITEM_OBTAINED, 634);
             player:addTitle(RESEARCHER_OF_CLASSICS);
             player:addFame(BASTOK,BAS_FAME*10);
             player:addFame(SANDORIA,SAN_FAME*10);
@@ -52,8 +50,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -61,8 +59,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x0000) then
         player:setVar("TheOldMonument_Event",3);

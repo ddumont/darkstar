@@ -3,12 +3,10 @@
 -- Zone: Mhaura (249)
 --
 -----------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/zone");
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 require("scripts/globals/missions");
 
 -----------------------------------
@@ -39,7 +37,7 @@ function onZoneIn(player,prevZone)
     if (player:getCurrentMission(COP) == DAWN and player:getVar("PromathiaStatus")==3 and player:getVar("Promathia_kill_day") ~= currentday and player:getVar("COP_shikarees_story")== 0 ) then
         cs=0x0142;
     end
-return cs;
+    return cs;
 end;
 
 -----------------------------------
@@ -50,7 +48,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -62,7 +60,7 @@ function onTransportEvent(player,transport)
     if ((transport == 47) or (transport == 46)) then
         if (not(player:hasKeyItem(BOARDING_PERMIT)) or ENABLE_TOAU == 0) then
             player:setPos(8.200,-1.363,3.445,192);
-            player:messageSpecial(DO_NOT_POSSESS, BOARDING_PERMIT);
+            player:messageSpecial(text.DO_NOT_POSSESS, BOARDING_PERMIT);
         else
             player:startEvent(0x00c8);
         end

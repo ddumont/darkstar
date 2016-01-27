@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Aquillina
+--  NPC: Aquillina
 -- Starts & Finishes Repeatable Quest: A Flash In The Pan
 -- Note: Reapeatable every 15 minutes.
------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -58,8 +56,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -67,8 +65,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x00d9) then
         player:addQuest(BASTOK, A_FLASH_IN_THE_PAN);        
@@ -86,11 +84,8 @@ function onEventFinish(player,csid,option)
         player:tradeComplete();
         player:setVar("FlashInThePan",CompleteTime + 900);
         player:addGil(GIL_RATE*100);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*100);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*100);
     end        
     
 end;
-
-
-
 

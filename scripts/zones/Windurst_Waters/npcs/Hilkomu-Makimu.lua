@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Windurst Waters
--- NPC:  Hilkomu-Makimu
+--  NPC: Hilkomu-Makimu
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,HIKOMUMAKIMU_SHOP_DIALOG);
+    player:showText(npc, text.HIKOMUMAKIMU_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x12DD, 23184,1,     --Scroll of Poison II
         0x12E7, 12880,1,     --Scroll of Bio II
         0x12E1,  4747,1,     --Scroll of Poisonga
@@ -51,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -60,6 +61,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

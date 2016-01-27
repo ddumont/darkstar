@@ -1,11 +1,9 @@
 -----------------------------------
---  Area: Oldton Movalpolos
---  NPC:  Rakorok
------------------------------------
-package.loaded["scripts/zones/Oldton_Movalpolos/TextIDs"] = nil;
+-- Area: Oldton Movalpolos
+--  NPC: Rakorok
 -----------------------------------
 
-require("scripts/zones/Oldton_Movalpolos/TextIDs");
+local text = require("scripts/zones/Oldton_Movalpolos/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -19,7 +17,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    npc:showText(npc, RAKOROK_DIALOGUE); 
+    npc:showText(npc, text.RAKOROK_DIALOGUE); 
 end;
 
 -----------------------------------

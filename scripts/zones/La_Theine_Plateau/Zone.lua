@@ -2,12 +2,10 @@
 --
 -- Zone: La_Theine_Plateau (102)
 --
------------------------------------
-package.loaded["scripts/zones/La_Theine_Plateau/TextIDs"] = nil;
 package.loaded["scripts/globals/chocobo_digging"] = nil;
 -----------------------------------
 
-require("scripts/zones/La_Theine_Plateau/TextIDs");
+local text = require("scripts/zones/La_Theine_Plateau/TextIDs");
 require("scripts/globals/zone");
 require("scripts/globals/icanheararainbow");
 require("scripts/globals/quests");
@@ -95,7 +93,7 @@ function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
 
     for name, player in pairs(players) do
-        conquestUpdate(zone, player, updatetype, CONQUEST_BASE);
+        conquestUpdate(zone, player, updatetype, text.CONQUEST_BASE);
     end
 end;
 
@@ -131,7 +129,7 @@ function onEventFinish( player, csid, option)
         lightCutsceneFinish(player); -- Quest: I Can Hear A Rainbow
     elseif (csid == 0x007a) then
         player:addItem( 14096);
-        player:messageSpecial( ITEM_OBTAINED, 14096); -- Chaos Sollerets
+        player:messageSpecial(text.ITEM_OBTAINED, 14096); -- Chaos Sollerets
         player:setVar( "darkPuppetCS", 0);
         player:addFame( BASTOK, AF2_FAME);
         player:completeQuest( BASTOK,DARK_PUPPET);

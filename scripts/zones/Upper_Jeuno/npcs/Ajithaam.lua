@@ -1,9 +1,7 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC:  Ajithaam
+--  NPC: Ajithaam
 -- @pos -82 0.1 160 244
------------------------------------
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
 package.loaded["scripts/globals/settings"] = nil;
 -----------------------------------
 
@@ -12,7 +10,7 @@ require("scripts/globals/quests");
 require("scripts/globals/missions");
 require("scripts/globals/teleports");
 require("scripts/globals/keyitems");
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 --[[
 Bitmask Designations:
@@ -87,8 +85,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -96,21 +94,21 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 10088) then
         player:addQuest(JEUNO,LURE_OF_THE_WILDCAT_JEUNO);
         player:setVar("WildcatJeuno",0);
         player:addKeyItem(WHITE_SENTINEL_BADGE);
-        player:messageSpecial(KEYITEM_OBTAINED,WHITE_SENTINEL_BADGE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHITE_SENTINEL_BADGE);
     elseif (csid == 10091) then
         player:completeQuest(JEUNO,LURE_OF_THE_WILDCAT_JEUNO);
         player:addFame(JEUNO, JEUNO_FAME*150);
         player:setVar("WildcatJeuno",0);
         player:delKeyItem(WHITE_SENTINEL_BADGE);
         player:addKeyItem(WHITE_INVITATION_CARD);
-        player:messageSpecial(KEYITEM_LOST,WHITE_SENTINEL_BADGE);
-        player:messageSpecial(KEYITEM_OBTAINED,WHITE_INVITATION_CARD);
+        player:messageSpecial(text.KEYITEM_LOST,WHITE_SENTINEL_BADGE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,WHITE_INVITATION_CARD);
     elseif (csid == 10177) then
         player:tradeComplete();
         toAhtUrhganWhitegate(player);

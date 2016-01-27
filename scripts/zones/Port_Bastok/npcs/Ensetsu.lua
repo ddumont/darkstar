@@ -1,18 +1,16 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC:  Ensetsu
+--  NPC: Ensetsu
 -- Finish Quest: Ayame and Kaede
 -- Involved in Quest: 20 in Pirate Years, I'll Take the Big Box
 -- @pos 33 -6 67 236
------------------------------------
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -67,8 +65,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -76,8 +74,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x00f2) then
         player:setVar("AyameAndKaede_Event", 2);
@@ -87,7 +85,7 @@ function onEventFinish(player,csid,option)
         player:delKeyItem(SEALED_DAGGER);
         player:addTitle(SHADOW_WALKER);
         player:unlockJob(13);
-        player:messageSpecial(UNLOCK_NINJA); -- You can now become a Ninja
+        player:messageSpecial(text.UNLOCK_NINJA); -- You can now become a Ninja
         player:setVar("AyameAndKaede_Event", 0);
         player:addFame(BASTOK, BAS_FAME*30);
         player:completeQuest(BASTOK,AYAME_AND_KAEDE);

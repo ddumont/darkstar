@@ -4,13 +4,11 @@
 -- Involved in Quest: In Defiant Challenge
 -- @pos -137.047 0 347.502 200
 -----------------------------------
-package.loaded["scripts/zones/Garlaige_Citadel/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
 require("scripts/globals/settings");
-require("scripts/zones/Garlaige_Citadel/TextIDs");
+local text = require("scripts/zones/Garlaige_Citadel/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -28,15 +26,15 @@ function onTrigger(player,npc)
         if (player:hasItem(1090) == false and player:hasKeyItem(BOMB_COAL_FRAGMENT3) == false
         and player:getQuestStatus(JEUNO,IN_DEFIANT_CHALLENGE) == QUEST_ACCEPTED) then
             player:addKeyItem(BOMB_COAL_FRAGMENT3);
-            player:messageSpecial(KEYITEM_OBTAINED,BOMB_COAL_FRAGMENT3);
+            player:messageSpecial(text.KEYITEM_OBTAINED,BOMB_COAL_FRAGMENT3);
         end
 
         if (player:hasKeyItem(BOMB_COAL_FRAGMENT1) and player:hasKeyItem(BOMB_COAL_FRAGMENT2) and player:hasKeyItem(BOMB_COAL_FRAGMENT3)) then
             if (player:getFreeSlotsCount() >= 1) then
                 player:addItem(1090, 1);
-                player:messageSpecial(ITEM_OBTAINED, 1090);
+                player:messageSpecial(text.ITEM_OBTAINED, 1090);
             else
-                player:messageSpecial(ITEM_CANNOT_BE_OBTAINED, 1090);
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED, 1090);
             end
         end
 

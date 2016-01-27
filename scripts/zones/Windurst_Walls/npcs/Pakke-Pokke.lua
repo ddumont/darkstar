@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Walls
---   NPC: Pakke-Pokke
---  Type: Standard NPC
+-- Area: Windurst Walls
+--  NPC: Pakke-Pokke
+-- Type: Standard NPC
 -- @zone: 239
---  @pos -3.464 -17.25 125.635
+-- @pos -3.464 -17.25 125.635
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

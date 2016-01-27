@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Hall of Transference
--- NPC:  Cermet Gate - Mea
+--  NPC: Cermet Gate - Mea
 -- @pos 280 -86 -19
------------------------------------
-package.loaded["scripts/zones/Hall_of_Transference/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/missions");
-require("scripts/zones/Hall_of_Transference/TextIDs");
+local text = require("scripts/zones/Hall_of_Transference/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -25,7 +23,7 @@ function onTrigger(player,npc)
     if (player:getCurrentMission(COP) > BELOW_THE_ARKS) then
         player:startEvent(0x0096);
     else
-        player:messageSpecial(NO_RESPONSE_OFFSET+1); -- The door is firmly shut.
+        player:messageSpecial(text.NO_RESPONSE_OFFSET+1); -- The door is firmly shut.
     end
     
 end;

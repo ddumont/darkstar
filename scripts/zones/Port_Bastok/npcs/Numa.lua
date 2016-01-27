@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC: Numa
+--  NPC: Numa
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,NUMA_SHOP_DIALOG);
+    player:showText(npc, text.NUMA_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x30A9,  5079,1,     --Cotton Hachimaki
         0x3129,  7654,1,     --Cotton Dogi
         0x31A9,  4212,1,     --Cotton Tekko
@@ -51,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -60,6 +61,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

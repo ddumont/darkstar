@@ -3,14 +3,12 @@
 -- Zone: Ra’Kanzar Turris (277)
 --
 -----------------------------------
-package.loaded["scripts/zones/RaKaznar_Turris/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/RaKaznar_Turris/TextIDs");
+local text = require("scripts/zones/RaKaznar_Turris/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)

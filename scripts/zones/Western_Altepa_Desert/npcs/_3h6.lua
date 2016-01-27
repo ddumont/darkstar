@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area:  Western Altepa Desert
--- NPC:   _3h6 (Topaz Column)
+--  NPC:  _3h6 (Topaz Column)
 -- Notes: Mechanism for Altepa Gate
 -- @pos -260 10 -344 125
 -----------------------------------
-package.loaded["scripts/zones/Western_Altepa_Desert/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Western_Altepa_Desert/TextIDs");
+local text = require("scripts/zones/Western_Altepa_Desert/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -32,7 +30,7 @@ function onTrigger(player,npc)
         npc:setAnimation(8);
         GetNPCByID(TopazID-4):setAnimation(8);
     else
-        player:messageSpecial(DOES_NOT_RESPOND);
+        player:messageSpecial(text.DOES_NOT_RESPOND);
     end
 
     if (Emerald == 8 and Ruby == 8 and Sapphire == 8) then
@@ -54,8 +52,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -63,6 +61,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

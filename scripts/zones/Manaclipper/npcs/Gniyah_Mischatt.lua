@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Manaclipper
---  NPC:  Gniyah Mischatt
---  Type: Adventurer's Assistant
---  @pos 0.033 -4 2.725 3
------------------------------------
-package.loaded["scripts/zones/Manaclipper/TextIDs"] = nil;
+-- Area: Manaclipper
+--  NPC: Gniyah Mischatt
+-- Type: Adventurer's Assistant
+-- @pos 0.033 -4 2.725 3
 -----------------------------------
 
-require("scripts/zones/Manaclipper/TextIDs");
+local text = require("scripts/zones/Manaclipper/TextIDs");
 
 -----------------------------------
 -- onTrade Action

@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Selbina
--- NPC:  Elfriede
+--  NPC: Elfriede
 -- Involved In Quest: The Tenshodo Showdown
 -- @pos 61 -15 10 248
 -----------------------------------
-package.loaded["scripts/zones/Selbina/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Selbina/TextIDs");
+local text = require("scripts/zones/Selbina/TextIDs");
 require("scripts/globals/keyitems");
 
 -----------------------------------
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -59,15 +57,15 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x2714) then
         player:tradeComplete();
         player:setVar("theTenshodoShowdownCS",4);
         player:delKeyItem(TENSHODO_ENVELOPE);
         player:addKeyItem(SIGNED_ENVELOPE);
-        player:messageSpecial(KEYITEM_OBTAINED,SIGNED_ENVELOPE);
+        player:messageSpecial(text.KEYITEM_OBTAINED,SIGNED_ENVELOPE);
     end
 
 end;

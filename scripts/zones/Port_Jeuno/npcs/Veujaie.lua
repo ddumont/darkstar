@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Port Jeuno
+-- Area: Port Jeuno
 --  NPC: Veujaie
---  Type: Item Deliverer
---  @zone: 246
---  @pos -20.349    7.999    -2.888
+-- Type: Item Deliverer
+-- @zone: 246
+-- @pos -20.349    7.999    -2.888
 --
------------------------------------
-
-package.loaded["scripts/zones/Port_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Port_Jeuno/TextIDs");
+local text = require("scripts/zones/Port_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

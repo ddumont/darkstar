@@ -1,14 +1,13 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Brunhilde
+--  NPC: Brunhilde
 -- Standard Merchant NPC
 --
 -- Updated Aug-09-2013 by Zerahn, based on bgwiki and gamerescape
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,9 +21,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,BRUNHILDE_SHOP_DIALOG);
+    player:showText(npc, text.BRUNHILDE_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x30A0,   151,3,     --Bronze Cap
         0x3090,  1305,3,     --Faceguard
         0x3091, 11520,3,     --Brass Mask
@@ -45,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -54,6 +55,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

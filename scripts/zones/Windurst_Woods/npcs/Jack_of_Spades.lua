@@ -1,17 +1,17 @@
 -----------------------------------
---    Area: Windurst Woods
---    NPC: Jack of Spades
---    Adventurer's Assistant
---    Working 100%
+-- Area: Windurst Woods
+--  NPC: Jack of Spades
+-- Adventurer's Assistant
+-- Working 100%
 -------------------------------------
 
 require("scripts/globals/settings");
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
-require("scripts/zones/Windurst_Woods/TextIDs");
 
------------------------------------ 
--- onTrade Action 
------------------------------------ 
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
+
+-----------------------------------
+-- onTrade Action
+-----------------------------------
 
 function onTrade(player,npc,trade)
 
@@ -23,21 +23,21 @@ AdventurerCoupon = trade:hasItemQty(536,1);
     end
 end;
 
------------------------------------ 
--- onTrigger Action 
 -----------------------------------
- 
-function onTrigger(player,npc) 
+-- onTrigger Action
+-----------------------------------
+
+function onTrigger(player,npc)
     player:startEvent(0x2719,0,4);
-end; 
+end;
 
 -----------------------------------
 -- onEventUpdate
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -45,13 +45,10 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x271a) then
         player:tradeComplete();
         player:addGil(GIL_RATE*50);
-    end 
+    end
 end;
-
-
-

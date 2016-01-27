@@ -1,9 +1,7 @@
 -----------------------------------
 -- Area: Promyvion-Mea
---  MOB: Memory Receptacle
+-- MOB: Memory Receptacle
 -- Todo: clean up disgustingly bad formatting
------------------------------------
-package.loaded["scripts/zones/Promyvion-Mea/TextIDs"] = nil;
 -----------------------------------
 require( "scripts/zones/Promyvion-Mea/TextIDs" );
 require("scripts/globals/status");
@@ -197,8 +195,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 ----------------------------------
@@ -206,8 +204,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
    if (option==1) then
     player:setVar("MemoryReceptacle",0);
     end

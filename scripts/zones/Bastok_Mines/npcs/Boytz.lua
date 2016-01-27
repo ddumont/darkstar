@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Bastok Mines
--- NPC:  Boytz
+--  NPC: Boytz
 -- Standard Merchant NPC
 -----------------------------------
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,BOYTZ_SHOP_DIALOG);
+    player:showText(npc, text.BOYTZ_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x1020,  4445,1,     --Ether
 
         0x1037,   736,2,     --Echo Drops
@@ -59,8 +60,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -68,6 +69,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

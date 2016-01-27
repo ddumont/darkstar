@@ -1,14 +1,11 @@
 -----------------------------------
 -- Area: Aht Urhgan Whitegate
--- NPC:  Ahkk Jharcham
+--  NPC: Ahkk Jharcham
 -- Quest 'Keeping Notes'
 -- @pos 0.1 -1 -76 50
 -----------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/quests");
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action

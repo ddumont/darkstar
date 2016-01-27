@@ -2,12 +2,10 @@
 -- Area: Cloister of Storms
 -- BCNM: Trial by Lightning
 -----------------------------------
-package.loaded["scripts/zones/Cloister_of_Storms/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Cloister_of_Storms/TextIDs");
+local text = require("scripts/zones/Cloister_of_Storms/TextIDs");
 
 -----------------------------------
 
@@ -61,11 +59,11 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         if (player:hasSpell(303) == false) then
             player:addSpell(303) -- Ramuh
-            player:messageSpecial(RAMUH_UNLOCKED,0,0,5);            
+            player:messageSpecial(text.RAMUH_UNLOCKED,0,0,5);            
         end
         if (player:hasItem(4181) == false) then
             player:addItem(4181);
-            player:messageSpecial(ITEM_OBTAINED,4181); -- Scroll of instant warp
+            player:messageSpecial(text.ITEM_OBTAINED,4181); -- Scroll of instant warp
         end
         player:setVar("TrialSizeLightning_date", 0);
         player:addFame(WINDURST,WIN_FAME*30);

@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters (S)
---   NPC: Sahnn Dhansett
---  Type: Standard NPC
+-- Area: Windurst Waters (S)
+--  NPC: Sahnn Dhansett
+-- Type: Standard NPC
 -- @zone: 94
---  @pos 112.820 -3.122 47.857
+-- @pos 112.820 -3.122 47.857
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters_[S]/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

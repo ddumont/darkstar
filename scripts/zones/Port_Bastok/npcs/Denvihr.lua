@@ -1,13 +1,12 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC: Denvihr
+--  NPC: Denvihr
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
 
 require("scripts/globals/shop");
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,9 +20,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,DENVIHR_SHOP_DIALOG);
+    player:showText(npc, text.DENVIHR_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x02BB,  5688,1,     --Oak Log
         0x0284,  1800,1,     --Mythril Ore
         0x0343,   225,1,     --Flax Flower
@@ -46,8 +47,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,6 +56,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

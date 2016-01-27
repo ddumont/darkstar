@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Middle Delfutt's Tower
--- NPC:  ??? (qm1)
+--  NPC: ??? (qm1)
 -- Involved In Quest: Blade of Evil
 -- @pos 84 -79 77 157
------------------------------------
-package.loaded["scripts/zones/Middle_Delkfutts_Tower/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Middle_Delkfutts_Tower/TextIDs");
+local text = require("scripts/zones/Middle_Delkfutts_Tower/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -33,7 +31,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+    player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
 end;
 
 -----------------------------------
@@ -41,8 +39,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -50,6 +48,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

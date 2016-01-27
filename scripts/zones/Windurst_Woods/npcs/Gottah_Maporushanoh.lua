@@ -1,7 +1,7 @@
 -----------------------------------
---    Area: Windurst Woods
---    NPC:  Gottah Maporushanoh
---    Working 100%
+-- Area: Windurst Woods
+--  NPC: Gottah Maporushanoh
+-- Working 100%
 -----------------------------------
 
 require("scripts/globals/settings");
@@ -11,7 +11,7 @@ require("scripts/globals/settings");
 -----------------------------------
 
 function onTrade(player,npc,trade)
-end; 
+end;
 
 -----------------------------------
 -- onTrigger Action
@@ -28,7 +28,7 @@ AmazinScorpio = player:getQuestStatus(WINDURST,THE_AMAZIN_SCORPIO);
     else
         player:startEvent(0x1a4);
     end
-    
+
 end;
 
 -----------------------------------
@@ -36,8 +36,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -45,9 +45,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
-
-
-

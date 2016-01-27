@@ -1,15 +1,11 @@
 -----------------------------------
 -- Area: The_Garden_of_RuHmet
--- NPC:  Luminus convergence
------------------------------------
-
-package.loaded["scripts/zones/The_Garden_of_RuHmet/TextIDs"] = nil;
-
+--  NPC: Luminus convergence
 -----------------------------------
 
 
 require("scripts/globals/settings");
-require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
+local text = require("scripts/zones/The_Garden_of_RuHmet/TextIDs");
 
 
 -----------------------------------
@@ -35,8 +31,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("onUpdate CSID: %u",csid);
---printf("onUpdate RESULT: %u",option);
+    -- printf("onUpdate CSID: %u",csid);
+    -- printf("onUpdate RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -44,8 +40,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("onFinish CSID: %u",csid);
---printf("onFinish RESULT: %u",option);
+    -- printf("onFinish CSID: %u",csid);
+    -- printf("onFinish RESULT: %u",option);
    if (csid==0x00CC) then
               player:completeMission(COP,WHEN_ANGELS_FALL);
         player:addMission(COP,DAWN);

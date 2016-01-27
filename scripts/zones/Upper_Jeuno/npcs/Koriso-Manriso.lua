@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Upper Jeuno
+-- Area: Upper Jeuno
 --  NPC: Koriso-Manriso
---  Type: Item Deliverer
---  @zone: 244
---  @pos -64.39    1    23.704
+-- Type: Item Deliverer
+-- @zone: 244
+-- @pos -64.39    1    23.704
 --
------------------------------------
-
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

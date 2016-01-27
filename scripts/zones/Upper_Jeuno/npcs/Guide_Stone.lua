@@ -1,10 +1,8 @@
 -----------------------------------
 -- Area: Upper Jeuno
--- NPC:  Guide Stone
+--  NPC: Guide Stone
 -- @pos 25 -3 -41 244
------------------------------------
-package.loaded["scripts/zones/Upper_Jeuno/TextIDs"] = nil;
-require("scripts/zones/Upper_Jeuno/TextIDs");
+local text = require("scripts/zones/Upper_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -19,7 +17,7 @@ end;
 
 function onTrigger(player,npc)
 
-    player:messageSpecial(GUIDE_STONE);
+    player:messageSpecial(text.GUIDE_STONE);
 end;
 
 -----------------------------------
@@ -27,8 +25,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -36,6 +34,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

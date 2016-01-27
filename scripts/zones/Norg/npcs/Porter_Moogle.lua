@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Norg
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 252
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
+-- Area: Norg
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 252
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

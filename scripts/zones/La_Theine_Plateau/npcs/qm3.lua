@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: La Theine Plateau
---  NPC:??? (qm3)
+-- NPC:??? (qm3)
 -- Involved in Quest: I Can Hear A Rainbow
 -----------------------------------
-package.loaded["scripts/zones/La_Theine_Plateau/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/La_Theine_Plateau/TextIDs");
+local text = require("scripts/zones/La_Theine_Plateau/TextIDs");
 require("scripts/globals/icanheararainbow");
 require("scripts/globals/quests");
 require("scripts/globals/settings");
@@ -56,14 +54,11 @@ function onEventFinish(player,csid,option)
         player:addTitle(RAINBOW_WEAVER);
         player:unlockJob(15);
         player:addSpell(296);
-        player:messageSpecial(UNLOCK_SUMMONER);
-        player:messageSpecial(UNLOCK_CARBUNCLE);
+        player:messageSpecial(text.UNLOCK_SUMMONER);
+        player:messageSpecial(text.UNLOCK_CARBUNCLE);
         player:setVar("ICanHearARainbow",0);
         SetServerVariable("I_Can_Hear_a_Rainbow", 1);
     elseif (csid == 0x00CB) then    
         player:setVar("COP_Tenzen_s_Path",1);
     end
 end;
-
-
-

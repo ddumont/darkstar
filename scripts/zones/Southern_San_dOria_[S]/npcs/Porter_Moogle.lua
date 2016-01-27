@@ -1,14 +1,12 @@
 -----------------------------------
---  Area:   Southern San d'Oria [S]
---  NPC:    Porter Moogle
---  Type:   Storage Moogle
---  @zone 80
---  @pos TODO
------------------------------------
-package.loaded["scripts/zones/Southern_San_dOria_[S]/TextIDs"] = nil;
+-- Area: Southern San d'Oria [S]
+--  NPC: Porter Moogle
+-- Type: Storage Moogle
+-- @zone 80
+-- @pos TODO
 -----------------------------------
 
-require("scripts/zones/Southern_San_dOria_[S]/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria_[S]/TextIDs");
 require("scripts/globals/porter_moogle_util");
 
 local e = 

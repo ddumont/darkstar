@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Heaven's Tower
--- NPC:  Starway Stairway
+--  NPC: Starway Stairway
 -- @pos -10 0.1 30 242
------------------------------------
-package.loaded["scripts/zones/Heavens_Tower/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Heavens_Tower/TextIDs");
+local text = require("scripts/zones/Heavens_Tower/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -30,10 +28,10 @@ function onTrigger(player,npc)
                 player:startEvent(0x0069);
             end;
         else
-          player:messageSpecial(STAIRWAY_LOCKED);
+          player:messageSpecial(text.STAIRWAY_LOCKED);
         end;
     else
-        player:messageSpecial(STAIRWAY_ONLY_CITIZENS);
+        player:messageSpecial(text.STAIRWAY_ONLY_CITIZENS);
     end
     
     return 1;
@@ -44,8 +42,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -53,6 +51,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Lower Jeuno
--- NPC:  Aldo
+--  NPC: Aldo
 -- Involved in Mission: Magicite, Return to Delkfutt's Tower (Zilart)
 -- @pos 20 3 -58 245
------------------------------------
-package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Lower_Jeuno/TextIDs");
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -43,8 +41,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -52,13 +50,13 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x0098) then
         player:delKeyItem(LETTERS_TO_ALDO);
         player:addKeyItem(SILVER_BELL);
-        player:messageSpecial(KEYITEM_OBTAINED,SILVER_BELL);
+        player:messageSpecial(text.KEYITEM_OBTAINED,SILVER_BELL);
         player:setVar("MissionStatus",3);
     elseif (csid == 0x0068) then
         player:setVar("ZilartStatus",1);

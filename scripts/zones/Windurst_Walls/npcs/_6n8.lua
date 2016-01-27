@@ -1,11 +1,11 @@
 -----------------------------------
---  Area: Windurst Walls
---  Door: Priming Gate
---  Involved in quest: Toraimarai Turmoil
+-- Area: Windurst Walls
+-- Door: Priming Gate
+-- Involved in quest: Toraimarai Turmoil
 -----------------------------------
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 -----------------------------------
 
 -----------------------------------

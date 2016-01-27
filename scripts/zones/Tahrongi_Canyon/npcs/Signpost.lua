@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Tahrongi Canyon
--- NPC:  Signpost
------------------------------------
-package.loaded["scripts/zones/Tahrongi_Canyon/TextIDs"] = nil;
+--  NPC: Signpost
 -----------------------------------
 
-require("scripts/zones/Tahrongi_Canyon/TextIDs");
+local text = require("scripts/zones/Tahrongi_Canyon/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -21,13 +19,13 @@ end;
 function onTrigger(player,npc)
 
     if (npc:getID() == 17257026) or (npc:getID() == 17257026) then
-        player:messageSpecial(SIGN_1);        
+        player:messageSpecial(text.SIGN_1);        
     elseif (npc:getID() == 17257027) or (npc:getID() == 17257028) then
-        player:messageSpecial(SIGN_3);
+        player:messageSpecial(text.SIGN_3);
     elseif (npc:getID() == 17257031) or (npc:getID() == 17257032) then
-        player:messageSpecial(SIGN_5);
+        player:messageSpecial(text.SIGN_5);
     elseif (npc:getID() == 17257033) or (npc:getID() == 17257034) then
-        player:messageSpecial(SIGN_7);    
+        player:messageSpecial(text.SIGN_7);    
     end
     
 end; 
@@ -36,8 +34,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------

@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Ru'Lude Gardens
--- NPC:  Harith
+--  NPC: Harith
 -- Type: Standard NPC
 -- @pos -4.349 1 134.014 243
------------------------------------
-package.loaded["scripts/zones/RuLude_Gardens/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/missions");
-require("scripts/zones/RuLude_Gardens/TextIDs");
+local text = require("scripts/zones/RuLude_Gardens/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -41,11 +39,11 @@ function onTrade(player,npc,trade)
                 player:setVar("harithreward",reward);
                 player:startEvent(0x006E);
             else
-                player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,reward);
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,reward);
             end
         elseif (anima > 5000) then
             if (player:getFreeSlotsCount() == 0) then
-                player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,anima);
+                player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,anima);
             elseif (trade:getGil() ~= 2000) then 
                 player:startEvent(0x006C,2000);
             else 
@@ -98,7 +96,7 @@ function onEventFinish(player,csid,option)
         
         player:tradeComplete();
         player:addItem(objecttrade);
-        player:messageSpecial(ITEM_OBTAINED,objecttrade);
+        player:messageSpecial(text.ITEM_OBTAINED,objecttrade);
         player:setVar("harithreward",0);
     end
     

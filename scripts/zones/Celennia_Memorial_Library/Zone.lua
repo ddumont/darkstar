@@ -3,14 +3,11 @@
 -- Zone: Celennia Memorial Library (284)
 --
 -----------------------------------
-package.loaded["scripts/zones/Celennia_Memorial_Library/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Celennia_Memorial_Library/TextIDs");
 
 -----------------------------------
---  onInitialize
+-- onInitialize
 -----------------------------------
 
 function onInitialize(zone)

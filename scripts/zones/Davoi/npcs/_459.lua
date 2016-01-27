@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Davoi
--- NPC:  Wall of Dark Arts
+--  NPC: Wall of Dark Arts
 -- Involved in Mission: Magicite
 -- @pos -22 1 -66 149
 -----------------------------------
-package.loaded["scripts/zones/Davoi/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Davoi/TextIDs");
+local text = require("scripts/zones/Davoi/TextIDs");
 
 -----------------------------------
 -- onTrade Action

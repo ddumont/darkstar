@@ -4,12 +4,10 @@
 -- Type: Goldsmithing Synthesis Image Support
 -- @pos -211.937 -7.814 -56.292 235
 -----------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/status");
 require("scripts/globals/crafting");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -55,7 +53,7 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
     if (csid == 0x012F and option == 1) then
-        player:messageSpecial(GOLDSMITHING_SUPPORT,0,3,1);
+        player:messageSpecial(text.GOLDSMITHING_SUPPORT,0,3,1);
         player:addStatusEffect(EFFECT_GOLDSMITHING_IMAGERY,1,0,120);
     end
 end;

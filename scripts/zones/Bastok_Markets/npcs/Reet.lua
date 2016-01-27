@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Bastok Markets
--- NPC: Reet
+--  NPC: Reet
 -- Adventurer's Assistant
 -- @zone 235
 -- @pos -237 -12 -41
 -------------------------------------
-package.loaded["scripts/zones/Bastok_Markets/TextIDs"] = nil;
--------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Bastok_Markets/TextIDs");
+local text = require("scripts/zones/Bastok_Markets/TextIDs");
 
 ----------------------------------- 
 -- onTrade Action 
@@ -34,8 +32,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -43,11 +41,11 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0006) then
         player:tradeComplete();
         player:addGil(GIL_RATE*50);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*50);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*50);
     end
 end;

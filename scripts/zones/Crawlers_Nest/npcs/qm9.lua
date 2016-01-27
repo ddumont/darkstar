@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Crawlers Nest
--- NPC:  ???
+--  NPC: ???
 -- Used In Quest: A Boy's Dream
 -- @pos -18 -8 124 197
 -----------------------------------
-package.loaded["scripts/zones/Crawlers_Nest/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Crawlers_Nest/TextIDs");
+local text = require("scripts/zones/Crawlers_Nest/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -34,12 +32,12 @@ function onTrigger(player,npc)
             SpawnMob(17584425,168):updateClaim(player); -- Despawn after 3 minutes (-12 seconds for despawn delay).
             player:setVar("DreadbugNM_Timer",os.time()+180);
             player:setVar("DreadbugNM_Day",VanadielDayOfTheYear());
-            player:messageSpecial(SENSE_OF_FOREBODING);
+            player:messageSpecial(text.SENSE_OF_FOREBODING);
         else
-            player:messageSpecial(NOTHING_SEEMS_TO_HAPPEN);
+            player:messageSpecial(text.NOTHING_SEEMS_TO_HAPPEN);
         end
     else
-        player:messageSpecial(NOTHING_WILL_HAPPEN_YET);
+        player:messageSpecial(text.NOTHING_WILL_HAPPEN_YET);
     end
 end;
 
@@ -48,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,7 +55,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 

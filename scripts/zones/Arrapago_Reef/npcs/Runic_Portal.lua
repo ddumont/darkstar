@@ -1,16 +1,14 @@
 -----------------------------------
 -- Area: Arrapago Reef
--- NPC:  Runic Portal
+--  NPC: Runic Portal
 -- Arrapago Reef Teleporter Back to Aht Urgan Whitegate
 -- @pos 15 -7 627 54
------------------------------------
-package.loaded["scripts/zones/Arrapago_Reef/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/besieged");
 require("scripts/globals/teleports");
 require("scripts/globals/missions");
-require("scripts/zones/Arrapago_Reef/TextIDs");
+local text = require("scripts/zones/Arrapago_Reef/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -38,7 +36,7 @@ function onTrigger(player,npc)
             player:startEvent(0x006F);
         end
     else
-        player:messageSpecial(RESPONSE);
+        player:messageSpecial(text.RESPONSE);
     end
     
 end; 
@@ -48,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x006F and option == 1) then
         if (player:getVar("TOAUM2") == 1) then

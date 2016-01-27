@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Mhaura
---  NPC:  Koh Lenbalalako
---  Type: Standard NPC
---  @pos -64.412 -17 29.213 249
------------------------------------
-package.loaded["scripts/zones/Mhaura/TextIDs"] = nil;
+-- Area: Mhaura
+--  NPC: Koh Lenbalalako
+-- Type: Standard NPC
+-- @pos -64.412 -17 29.213 249
 -----------------------------------
 
-require("scripts/zones/Mhaura/TextIDs");
+local text = require("scripts/zones/Mhaura/TextIDs");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
 
@@ -75,7 +73,7 @@ function onEventFinish(player,csid,option)
         player:setVar("unbridledPassion",2);
     elseif (csid == 0x271b) then
         player:addKeyItem(KOHS_LETTER);
-        player:messageSpecial(KEYITEM_OBTAINED,KOHS_LETTER);            
+        player:messageSpecial(text.KEYITEM_OBTAINED,KOHS_LETTER);            
         player:tradeComplete();    
         player:setVar("unbridledPassion",3);    
     end

@@ -1,12 +1,10 @@
 -----------------------------------
 -- Area: Spire_of_vahlz
--- NPC:  web of regret
------------------------------------
-package.loaded["scripts/zones/Spire_of_Vahzl/TextIDs"] = nil;
+--  NPC: web of regret
 -----------------------------------
 
 require("scripts/globals/bcnm");
-require("scripts/zones/Spire_of_Vahzl/TextIDs");
+local text = require("scripts/zones/Spire_of_Vahzl/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -37,8 +35,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("onUpdate CSID: %u",csid);
---printf("onUpdate RESULT: %u",option);
+    -- printf("onUpdate CSID: %u",csid);
+    -- printf("onUpdate RESULT: %u",option);
 
     if (EventUpdateBCNM(player,csid,option)) then
         return;
@@ -51,8 +49,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("onFinish CSID: %u",csid);
---printf("onFinish RESULT: %u",option);
+    -- printf("onFinish CSID: %u",csid);
+    -- printf("onFinish RESULT: %u",option);
     
     if (EventFinishBCNM(player,csid,option)) then
         return;

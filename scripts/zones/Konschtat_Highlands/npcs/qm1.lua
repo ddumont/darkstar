@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Konschtat Highlands
--- NPC:  qm1 (???)
+--  NPC: qm1 (???)
 -- Continues Quests: Past Perfect
 -- @pos -201 16 80 108
------------------------------------
-package.loaded["scripts/zones/Konschtat_Highlands/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/settings");
-require("scripts/zones/Konschtat_Highlands/TextIDs");
+local text = require("scripts/zones/Konschtat_Highlands/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -28,9 +26,9 @@ function onTrigger(player,npc)
 
     if (PastPerfect == QUEST_ACCEPTED) then
         player:addKeyItem(0x6d);
-        player:messageSpecial(KEYITEM_OBTAINED,0x6d); -- Tattered Mission Orders
+        player:messageSpecial(text.KEYITEM_OBTAINED,0x6d); -- Tattered Mission Orders
     else
-        player:messageSpecial(FIND_NOTHING);
+        player:messageSpecial(text.FIND_NOTHING);
     end
 end;
 
@@ -39,8 +37,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -48,6 +46,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

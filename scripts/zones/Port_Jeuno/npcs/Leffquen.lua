@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Port Jeuno
--- NPC: Leffquen
+--  NPC: Leffquen
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Port_Jeuno/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Port_Jeuno/TextIDs");
+local text = require("scripts/zones/Port_Jeuno/TextIDs");
 
 -----------------------------------
 -- onTrade Action

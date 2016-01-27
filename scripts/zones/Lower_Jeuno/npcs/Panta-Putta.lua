@@ -1,12 +1,19 @@
 -----------------------------------
 -- Area: Lower Jeuno
+<<<<<<< HEAD
 -- NPC:  Panta-Putta
+=======
+--  NPC: Panta-Putta
+>>>>>>> Safe, cacheable requires in lua.
 -- Starts and Finishes Quest: The Wonder Magic Set, The kind cardian
 -- Involved in Quests: The Lost Cardian
 -- @zone 245
 -- @pos -61 0 -140
+<<<<<<< HEAD
 -----------------------------------
 package.loaded["scripts/zones/Lower_Jeuno/TextIDs"] = nil;
+=======
+>>>>>>> Safe, cacheable requires in lua.
 package.loaded["scripts/globals/settings"] = nil;
 -----------------------------------
 
@@ -15,7 +22,11 @@ require("scripts/globals/titles");
 require("scripts/globals/keyitems");
 require("scripts/globals/shop");
 require("scripts/globals/quests");
+<<<<<<< HEAD
 require("scripts/zones/Lower_Jeuno/TextIDs");
+=======
+local text = require("scripts/zones/Lower_Jeuno/TextIDs");
+>>>>>>> Safe, cacheable requires in lua.
 
 -----------------------------------
 -- onTrade Action
@@ -58,7 +69,11 @@ function onTrigger(player,npc)
 end;
 
 -- 0x004E oh zut j'ai besoin de cette marmite
+<<<<<<< HEAD
 -- 0x001E j'ai été trop dur avec two... et percé la marmite
+=======
+-- 0x001E j'ai ï¿½tï¿½ trop dur avec two... et percï¿½ la marmite
+>>>>>>> Safe, cacheable requires in lua.
 -- 0x0028 du moment que j'ai cette boite et la marmite je vais enfin battre ce gars
 
 -----------------------------------
@@ -66,8 +81,13 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
+<<<<<<< HEAD
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
+=======
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
+>>>>>>> Safe, cacheable requires in lua.
 end;
 
 -----------------------------------
@@ -75,18 +95,31 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
+<<<<<<< HEAD
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
+=======
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
+>>>>>>> Safe, cacheable requires in lua.
     if (csid == 0x004D and option == 1) then 
         player:addQuest(JEUNO,THE_WONDER_MAGIC_SET);
     elseif (csid == 0x0021) then 
         if (player:getFreeSlotsCount() == 0) then
+<<<<<<< HEAD
             player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,13328);
+=======
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,13328);
+>>>>>>> Safe, cacheable requires in lua.
         else
             player:addTitle(FOOLS_ERRAND_RUNNER);
             player:delKeyItem(WONDER_MAGIC_SET);
             player:addItem(13328);
+<<<<<<< HEAD
             player:messageSpecial(ITEM_OBTAINED,13328);
+=======
+            player:messageSpecial(text.ITEM_OBTAINED,13328);
+>>>>>>> Safe, cacheable requires in lua.
             player:addFame(JEUNO, JEUNO_FAME*30);
             player:needToZone(true);
             player:completeQuest(JEUNO,THE_WONDER_MAGIC_SET);
@@ -95,18 +128,29 @@ function onEventFinish(player,csid,option)
         player:setVar("theLostCardianVar",2);
     elseif (csid == 0x0023) then 
         if (player:getFreeSlotsCount() == 0) then
+<<<<<<< HEAD
             player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,13596);
+=======
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,13596);
+>>>>>>> Safe, cacheable requires in lua.
         else
             player:addTitle(BRINGER_OF_BLISS);
             player:delKeyItem(TWO_OF_SWORDS);
             player:setVar("theKindCardianVar",0);
             player:addItem(13596);
+<<<<<<< HEAD
             player:messageSpecial(ITEM_OBTAINED,13596); -- Green Cape
+=======
+            player:messageSpecial(text.ITEM_OBTAINED,13596); -- Green Cape
+>>>>>>> Safe, cacheable requires in lua.
             player:addFame(JEUNO, JEUNO_FAME*30);
             player:completeQuest(JEUNO,THE_KIND_CARDIAN);
         end
     end
 end;
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> Safe, cacheable requires in lua.

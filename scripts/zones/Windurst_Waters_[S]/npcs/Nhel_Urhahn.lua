@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters (S)
---   NPC: Nhel Urhahn
---  Type: Standard NPC
+-- Area: Windurst Waters (S)
+--  NPC: Nhel Urhahn
+-- Type: Standard NPC
 -- @zone: 94
---  @pos -47.348 -4.499 47.117
+-- @pos -47.348 -4.499 47.117
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters_[S]/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

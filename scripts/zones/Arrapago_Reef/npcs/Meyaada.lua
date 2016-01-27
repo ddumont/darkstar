@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Arrapago Reef
--- NPC:  Meyaada
+--  NPC: Meyaada
 -- @pos 22.446 -7.920 573.390 54
------------------------------------
-package.loaded["scripts/zones/Arrapago_Reef/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Arrapago_Reef/TextIDs");
+local text = require("scripts/zones/Arrapago_Reef/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -59,13 +57,13 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     
     if (csid == 0x00DF and option == 1) then
        player:delCurrency("imperial_standing", 50);
        player:addKeyItem(ASSAULT_ARMBAND);
-       player:messageSpecial(KEYITEM_OBTAINED,ASSAULT_ARMBAND);   
+       player:messageSpecial(text.KEYITEM_OBTAINED,ASSAULT_ARMBAND);   
     elseif (csid == 0x0005 and option == 1) then
         player:delKeyItem(SUPPLIES_PACKAGE);
         player:setVar("TOAUM2",1);

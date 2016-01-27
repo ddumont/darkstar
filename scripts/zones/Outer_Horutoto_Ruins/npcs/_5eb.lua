@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Inner Horutoto Ruins
--- NPC:  Gate: Magical Gizmo
+--  NPC: Gate: Magical Gizmo
 -- Involved In Mission: Full Moon Fountain
 -- @pos -291 0 -659 194
------------------------------------
-package.loaded["scripts/zones/Outer_Horutoto_Ruins/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
-require("scripts/zones/Outer_Horutoto_Ruins/TextIDs");
+local text = require("scripts/zones/Outer_Horutoto_Ruins/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -36,7 +34,7 @@ function onTrigger(player,npc)
     elseif (CurrentMission == FULL_MOON_FOUNTAIN and MissionStatus == 2) then
         player:startEvent(0x0044)
     else
-        player:messageSpecial(DOOR_FIRMLY_SHUT);
+        player:messageSpecial(text.DOOR_FIRMLY_SHUT);
     end
     
     return 1;
@@ -48,8 +46,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -57,8 +55,8 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 
     if (csid == 0x0044) then
         player:setVar("MissionStatus",3);

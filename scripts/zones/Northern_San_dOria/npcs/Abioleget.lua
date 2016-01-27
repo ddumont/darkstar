@@ -1,14 +1,11 @@
 -----------------------------------
---  Area: Northern San d'Oria
+-- Area: Northern San d'Oria
 --  NPC: Abioleget
---  Type: Quest Giver (Her Memories: The Faux Pas and The Vicasque's Sermon) / Merchant
---  @zone: 231
---  @pos 128.771 0.000 118.538
+-- Type: Quest Giver (Her Memories: The Faux Pas and The Vicasque's Sermon) / Merchant
+-- @zone: 231
+-- @pos 128.771 0.000 118.538
 --
------------------------------------
-
-package.loaded["scripts/zones/Northern_San_dOria/TextIDs"] = nil;
-require("scripts/zones/Northern_San_dOria/TextIDs");
+local text = require("scripts/zones/Northern_San_dOria/TextIDs");
 require("scripts/globals/settings");
 require("scripts/globals/titles");
 require("scripts/globals/quests");
@@ -41,10 +38,10 @@ function onTrigger(player,npc)
             player:tradeComplete();
             player:startEvent(0x0258);
         else
-            player:showText(npc,11103,618,70);
+            player:showText(npc, text.11103,618,70);
         end
     else
-        player:showText(npc,ABIOLEGET_DIALOG);
+        player:showText(npc, text.ABIOLEGET_DIALOG);
     end
 end;
 

@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Dynamis tavnazia
--- NPC:  Vanguard_Eye
+--  NPC: Vanguard_Eye
 
------------------------------------
-package.loaded["scripts/zones/Dynamis-Tavnazia/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Tavnazia/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

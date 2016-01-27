@@ -1,11 +1,9 @@
 -----------------------------------
 -- Area: Toraimarai Canal
--- NPC:  Marble Door
+--  NPC: Marble Door
 -- Involved In Windurst Mission 7-1
 -- @pos 132 12 -19 169 169
------------------------------------
-package.loaded["scripts/zones/Toraimarai_Canal/TextIDs"] = nil;
-require("scripts/zones/Toraimarai_Canal/TextIDs");
+local text = require("scripts/zones/Toraimarai_Canal/TextIDs");
 -----------------------------------
 
 require("scripts/globals/settings");
@@ -29,8 +27,8 @@ local CurrentMission = player:getCurrentMission(WINDURST);
 
 
 -- NOTE: MobAction is 25(ACTION_SPAWN) when they're dead/despawned and 16(ACTION_ROAMING) when spawned.
---         Not really sure why but this seems to work.
---         print("HingeOil 1 Action: "..GetMobAction(17469666));
+-- Not really sure why but this seems to work.
+-- print("HingeOil 1 Action: "..GetMobAction(17469666));
 if (CurrentMission == THE_SIXTH_MINISTRY or player:hasCompletedMission(WINDURST,THE_SIXTH_MINISTRY)) then
     if ((GetMobAction(17469666) == 25) and
        (GetMobAction(17469667) == 25) and
@@ -50,8 +48,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID2: %u",csid);
---printf("RESULT2: %u",option);
+    -- printf("CSID2: %u",csid);
+    -- printf("RESULT2: %u",option);
 end;
 
 -----------------------------------
@@ -59,6 +57,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

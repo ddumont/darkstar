@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters (S)
---   NPC: Pelsey-Holsey
---  Type: Standard NPC
+-- Area: Windurst Waters (S)
+--  NPC: Pelsey-Holsey
+-- Type: Standard NPC
 -- @zone: 94
---  @pos 119.755 -4.5 209.754
+-- @pos 119.755 -4.5 209.754
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters_[S]/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Qu'Bia Arena
--- NPC:  Mission Rank 5
+--  NPC: Mission Rank 5
 -- @pos -221 -24 19 206
------------------------------------
-package.loaded["scripts/zones/QuBia_Arena/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/QuBia_Arena/TextIDs");
+local text = require("scripts/zones/QuBia_Arena/TextIDs");
 
 -----------------------------------
 require("scripts/globals/keyitems");
@@ -51,7 +49,7 @@ function onEventFinish(player,csid,option)
     if (csid == 0x7d01) then
         if (player:hasKeyItem(NEW_FEIYIN_SEAL)) then
             player:addKeyItem(BURNT_SEAL);
-            player:messageSpecial(KEYITEM_OBTAINED,BURNT_SEAL);
+            player:messageSpecial(text.KEYITEM_OBTAINED,BURNT_SEAL);
             player:setVar("MissionStatus",12);
             player:delKeyItem(NEW_FEIYIN_SEAL);
         end;

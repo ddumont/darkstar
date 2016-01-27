@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Quicksand Caves
--- NPC:  ??? (qm5)
+--  NPC: ??? (qm5)
 -- Involved in Quest: The Missing Piece
 -- @pos
 --1:770 0 -419
@@ -10,12 +10,10 @@
 --5:787 -16 -819
 --spawn in npc_list is 770 0 -419
 -----------------------------------
-package.loaded["scripts/zones/Quicksand_Caves/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/quests");
 require("scripts/globals/keyitems");
-require("scripts/zones/Quicksand_Caves/TextIDs");
+local text = require("scripts/zones/Quicksand_Caves/TextIDs");
 
 -----------------------------------
 -- onTrigger Action
@@ -31,7 +29,7 @@ function onTrigger(player,npc)
     
     if (TheMissingPiece == QUEST_ACCEPTED and not(HasAncientTablet or HasAncientFragment or player:getTitle() == ACQUIRER_OF_ANCIENT_ARCANUM)) then
         player:addKeyItem(ANCIENT_TABLET_FRAGMENT);
-        player:messageSpecial(KEYITEM_OBTAINED,ANCIENT_TABLET_FRAGMENT);
+        player:messageSpecial(text.KEYITEM_OBTAINED,ANCIENT_TABLET_FRAGMENT);
         
         --move the ??? to a random location
         
@@ -50,7 +48,7 @@ function onTrigger(player,npc)
             npc:setPos(787,-16,-819,0);
         end;    
     else
-        player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+        player:messageSpecial(text.NOTHING_OUT_OF_ORDINARY);
     end;
 end; 
 

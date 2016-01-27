@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Waters
---   NPC: Panna-Donna
---  Type: Mission NPC
+-- Area: Windurst Waters
+--  NPC: Panna-Donna
+-- Type: Mission NPC
 -- @zone: 238
---  @pos -57.502 -6 229.571
+-- @pos -57.502 -6 229.571
 --
 -- Auto-Script: Requires Verification (Verfied By Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

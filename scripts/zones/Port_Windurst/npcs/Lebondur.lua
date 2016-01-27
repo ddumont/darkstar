@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Port Windurst
--- NPC: Lebondur
+--  NPC: Lebondur
 -- Regional Marchant NPC 
 -- Only sells when Windurst controls Vollbow.
 -- Confirmed shop stock, August 2013
@@ -8,8 +8,7 @@
 
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Port_Windurst/TextIDs"] = nil;
-require("scripts/zones/Port_Windurst/TextIDs");
+local text = require("scripts/zones/Port_Windurst/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -25,9 +24,9 @@ end;
 function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(VOLLBOW);
     if (RegionOwner ~= WINDURST) then 
-        player:showText(npc,LEBONDUR_CLOSED_DIALOG);
+        player:showText(npc, text.LEBONDUR_CLOSED_DIALOG);
     else
-        player:showText(npc,LEBONDUR_OPEN_DIALOG);
+        player:showText(npc, text.LEBONDUR_OPEN_DIALOG);
 
         stock = {
             0x027C,   119,   --Chamomile
@@ -46,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,6 +54,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,14 +1,12 @@
 -----------------------------------
 -- Area: Temple of Uggalepih
--- NPC:  Worn Book
+--  NPC: Worn Book
 -- Getting "Old Rusty Key (keyitem)"
 -- @pos 59 0 19 159
 -----------------------------------
-package.loaded["scripts/zones/Temple_of_Uggalepih/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/keyitems");
-require("scripts/zones/Temple_of_Uggalepih/TextIDs");
+local text = require("scripts/zones/Temple_of_Uggalepih/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -30,7 +28,7 @@ function onTrigger(player,npc)
     local soul = player:hasKeyItem(PAINTBRUSH_OF_SOULS);
 
     if (soul or rusty) then
-        player:messageSpecial(NO_REASON_TO_INVESTIGATE);
+        player:messageSpecial(text.NO_REASON_TO_INVESTIGATE);
     elseif (npc:getID() == Book1) then
         player:startEvent(0x003D); -- First Book
     elseif (npc:getID() == Book2) then
@@ -67,9 +65,9 @@ function onEventFinish(player,csid,option)
     end
 
     if (player:getVar("paintbrushOfSouls_book") == 7) then
-        player:messageSpecial(FALLS_FROM_THE_BOOK,OLD_RUSTY_KEY);
+        player:messageSpecial(text.FALLS_FROM_THE_BOOK,OLD_RUSTY_KEY);
         player:addKeyItem(OLD_RUSTY_KEY);
-        player:messageSpecial(KEYITEM_OBTAINED,OLD_RUSTY_KEY);
+        player:messageSpecial(text.KEYITEM_OBTAINED,OLD_RUSTY_KEY);
         player:setVar("paintbrushOfSouls_book",0);
     end
 

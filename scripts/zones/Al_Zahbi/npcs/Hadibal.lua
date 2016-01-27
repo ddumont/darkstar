@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Al Zahbi
---   NPC: Hadibal
---  Type: Standard NPC
+-- Area: Al Zahbi
+--  NPC: Hadibal
+-- Type: Standard NPC
 -- @zone: 48
---  @pos -34.345 -1 -38.842
+-- @pos -34.345 -1 -38.842
 -- 
 -- Auto-Script: Requires Verification (Verified by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------

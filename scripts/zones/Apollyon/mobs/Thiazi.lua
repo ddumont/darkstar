@@ -1,12 +1,9 @@
 -----------------------------------
 -- Area: Apollyon NE    
--- NPC:  Thiazi
+--  NPC: Thiazi
 
 -----------------------------------
-package.loaded["scripts/zones/Apollyon/TextIDs"] = nil;
------------------------------------
 require("scripts/globals/limbus");
-require("scripts/zones/Apollyon/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

@@ -1,20 +1,18 @@
 -----------------------------------
 -- Area: Windurst Woods
--- NPC: Mushuhi-Metahi
+--  NPC: Mushuhi-Metahi
 -- Type: Weather Reporter
------------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
-require("scripts/zones/Windurst_Woods/TextIDs");
+local text = require("scripts/zones/Windurst_Woods/TextIDs");
 
 -----------------------------------
 -- onTrade Action
 -----------------------------------
 
 function onTrade(player,npc,trade)
-end; 
+end;
 
 -----------------------------------
 -- onTrigger Action

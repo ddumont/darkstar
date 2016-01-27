@@ -1,14 +1,13 @@
 -----------------------------------
 -- Area: Bastok_Mines
--- NPC: Mille
+--  NPC: Mille
 -- Only sells when Bastok controlls Norvallen Region
 -----------------------------------
 
 require("scripts/globals/events/harvest_festivals");
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -25,9 +24,9 @@ end;
 function onTrigger(player,npc)
     RegionOwner = GetRegionOwner(NORVALLEN);
     if (RegionOwner ~= BASTOK) then
-        player:showText(npc,MILLE_CLOSED_DIALOG);
+        player:showText(npc, text.MILLE_CLOSED_DIALOG);
     else
-        player:showText(npc,MILLE_OPEN_DIALOG);
+        player:showText(npc, text.MILLE_OPEN_DIALOG);
 
         stock = {
             0x02b0,  18,     --Arrowwood Log
@@ -46,8 +45,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -55,6 +54,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,13 +1,10 @@
 -----------------------------------
 -- Area: Dynamis Tavnazia
--- NPC: Nightmare_Makara
+--  NPC: Nightmare_Makara
 
------------------------------------
-package.loaded["scripts/zones/Dynamis-Tavnazia/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/dynamis");
-require("scripts/zones/Dynamis-Tavnazia/TextIDs");
 
 -----------------------------------
 -- onMobSpawn Action

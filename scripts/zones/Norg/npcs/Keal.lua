@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Norg
--- NPC: Keal
+--  NPC: Keal
 -- Starts and Ends Quest: It's Not Your Vault
------------------------------------
-package.loaded["scripts/zones/Norg/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/quests");
-require("scripts/zones/Norg/TextIDs");
+local text = require("scripts/zones/Norg/TextIDs");
 
 local path = {
 -5.453587, 0.151494, -16.361458,
@@ -114,8 +112,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -123,17 +121,17 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option,npc)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
     if (csid == 0x0024 and option == 1) then
         player:addQuest(OUTLANDS,ITS_NOT_YOUR_VAULT);
     elseif (csid == 0x0026) then
         if (player:getFreeSlotsCount() == 0) then 
-            player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,4961); 
+            player:messageSpecial(text.ITEM_CANNOT_BE_OBTAINED,4961); 
         else
             player:delKeyItem(SEALED_IRON_BOX);
             player:addItem(4961); -- Scroll of Tonko: Ichi
-            player:messageSpecial(ITEM_OBTAINED, 4961); 
+            player:messageSpecial(text.ITEM_OBTAINED, 4961); 
             player:addFame(OUTLANDS,NORG_FAME*50);
             player:completeQuest(OUTLANDS,ITS_NOT_YOUR_VAULT);
         end
@@ -141,6 +139,3 @@ function onEventFinish(player,csid,option,npc)
 
     npc:wait(0);
 end;
-
-
-

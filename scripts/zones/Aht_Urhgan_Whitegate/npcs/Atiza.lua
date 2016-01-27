@@ -1,13 +1,11 @@
 -----------------------------------
 -- Area: Aht Urhgan Whitegate
--- NPC:  Atiza
+--  NPC: Atiza
 -- Admits players to the dock in Aht Urhgan
 -- @pos 5.195 -1 98.966 50
 -----------------------------------
-package.loaded["scripts/zones/Aht_Urhgan_Whitegate/TextIDs"] = nil;
------------------------------------
 
-require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
+local text = require("scripts/zones/Aht_Urhgan_Whitegate/TextIDs");
 
 -----------------------------------
 -- onTrade Action

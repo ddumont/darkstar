@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Southern San dOria
--- NPC: Maleme
+--  NPC: Maleme
 -- Type: Weather Reporter
 -- Involved in Quest: Flyers for Regine
------------------------------------
-package.loaded["scripts/zones/Southern_San_dOria/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/quests");
-require("scripts/zones/Southern_San_dOria/TextIDs");
+local text = require("scripts/zones/Southern_San_dOria/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +20,7 @@ function onTrade(player,npc,trade)
         local MagicFlyer = trade:hasItemQty(532,1);
 
         if (MagicFlyer == true and count == 1) then
-            player:messageSpecial(FLYER_REFUSED);
+            player:messageSpecial(text.FLYER_REFUSED);
         end
     end
 end; 

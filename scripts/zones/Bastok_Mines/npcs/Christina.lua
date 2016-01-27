@@ -1,15 +1,12 @@
 -----------------------------------
---  Area: Bastok Mines
---   NPC: Christina
---  Type: Special Event Coordinator
+-- Area: Bastok Mines
+--  NPC: Christina
+-- Type: Special Event Coordinator
 -- @zone: 234
---  @pos 23.703 -1 -86.034
+-- @pos 23.703 -1 -86.034
 --
 -- Auto-Script: Requires Verification
------------------------------------
-
-package.loaded["scripts/zones/Bastok_Mines/TextIDs"] = nil;
-require("scripts/zones/Bastok_Mines/TextIDs");
+local text = require("scripts/zones/Bastok_Mines/TextIDs");
 
 -----------------------------------
 -- onTrade Action

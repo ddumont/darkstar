@@ -5,14 +5,12 @@
 -- Involved In Quest: Know One's Onions, Onion Rings, The Puppet Master, Class Reunion
 -- @pos -26 -13 260 239
 -----------------------------------
-package.loaded["scripts/zones/Windurst_Walls/TextIDs"] = nil;
------------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/missions");
 require("scripts/globals/quests");
-require("scripts/zones/Windurst_Walls/TextIDs");
+local text = require("scripts/zones/Windurst_Walls/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -101,7 +99,7 @@ function onEventFinish(player,csid,option)
     elseif (csid == 0x0183) then
         player:delKeyItem(JOKER_CARD);
         player:addGil(GIL_RATE*8000);
-        player:messageSpecial(GIL_OBTAINED,GIL_RATE*8000);
+        player:messageSpecial(text.GIL_OBTAINED,GIL_RATE*8000);
     elseif (csid == 0x0151) then
         -- Mark the progress
         player:setVar("MissionStatus",6);
@@ -116,7 +114,7 @@ function onEventFinish(player,csid,option)
         player:setVar("ClassReunionProgress",1);
         player:addQuest(WINDURST,CLASS_REUNION);
         player:addKeyItem(CARBUNCLES_TEAR);
-        player:messageSpecial(KEYITEM_OBTAINED,CARBUNCLES_TEAR);
+        player:messageSpecial(text.KEYITEM_OBTAINED,CARBUNCLES_TEAR);
     elseif (csid == 0x019f) then
         player:addQuest(WINDURST,CARBUNCLE_DEBACLE);
         player:setVar("CarbuncleDebacleProgress",1);

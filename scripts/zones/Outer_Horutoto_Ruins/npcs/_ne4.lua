@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Outer Horutoto Ruins
--- NPC: Strange Apparatus
+--  NPC: Strange Apparatus
 -- @pos: -574 0 739 194
------------------------------------
-
-package.loaded["scripts/zones/Outer_Horutoto_Ruins/TextIDs"] = nil;
-
-require("scripts/zones/Outer_Horutoto_Ruins/TextIDs");
+local text = require("scripts/zones/Outer_Horutoto_Ruins/TextIDs");
 require("scripts/globals/strangeapparatus");
 
 -----------------------------------
@@ -33,12 +29,12 @@ function onTrade(player,npc,trade)
 
             spawnElementalNM(player);
             delStrAppDocStatus(player);
-            player:messageSpecial(SYS_OVERLOAD);
-            player:messageSpecial(YOU_LOST_THE, trade);
+            player:messageSpecial(text.SYS_OVERLOAD);
+            player:messageSpecial(text.YOU_LOST_THE, trade);
         end
     else -- Invalid trade, lose doctor status
         delStrAppDocStatus(player);
-        player:messageSpecial(DEVICE_NOT_WORKING);
+        player:messageSpecial(text.DEVICE_NOT_WORKING);
     end
 end; 
 

@@ -1,11 +1,9 @@
 -----------------------------------
---  Area: Uleguerand_Range
---   NPC: Geush Urvan
------------------------------------
-package.loaded["scripts/zones/Uleguerand_Range/TextIDs"] = nil;
+-- Area: Uleguerand_Range
+--  NPC: Geush Urvan
 -----------------------------------
 
-require("scripts/zones/Uleguerand_Range/TextIDs");
+local text = require("scripts/zones/Uleguerand_Range/TextIDs");
 
 -----------------------------------
 -- onTrade Action

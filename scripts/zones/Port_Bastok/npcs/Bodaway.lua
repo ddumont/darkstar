@@ -1,12 +1,8 @@
 -----------------------------------
 -- Area: Port Bastok
--- NPC: Bodaway
+--  NPC: Bodaway
 -- Standard Info NPC
------------------------------------
-
-package.loaded["scripts/zones/Port_Bastok/TextIDs"] = nil;
-
-require("scripts/zones/Port_Bastok/TextIDs");
+local text = require("scripts/zones/Port_Bastok/TextIDs");
 
 -----------------------------------
 -- onTrade Action

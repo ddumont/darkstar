@@ -1,14 +1,11 @@
 ----------------------------------
---  Area: Al Zahbi
+-- Area: Al Zahbi
 --  NPC: Mabebe
---  Type: Item Deliverer
---  @zone: 48
---  @pos -27.551 0 -141.095
+-- Type: Item Deliverer
+-- @zone: 48
+-- @pos -27.551 0 -141.095
 --
------------------------------------
-
-package.loaded["scripts/zones/Al_Zahbi/TextIDs"] = nil;
-require("scripts/zones/Al_Zahbi/TextIDs");
+local text = require("scripts/zones/Al_Zahbi/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -22,7 +19,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc, ITEM_DELIVERY_DIALOG);
+    player:showText(npc, text.ITEM_DELIVERY_DIALOG);
     player:openSendBox();
 end;
 

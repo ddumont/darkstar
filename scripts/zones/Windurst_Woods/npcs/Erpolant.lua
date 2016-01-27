@@ -1,13 +1,11 @@
 -----------------------------------
---  Area: Windurst Woods
---   NPC: Erpolant
---  Type: Standard NPC
+-- Area: Windurst Woods
+--  NPC: Erpolant
+-- Type: Standard NPC
 -- @zone: 241
---  @pos -63.224 -0.749 -33.424
+-- @pos -63.224 -0.749 -33.424
 --
 -- Auto-Script: Requires Verification (Verfied by Brawndo)
------------------------------------
-package.loaded["scripts/zones/Windurst_Woods/TextIDs"] = nil;
 -----------------------------------
 
 -----------------------------------
@@ -42,4 +40,3 @@ function onEventFinish(player,csid,option)
     -- printf("CSID: %u",csid);
     -- printf("RESULT: %u",option);
 end;
-

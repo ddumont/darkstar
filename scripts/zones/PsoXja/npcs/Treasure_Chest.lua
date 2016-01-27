@@ -1,15 +1,13 @@
 -----------------------------------
 -- Area: Pso'Xja
--- NPC:  Treasure Chest
+--  NPC: Treasure Chest
 -- @zone 9
------------------------------------
-package.loaded["scripts/zones/PsoXja/TextIDs"] = nil;
 -----------------------------------
 
 require("scripts/globals/settings");
 require("scripts/globals/keyitems");
 require("scripts/globals/treasure");
-require("scripts/zones/PsoXja/TextIDs");
+local text = require("scripts/zones/PsoXja/TextIDs");
 
 local TreasureType = "Chest";
 local TreasureLvL = 53;
@@ -37,7 +35,7 @@ function onTrade(player,npc,trade)
         local pack = openChance(player,npc,trade,TreasureType,TreasureLvL,TreasureMinLvL,questItemNeeded);
         local success = 0;
         if (pack[2] ~= nil) then
-            player:messageSpecial(pack[2]);
+            player:messageSpecial(text.pack[2]);
             success = pack[1];
         else
             success = pack[1];
@@ -48,11 +46,11 @@ function onTrade(player,npc,trade)
 
             if (math.random() <= success) then
                 -- Succeded to open the coffer
-                player:messageSpecial(CHEST_UNLOCKED);
+                player:messageSpecial(text.CHEST_UNLOCKED);
 
                 if (questItemNeeded == 1) then
                     player:addKeyItem(MAP_OF_PSOXJA);
-                    player:messageSpecial(KEYITEM_OBTAINED,MAP_OF_PSOXJA); -- Map of Pso'Xja
+                    player:messageSpecial(text.KEYITEM_OBTAINED,MAP_OF_PSOXJA); -- Map of Pso'Xja
                 else
                     player:setVar("["..zone.."]".."Treasure_"..TreasureType,os.time() + math.random(CHEST_MIN_ILLUSION_TIME,CHEST_MAX_ILLUSION_TIME)); 
 
@@ -63,11 +61,11 @@ function onTrade(player,npc,trade)
                     
                     if (loot[1]=="gil") then
                         player:addGil(loot[2]*GIL_RATE);
-                        player:messageSpecial(GIL_OBTAINED,loot[2]*GIL_RATE);
+                        player:messageSpecial(text.GIL_OBTAINED,loot[2]*GIL_RATE);
                     else
                         -- Item
                         player:addItem(loot[2]);
-                        player:messageSpecial(ITEM_OBTAINED,loot[2]);
+                        player:messageSpecial(text.ITEM_OBTAINED,loot[2]);
                     end
                 end
 
@@ -82,7 +80,7 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:messageSpecial(CHEST_LOCKED,1064);
+    player:messageSpecial(text.CHEST_LOCKED,1064);
 end; 
 
 -----------------------------------
@@ -90,8 +88,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -99,6 +97,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;

@@ -1,6 +1,6 @@
 -----------------------------------
 -- Area: Windurst Waters
--- NPC:  Upih Khachla
+--  NPC: Upih Khachla
 -- Standard Merchant NPC
 -- Confirmed shop stock, August 2013
 -----------------------------------
@@ -8,8 +8,7 @@
 require("scripts/globals/events/harvest_festivals")
 require("scripts/globals/shop");
 require("scripts/globals/conquest");
-package.loaded["scripts/zones/Windurst_Waters/TextIDs"] = nil;
-require("scripts/zones/Windurst_Waters/TextIDs");
+local text = require("scripts/zones/Windurst_Waters/TextIDs");
 
 -----------------------------------
 -- onTrade Action
@@ -24,9 +23,11 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    player:showText(npc,UPIHKHACHLA_SHOP_DIALOG);
+    player:showText(npc, text.UPIHKHACHLA_SHOP_DIALOG);
 
-    stock = {
+    local stock =
+    {
+    
         0x43A1,  1107,1,     --Grenade
         0x1010,   837,1,     --Potion
         0x03B7,   108,1,     --Wijnruit
@@ -65,8 +66,8 @@ end;
 -----------------------------------
 
 function onEventUpdate(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
 
 -----------------------------------
@@ -74,6 +75,6 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
---printf("CSID: %u",csid);
---printf("RESULT: %u",option);
+    -- printf("CSID: %u",csid);
+    -- printf("RESULT: %u",option);
 end;
